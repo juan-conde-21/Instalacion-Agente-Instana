@@ -50,7 +50,8 @@
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/f7b72266-d585-4b06-bdd4-12075b2424c9)
 
-   Buscar el hostname en la barra de consultas, ejemplo entity.host.name:"WIN-R0UTIF1RLS4" 
+   Buscar el hostname en la barra de consultas, ejemplo entity.host.name:"ubuntu-server" 
 
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/df3f42fe-6c9c-4915-a75f-4624ec8c0b37)
 
 
