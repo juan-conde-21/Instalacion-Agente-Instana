@@ -4,10 +4,11 @@
 
    Windows
 
-
+         C:\Program Files\Instana\instana-agent\etc\instana
 
    Linux
 
+   
 
 2. Ubicar las lineas de configuracion para el plugin de vsphere.
 
