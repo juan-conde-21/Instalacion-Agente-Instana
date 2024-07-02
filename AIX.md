@@ -4,7 +4,6 @@
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/14ac8ed5-4346-4256-9c01-0eb3f7d33a5c)
 
-
 2. Seleccionar Install Agents
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/6acee1fb-f4ed-4427-9282-310c2d7ab8be)
@@ -23,41 +22,40 @@
 
    Ingresar a la ruta /opt
 
-         cd /opt
+       cd /opt
 
    Descomprimir el agente Instana en la carpeta
 
-         gunzip instana-agent-aix-ppc-64bit.tar
-         tar -xvf instana-agent-aix-ppc-64bit.tar
+       gunzip instana-agent-aix-ppc-64bit.tar
+       tar -xvf instana-agent-aix-ppc-64bit.tar
 
    Descomprimir el archivo IBM OpenJ9 JDK 11
 
-         gunzip ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
+       gunzip ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
 
-         tar -xvf ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar
-
+       tar -xvf ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar
 
    Renombrar la carpeta IBM OpenJ9 JDK 11 descomprimida, a jvm.
 
-         mv jdk-11.0.14.1+1 jvm
+       mv jdk-11.0.14.1+1 jvm
 
    Mover la carpeta jvm hacia la ruta del agente /opt/instana-agent/
 
-         mv jvm /opt/instana-agent/ 
+       mv jvm /opt/instana-agent/ 
 
 6. Iniciar el agente Instana desde la ruta:  /opt/instana-agent/bin/
 
    Ejecutar los siguientes comandos:
    
-         cd  /opt/instana-agent/bin/
-         ./start
+       cd  /opt/instana-agent/bin/
+       ./start
           
 7. Validación que el agente se encuentre operativo.
 
    Ejecutar los siguientes comandos:
    
-         cd  /opt/instana-agent/bin/
-         ./status
+       cd  /opt/instana-agent/bin/
+       ./status
 
    Resultado del comando:
 
@@ -68,11 +66,11 @@
 
    Ejecutar los siguientes comandos:
 
-         vi /etc/inittab
+       vi /etc/inittab
          
    Al final del archivo inittab, agregar la siguiente línea:
 
-         instana:once:/opt/instana-agent/bin/start > /dev/null
+       instana:once:/opt/instana-agent/bin/start > /dev/null
 
 
 
