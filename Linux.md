@@ -17,7 +17,7 @@
  
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/3d21a9b1-6e9c-4eff-b4d6-62adf79d44eb)
 
-5. Ingresar al servidor Windows con usuario root y ejecutar los comandos copiados en el paso anterior. Ingresar la letra Y para aceptar la instalación y continuar.
+5. Ingresar al servidor Linux con usuario root y ejecutar los comandos copiados en el paso anterior. Ingresar la letra Y para aceptar la instalación y continuar.
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/838465ef-2424-49cb-90e9-d6208edd0128)
 
