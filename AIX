@@ -1,0 +1,16 @@
+# Instalación de Agente Instana en plataforma UNIX
+
+1. Dirigirse al módulo de Agentes en la consola de Instana.
+
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/14ac8ed5-4346-4256-9c01-0eb3f7d33a5c)
+
+
+2. Seleccionar Install Agents
+
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/6acee1fb-f4ed-4427-9282-310c2d7ab8be)
+
+3. Buscar la plataforma Unix y seleccionar el instalador dependiendo de la arquitectura del servidor donde se va a desplegar.
+
+
+
+
