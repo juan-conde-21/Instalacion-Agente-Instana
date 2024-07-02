@@ -9,7 +9,7 @@
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/6acee1fb-f4ed-4427-9282-310c2d7ab8be)
 
-3. Buscar la plataforma windows y seleccionar el instalador dependiendo con la plataforma donde se va a desplegar.
+3. Buscar la plataforma Linux y seleccionar el instalador dependiendo con la plataforma donde se va a desplegar.
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/47162d4f-ac46-464f-bee7-9857be118684)
 
