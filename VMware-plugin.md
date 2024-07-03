@@ -22,6 +22,12 @@
 
 5. Guardar los cambios y verificar que el cluster VMware se encuentre reportando.
 
+   En el módulo Platform ubicar el submódulo vSphere:
+
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/a1d6466c-0496-40ca-a59f-6fd342a75f1d)
+
+   Se mostrara el clúster descubierto:
+
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/e6d9be04-5490-4ae2-b2e7-0b56586d49db)
 
    
