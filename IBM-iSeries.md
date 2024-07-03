@@ -14,7 +14,7 @@
 
        vi configuration.yaml
 
-       ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/935b5ea0-b534-41f0-9006-bb21ae967059)
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/935b5ea0-b534-41f0-9006-bb21ae967059)
 
    Configuración de ejemplo:
 
