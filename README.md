@@ -3,10 +3,10 @@
 Este repositorio contiene procedimientos detallados para la instalación y configuración del agente de Instana en diferentes entornos. El objetivo es proporcionar instrucciones claras y concisas para facilitar la implementación y el monitoreo de aplicaciones utilizando Instana.
 
 - Instalación del Agente de Instana
-  - [En Linux](Linux.md)
-  - [En Windows](Windows.md)
-  - [En Openshift](Openshift.md)
+  - [En Linux](Plataformas/Linux.md)
+  - [En Windows](Plataformas/Windows.md)
+  - [En Openshift](Plataformas/Openshift.md)
 - Configuración del Agente - Plugins
-  - [VMware](VMware-plugin.md)
-  - [IBM iSeries](IBM-iSeries.md)
+  - [VMware](Plugins/VMware-plugin.md)
+  - [IBM iSeries](Plugins/IBM-iSeries.md)
 - Solución de Problemas
