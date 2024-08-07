@@ -4,11 +4,11 @@
 
    Windows
 
-       C:\Program Files\Instana\instana-agent\etc\instana
+       C:\Program Files\Instana\instana-agent\etc\instana\configuration.yaml
 
    Linux
 
-       /opt/instana/agent/etc/instana/
+       /opt/instana/agent/etc/instana/configuration.yaml
 
 2. Ubicar las lineas para el plugin de IBM Secret Manager en el archivo de configuracion, modificar y guardar los cambios.
 
