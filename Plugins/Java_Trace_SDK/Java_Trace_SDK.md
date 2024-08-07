@@ -84,7 +84,7 @@
 
    ![image](https://github.com/user-attachments/assets/7632791e-c2fb-4f4e-8e58-79fdc2b50074)
 
- 7. Aplicacion demo utilizada [hello-spring](Plugins/Java_Trace_SDK/hello-spring)  
+ 7. Aplicacion demo utilizada [hello-spring](hello-spring)  
 
 
 
