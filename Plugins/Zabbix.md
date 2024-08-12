@@ -1,6 +1,6 @@
 # Habilitación de Plugin Zabbix
 
-## Prerequisitos:
+## Prerrequisitos:
 
 1. Tener instalado un agente Instana.
 2. Creación de un token de API en Zabbix con los permisos definidos a nivel de rol de usuario. Los permisos sobre los hosts asociados están vinculados a los permisos del usuario propietario del token en Zabbix.
