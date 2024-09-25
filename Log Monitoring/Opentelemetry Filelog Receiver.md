@@ -2,8 +2,8 @@
 
 ## Prerequisitos
 
-1. Agente Instana desplegado. (Windows/Linux)
-2. Sensor de Opentelemetry habilitado en el Agente Instana.
+1. Agente Instana instalado. ([Windows](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Plataformas/Windows.md)/[Linux](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Plataformas/Linux.md))
+2. Sensor de Opentelemetry habilitado en el Agente Instana. ([Procedimiento](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Sensores/Opentelemetry.md))
 
 ## Desplegar Colector de Opentelemetry Contrib (Linux)
 
