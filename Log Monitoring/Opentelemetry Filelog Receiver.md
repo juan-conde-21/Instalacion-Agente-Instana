@@ -5,7 +5,7 @@
 1. Agente Instana desplegado. (Windows/Linux)
 2. Sensor de Opentelemetry habilitado en el Agente Instana.
 
-## Desplegar Colector de Opentelemetry Contrib
+## Desplegar Colector de Opentelemetry Contrib (Linux)
 
 1. Descargar el instalador del Colector de Opentelemetry Contrib desde la pagina oficial de Opentelemetry.(https://github.com/open-telemetry/opentelemetry-collector-releases/releases)
 
@@ -26,7 +26,9 @@
        rpm -ivh otelcol-contrib_0.110.0_linux_amd64.rpm
 
     Ejemplo de ejecución:
-   
+
+    ![image](https://github.com/user-attachments/assets/0d3219d8-daae-452c-a8e1-f32d1cf75752)
+
 
 4. Ingresar al archivo de configuración del colector Opentelemetry y agregar la configuracion de la ruta de los logs a monitorear.
 
@@ -42,7 +44,7 @@
 
        receivers:
          filelog:
-           ## Ruta de los logs que seran leidos, puede ser ruta absoluta o utilizando wildcard
+           ## Ruta de los logs que seran leidos, puede ser ruta absoluta del archivo o utilizando wildcard
            include: [ "/var/log/apache2/*.log" ]
        
        processors:
@@ -65,21 +67,22 @@
              processors: [batch]
              exporters: [otlp]
 
+5. Reiniciar el servicio del colector de Opentelemetry para aplicar los cambios y verificar el estado del servicio.
 
+    Ejecutar los siguientes comandos:
 
+       systemctl restart otelcol-contrib
+       systemctl status otelcol-contrib
 
+    Ejemplo de ejecución:
 
+    ![image](https://github.com/user-attachments/assets/3d2fb886-6041-4fb7-ae13-953f16a1e749)
 
-## Plataforma Linux
-1. Ingresar al archivo de configuración del agente Instana
+   
+6. Verificar la recolección de logs en Instana.
 
-   Windows
+   ![image](https://github.com/user-attachments/assets/a005865b-a6fa-473e-858e-491a07900c8f)
 
-       C:\Program Files\Instana\instana-agent\etc\instana
-
-   Linux / Unix
-
-       /opt/instana/agent/etc/instana/
 
 
 
