@@ -16,6 +16,8 @@ Se detalla la instrumentación de una funcion AWS Lambda con Instana.
   
   El formato del ARN (arn:aws:lambda:us-east-1:410797082306:layer:instana-nodejs:177) para el Layer debe referenciar a la region donde se desplegaron los servicios, luego verificar la validez del layer.
   
+  **Revisar el tipo de arquitectura y version de layer a utilizar** ([Documentacion](https://www.ibm.com/docs/en/instana-observability/current?topic=lambda-aws-native-tracing-nodejs#instana-lambda-layers))
+  
   ![image](https://github.com/juan-conde-21/aws_lambda/assets/13276404/3644ff62-61ed-4a5e-9665-9662f08f0991)
   
 4. Editar el handler (instana-aws-lambda-auto-wrap.handler) de la funcion Lambda referenciando al agente instana.
