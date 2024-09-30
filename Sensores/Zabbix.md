@@ -1,4 +1,4 @@
-# Habilitación de Plugin Zabbix
+# Habilitación de Sensor Zabbix
 
 ## Prerrequisitos:
 
