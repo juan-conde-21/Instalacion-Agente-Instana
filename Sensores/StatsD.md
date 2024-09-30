@@ -1,4 +1,4 @@
-# Habilitación de Plugin StatsD
+# Habilitación de Sensor StatsD
 
 1. Ingresar al archivo de configuración del agente Instana
 
@@ -10,7 +10,7 @@
 
        /opt/instana/agent/etc/instana/
 
-2. Ubicar las lineas para el plugin de statsd en el archivo de configuracion, modificar y guardar los cambios.
+2. Ubicar las lineas para el sensor de statsd en el archivo de configuracion, modificar y guardar los cambios.
 
    ![image](https://github.com/user-attachments/assets/0522fb2e-75e6-4c37-95e3-109887972d39)
 
@@ -25,7 +25,7 @@
          bind-ip: "0.0.0.0" # all ips by default
          flush-interval: 10 # in seconds
 
-3. El plugin de Statsd soporta la recepcion de datos por el puerto 8125, por ejemplo los datos serian enviados de la siguiente manera:
+3. El sensor de Statsd soporta la recepcion de datos por el puerto 8125, por ejemplo los datos serian enviados de la siguiente manera:
 
         echo -n "custom.metric.name-test:1|c" | 34.135.37.172 8125
 
