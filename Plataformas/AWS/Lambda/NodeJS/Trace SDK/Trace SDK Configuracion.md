@@ -1,11 +1,11 @@
 
-#Configuracion de Trace SDK para NodeJS en servicio AWS Lambda
+# Configuracion de Trace SDK para NodeJS en servicio AWS Lambda
 
-##Prerequisitos:
+## Prerequisitos:
 
 - Instalar Instana Layer en lambda para NodeJS ([Tracing Layer AWS Lambda NodeJS](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Plataformas/AWS/Lambda/NodeJS/Tracing%20Layer.md))
 
-##Procedimiento
+## Procedimiento
 
 1. Importar el módulo Lambda de Instana en el código de la aplicación.
 
