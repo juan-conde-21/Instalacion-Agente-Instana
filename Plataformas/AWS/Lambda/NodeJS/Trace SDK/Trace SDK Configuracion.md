@@ -4,6 +4,7 @@
 ## Prerequisitos:
 
 - Instalar Instana Layer en lambda para NodeJS ([Tracing Layer AWS Lambda NodeJS](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Plataformas/AWS/Lambda/NodeJS/Tracing%20Layer.md))
+- Codigo ejemplo para desplegar en lambda ([Código](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Plataformas/AWS/Lambda/NodeJS/Trace%20SDK/index.js))
 
 ## Procedimiento
 
