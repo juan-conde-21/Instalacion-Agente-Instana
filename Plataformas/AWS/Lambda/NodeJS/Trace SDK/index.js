@@ -16,7 +16,17 @@ export const handler = async (event) => {
   }
 
   console.log("Instana span activo:", span);
-  
+
+  //Texto con formato de log en json de prueba
+  const texto = "{\"severityText\": \"INFO\", \"request\": {\"destination\": \"huacabala@gmail.com\", \"subject\": \"Recuperación de contraseña\", \"type\": 3, \"template\": \"recovery_password\", \"parameters\": {\"baseUrl\": \"https://centrodemonitoreo.rimac.com\", \"url\": \"https://centrodemonitoreo.rimac.com/recovery/UhL4I_flA\", \"email\": \"huacabala@gmail.com\"}}, \"response\": {\"mailId\": 9978954, \"code\": 200, \"body\": {\"message\": \"CORREO ENVIADO - 010001923504b86c-613bbc9c-4251-44de-8f3e-f092f81e086c-000000\"}, \"message\": \"CONSULTA TERMINADA\"}, \"status\": \"unique\", \"name\": \"mail\", \"action\": \"send\", \"traceId\": \"672c26ff-7d3d-4cd1-9a94-0c3e239f17a1\", \"resource\": \"UE2COMPRODLMBCMOPUBLIC\", \"createdAt\": \"2024-09-27T19:45:54.937Z\",\"severityText2\": \"INFO\", \"request2\": {\"destination2\": \"huacabala@gmail.com\", \"subject2\": \"Recuperación de contraseña\", \"type2\": 3, \"template2\": \"recovery_password\", \"parameters2\": {\"baseUrl2\": \"https://centrodemonitoreo.rimac.com\", \"url2\": \"https://centrodemonitoreo.rimac.com/recovery/UhL4I_flA\", \"email2\": \"huacabala@gmail.com\", \"extraParam12\": \"Additional info that needs to be processed carefully.\", \"extraParam22\": \"Some more extra information to extend the length.\", \"extraParam32\": \"https://example.com/extended_url_part3\"}}, \"response2\": {\"mailId2\": 9978954, \"code2\": 200, \"body2\": {\"message2\": \"CORREO ENVIADO - 010001923504b86c-613bbc9c-4251-44de-8f3e-f092f81e086c-000000\", \"log2\": \"Additional response details with more metadata.\", \"additionalInfo2\": \"This message was sent successfully using a secure mail service with timestamp validation.\", \"details2\": \"Unique details about the transaction that occurred during the operation.\", \"trackingId2\": \"TRACKER-8292929292929\", \"uuid2\": \"c29a92a1-4452-4a58-9f92-7296f62e623b\"}, \"message2\": \"CONSULTA TERMINADA\", \"debugInfo2\": {\"step12\": \"Initialization completed successfully.\", \"step22\": \"Mail service authenticated.\", \"step32\": \"Mail composed and sent.\", \"step42\": \"Response validated and returned.\", \"fullLog2\": \"This full log contains the trace for each step during the mail recovery process with additional checks.\"}}, \"status2\": \"unique\", \"name2\": \"mail\", \"action2\": \"send\", \"traceId2\": \"672c26ff-7d3d-4cd1-9a94-0c3e239f17a12\", \"resource2\": \"UE2COMPRODLMBCMOPUBLIC\", \"createdAt2\": \"2024-09-27T19:45:54.937Z\", \"additionalData2\": {\"dataSet12\": \"This is an extended data set that contains more information for further processing.\", \"dataSet22\": \"More tracking information for the system to process under certain conditions.\", \"dataSet32\": \"https://longer.example.com/more_data_for_extending_the_json_structure_part3\", \"meta2\": {\"id2\": 1234567890, \"description2\": \"A detailed description about the metadata involved in the request/response cycle.\", \"tags2\": [\"tag12\", \"tag22\", \"tag32\", \"tag42\"], \"type2\": \"secure\", \"trace2\": \"Execution trace with extra debugging information to ensure validity.\"}}}";
+
+  // Convertir el texto JSON en un objeto JavaScript
+  const jsonObject = JSON.parse(texto);
+
+  //Impresion de log en consola, Instana reconoce de manera automatica los logs con severidad warning y error.
+  console.error(JSON.stringify(jsonObject, null, 2));
+
+
   // Anotar valores del span
   span.annotate('sdk.custom.tags.span', "" + JSON.stringify(span, null, 2));
 
