@@ -25,7 +25,7 @@
    
        extension=grpc
 
-5. Configurar las variables de entorno en el archivo php.ini y reiniciar el servicio.
+3. Configurar las variables de entorno en el archivo php.ini y reiniciar el servicio.
 
    php.ini
 
@@ -35,10 +35,10 @@
        OTEL_EXPORTER_OTLP_PROTOCOL=grpc
        OTEL_SERVICE_NAME=webphp
 
-6. Reiniciar PHP.
+4. Reiniciar PHP.
 
 
-## Despliegue de la Aplicación
+## Despliegue de la Aplicación [Documentación](https://opentelemetry.io/docs/languages/php/getting-started/)
 
 1. Crear la carpeta de la app.
 
@@ -46,7 +46,6 @@
 
        composer init --no-interaction --require slim/slim:"^4" --require slim/psr7:"^1"
        composer update
-
 
 3. Instalar el SDK para PHP dependiendo del framework utilizado, para este ejemplo se utiliza slim.
 
@@ -90,11 +89,13 @@
        set OTEL_EXPORTER_OTLP_PROTOCOL=grpc
        set OTEL_SERVICE_NAME=webphp
 
-6. Ejecutar la aplicacion.
+7. Ejecutar la aplicacion.
 
        php -S localhost:8080
 
-7. Revisar en la consola de Instana el envio de las trazas.
+   ![image](https://github.com/user-attachments/assets/6d72b890-5640-4202-b3e2-baf74edab66c)
+
+8. Revisar en la consola de Instana el envio de las trazas.
 
    ![image](https://github.com/user-attachments/assets/dac40d69-dc7e-4f34-8e45-b636a4bd4d46)
 
