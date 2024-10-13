@@ -4,8 +4,8 @@
 
 1. Instalar php 8.2+ Zip [Instalador](https://windows.php.net/download/)
 2. Instalar composer [Instalador](https://getcomposer.org/download/)
-3. Instalar dependencias Opentelemetry [Procedimiento](#Instalar dependencias Opentelemetry)
-4. Despliegue de agente Instana [Instalación](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/README.md) con el sensor de opentelemetry activo [Procedimiento](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Sensores/Opentelemetry.md).
+3. Instalar dependencias Opentelemetry [Procedimiento](#instalar-dependencias-opentelemetry)
+4. Despliegue de agente Instana ([Instalación](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/README.md)) con el sensor de opentelemetry activo ([Procedimiento](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Sensores/Opentelemetry.md)).
 
 ## Instalar dependencias Opentelemetry 
 
