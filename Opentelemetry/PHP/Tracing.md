@@ -39,7 +39,9 @@
 4. Reiniciar PHP.
 
 
-## Despliegue de la Aplicación [Documentación](https://opentelemetry.io/docs/languages/php/getting-started/)
+## Despliegue de la Aplicación
+
+Se trabajara en base a la aplicacion demo para PHP de Opentelemetry ([Documentación](https://opentelemetry.io/docs/languages/php/getting-started/)), con la instrumentación automática.
 
 1. Crear la carpeta de la app.
 
