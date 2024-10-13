@@ -6,6 +6,7 @@
 2. Instalar composer [Instalador](https://getcomposer.org/download/)
 3. Instalar dependencias Opentelemetry [Procedimiento](#instalar-dependencias-opentelemetry)
 4. Despliegue de agente Instana ([Instalación](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/README.md)) con el sensor de opentelemetry activo ([Procedimiento](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Sensores/Opentelemetry.md)).
+5. Instalar git para la descarga de las dependencias. [Instalador](https://git-scm.com/downloads/win)
 
 ## Instalar dependencias Opentelemetry 
 
