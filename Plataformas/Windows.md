@@ -1,5 +1,7 @@
 # Instalación de Agente Instana en plataforma Windows
 
+## Instalación del agente de forma interactiva
+
 1. Dirigirse al módulo de Agentes en la consola de Instana.
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/14ac8ed5-4346-4256-9c01-0eb3f7d33a5c)
@@ -70,6 +72,67 @@
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/f4739ed9-e648-4aba-b540-4100ea5b7569)
 
    
+
+## Instalación del agente host utilizando un archivo .zip
+
+1. Dirigirse al módulo de Agentes en la consola de Instana.
+
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/14ac8ed5-4346-4256-9c01-0eb3f7d33a5c)
+
+
+2. Seleccionar Install Agents
+
+   ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/6acee1fb-f4ed-4427-9282-310c2d7ab8be)
+
+
+3. Buscar la plataforma windows y seleccionar el instalador dependiendo de la arquitectura donde se va a desplegar.
+
+   ![image](https://github.com/user-attachments/assets/2ca9da9c-e2c1-4c79-84f7-0a2e9fe9c1c9)
+
+   ![image](https://github.com/user-attachments/assets/b9a1ac1b-ef86-48c6-afb2-09519e7e8f03)
+
+
+4. Descargar el JDK necesario para la ejecución del agente Instana.
+
+   https://www.azul.com/downloads/?version=java-11-lts&os=windows&package=jdk#zulu
+
+   ![image](https://github.com/user-attachments/assets/2301236b-decc-4087-b1b3-d01c2b67bb55)
+
+
+5. Extrae el contenido del archivo "instana-agent-windows-64bit.zip" y colócalo en la ruta "C:\Program Files\Instana", de modo que la estructura quede como se muestra a continuación.
+
+   ![image](https://github.com/user-attachments/assets/5ea59539-92ea-41db-a79a-ce2b36970fb2)
+
+7. Extrae el contenido del archivo "zulu11.76.21-ca-jdk11.0.25-win_x64.zip" y colócalo en la ruta "C:\Program Files\Instana\instana-agent\jvm", de modo que la estructura quede como se muestra a continuación.
+   
+   ![image](https://github.com/user-attachments/assets/aa39f14f-715b-4f41-b1e4-f29347e57fa6)
+
+
+8. Ejecutar el archivo start.bat para iniciar el agente Instana.
+
+   - Ingresar a la ruta de los scripts "C:\Program Files\Instana\instana-agent\bin".
+  
+     Ejecutar:
+
+     cd C:\Program Files\Instana\instana-agent\bin
+     .\start.bat
+
+   ![image](https://github.com/user-attachments/assets/e333d746-f672-44e1-a1ab-ce2a4e570393)
+
+
+10. Validar que el agente se encuentre ejecutandose.
+
+    - Ingresar a la ruta de los scripts "C:\Program Files\Instana\instana-agent\bin".
+  
+      Ejecutar:
+
+      cd C:\Program Files\Instana\instana-agent\bin
+      .\status.bat
+
+    ![image](https://github.com/user-attachments/assets/f5f78779-ce2f-44ab-b072-1f53dc8f04e7)
+
+
+
 
 
 
