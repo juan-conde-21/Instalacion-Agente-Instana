@@ -30,6 +30,7 @@ Se detalla la integración de una funcion AWS Lambda con AWS SSM Parameter Store
 
    ![image](https://github.com/user-attachments/assets/bf347056-7ca8-4be5-a451-64a0b515a3ca)
 
+5. Verificar el envio de trazas en Instana.
 
-
+   ![image](https://github.com/user-attachments/assets/ae25544f-e7a6-41a7-b718-61682afc5446)
 
