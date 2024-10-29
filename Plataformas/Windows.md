@@ -73,7 +73,7 @@
 
    
 
-## Instalación del agente host utilizando un archivo .zip
+## Instalación del agente Instana utilizando un archivo .zip
 
 1. Dirigirse al módulo de Agentes en la consola de Instana.
 
