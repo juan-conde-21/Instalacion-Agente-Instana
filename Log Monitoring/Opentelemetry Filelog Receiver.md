@@ -32,15 +32,15 @@
 
 4. Ingresar al archivo de configuración del colector Opentelemetry y agregar la configuracion de la ruta de los logs a monitorear.
 
-    Ejecutar el siguiente comando:
+   Ejecutar el siguiente comando:
 
        cd /etc/otelcol-contrib/
 
-    Editar el archivo de configuración del Colector:
+   Editar el archivo de configuración del Colector:
 
        vi config.yaml
 
-      Agregar el siguiente contenido y modificar la ruta de los logs que seran leidos en la seccion include:
+   Agregar el siguiente contenido y modificar la ruta de los logs que seran leidos en la seccion include:
 
        receivers:
          filelog:
@@ -67,19 +67,25 @@
              processors: [batch]
              exporters: [otlp]
 
-5. Reiniciar el servicio del colector de Opentelemetry para aplicar los cambios y verificar el estado del servicio.
+5. Se debe agregar los permisos de lectura para el usuario que ejecuta el colector de opentelemetry "otelcol-contrib"
 
-    Ejecutar los siguientes comandos:
+   Ejecutar comando:
+
+       chmod o+r /var/log/apache2/*.log 
+
+6. Reiniciar el servicio del colector de Opentelemetry para aplicar los cambios y verificar el estado del servicio.
+
+   Ejecutar los siguientes comandos:
 
        systemctl restart otelcol-contrib
        systemctl status otelcol-contrib
 
-    Ejemplo de ejecución:
+   Ejemplo de ejecución:
 
     ![image](https://github.com/user-attachments/assets/3d2fb886-6041-4fb7-ae13-953f16a1e749)
 
    
-6. Verificar la recolección de logs en Instana.
+7. Verificar la recolección de logs en Instana.
 
    ![image](https://github.com/user-attachments/assets/a005865b-a6fa-473e-858e-491a07900c8f)
 
