@@ -16,11 +16,11 @@
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/3059bd09-8641-465d-9344-1097fba5c4ed)
 
-4. Descomentar las lineas del sensor vsphere y realizar las modificaciones de acuerdo con el ambiente a configurar.
+3. Descomentar las lineas del sensor vsphere y realizar las modificaciones de acuerdo con el ambiente a configurar.
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/fe1a0536-6200-4403-830f-adb477dd2b5e)
 
-5. Guardar los cambios y verificar que el cluster VMware se encuentre reportando.
+4. Guardar los cambios y verificar que el cluster VMware se encuentre reportando.
 
    En el módulo Platform ubicar el submódulo vSphere:
 
