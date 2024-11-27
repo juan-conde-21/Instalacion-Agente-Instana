@@ -14,12 +14,12 @@
 
        vi configuration.yaml
 
+   ![image](https://github.com/user-attachments/assets/e34b0db7-3cda-424e-b250-4990e2d70743)
+
+4. Descomentar las lineas del sensor IBM DataPower y realizar las modificaciones de acuerdo con el ambiente a configurar.
 
 
-3. Descomentar las lineas del sensor IBM DataPower y realizar las modificaciones de acuerdo con el ambiente a configurar.
-
-
-4. Guardar los cambios y verificar que el cluster IBM DataPower se encuentre reportando.
+5. Guardar los cambios y verificar que el cluster IBM DataPower se encuentre reportando.
 
    En el módulo Infrastructure ubicar el detalle de los componentes de Infraestructura, luego ubicar los componentes de DataPower descubiertos:
 
