@@ -12,7 +12,7 @@
    - problem.get
    - event.get
 
-## Configuración de Plugin
+## Configuración de Sensor
 
 1. Ingresar al archivo de configuración del agente Instana
 
