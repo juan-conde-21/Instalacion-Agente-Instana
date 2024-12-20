@@ -1,4 +1,4 @@
-# Instalación de Agente Instana en plataforma UNIX
+![image](https://github.com/user-attachments/assets/a449e727-5f10-4a84-ae84-bfd775b694ff)# Instalación de Agente Instana en plataforma UNIX
 
 1. Dirigirse al módulo de Agentes en la consola de Instana.
 
@@ -18,7 +18,7 @@
 
    https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.14.1%2B1_openj9-0.30.1/ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
 
-5. Copiar y descomprimir los instaladores en la ruta /opt del servidor a monitorear.
+5. Copiar y descomprimir los instaladores en la ruta /opt del servidor a monitorear. (Con usuario root)
 
    Ingresar a la ruta /opt
 
@@ -43,14 +43,28 @@
 
        mv jvm /opt/instana-agent/ 
 
-6. Iniciar el agente Instana desde la ruta:  /opt/instana-agent/bin/
+
+6. Editar el profile del usuario root e incluir la variable de entorno del JAVA utilizado.
+
+       vi ~/.bashrc
+
+   Agregar las siguiente lineas indicando la ubicacion del Java utilizado.
+
+       export JAVA_HOME=/opt/instana-agent/jvm
+       export PATH=$JAVA_HOME/bin:$PATH
+
+   Volver a cargar el profile en la sesion actual.
+
+       . ~/.bashrc
+   
+7. Iniciar el agente Instana desde la ruta:  /opt/instana-agent/bin/
 
    Ejecutar los siguientes comandos:
    
        cd  /opt/instana-agent/bin/
        ./start
           
-7. Validación que el agente se encuentre operativo.
+8. Validación que el agente se encuentre operativo.
 
    Ejecutar los siguientes comandos:
    
@@ -62,7 +76,7 @@
       ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/cbf816d0-f884-44ce-8e27-47f70cdee6f3)
 
 
-8. Configurar Inicio automático del agente Instana, para ello editar el archivo inittab.
+9. Configurar Inicio automático del agente Instana, para ello editar el archivo inittab.
 
    Ejecutar los siguientes comandos:
 
