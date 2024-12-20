@@ -43,7 +43,7 @@
          /usr/lib/systemd/systemd --user
          systemctl --user enable --now podman.socket
 
-6. Luego de aplicar los cambios se debe reiniciar el agente Instana.
+6. Luego de aplicar los cambios se debe reiniciar el agente Instana.(Con usuario root)
 
    Ejecutar el comando:
 
