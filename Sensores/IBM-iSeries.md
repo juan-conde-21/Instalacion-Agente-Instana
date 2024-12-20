@@ -58,7 +58,7 @@
 
        /opt/instana/agent/etc/instana/
 
-2. Ubicar las lineas para el plugin de IBM iSeries en el archivo de configuracion.
+2. Ubicar las lineas para el sensor de IBM iSeries en el archivo de configuracion.
 
        vi configuration.yaml
 
