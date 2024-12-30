@@ -90,7 +90,7 @@
          
    Al final del archivo inittab, agregar la siguiente línea:
 
-       instana:once:/opt/instana-agent/bin/start > /dev/null
+       instana:3:once:/opt/instana-agent/bin/start > /dev/null
 
 
 
