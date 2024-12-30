@@ -1,4 +1,10 @@
-![image](https://github.com/user-attachments/assets/a449e727-5f10-4a84-ae84-bfd775b694ff)# Instalación de Agente Instana en plataforma UNIX
+# Instalación de Agente Instana en plataforma UNIX
+
+## Prerrequisitos:
+
+- Espacio disponible en filesystem /opt/ mínimo 3 GB.
+
+## Instalación de Agente
 
 1. Dirigirse al módulo de Agentes en la consola de Instana.
 
