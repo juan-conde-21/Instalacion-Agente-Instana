@@ -5,6 +5,7 @@ Este repositorio contiene procedimientos detallados para la instalación y confi
 - Instalación del Agente de Instana
   - [En Linux](Plataformas/Linux.md)
   - [En Windows](Plataformas/Windows.md)
+  - [En UNIX](Plataformas/UNIX.md)
   - [En Openshift](Plataformas/Openshift.md)
 - Configuración del Agente - Plugins
   - [VMware](Plugins/VMware-plugin.md)
