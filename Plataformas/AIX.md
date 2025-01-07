@@ -18,11 +18,26 @@
 
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/db7015f0-fddc-49a3-983d-cb7c8c9582d0)
 
+   - AIX
+
    ![image](https://github.com/juan-conde-21/Instalacion-Agente-Instana/assets/13276404/a6aff306-bc97-49fc-9f06-fe0daa01f4b8)
 
-4. Descarga el IBM Semeru Runtime JDK/J9 11 desde la Url especificada:
+   - Solaris
 
-   https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.14.1%2B1_openj9-0.30.1/ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
+   ![image](https://github.com/user-attachments/assets/b15efa6c-30c0-4fb5-937d-adffc0a61b7b)
+
+
+4. Descarga la versión de Java JDK/J9 11 desde la Url indicada.
+
+   - AIX
+
+     https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.14.1%2B1_openj9-0.30.1/ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
+
+   - Solaris
+
+     https://cdn.azul.com/zulu/bin/zulu11.76.21-ca-jdk11.0.25-solaris_sparcv9.zip
+
+   **Observación:** Para el caso de Solaris versión 10 utilizar java JDK 1.8.
 
 5. Copiar y descomprimir los instaladores en la ruta /opt del servidor a monitorear. (Con usuario root)
 
@@ -30,20 +45,42 @@
 
        cd /opt
 
-   Descomprimir el agente Instana en la carpeta
+   - AIX
 
-       gunzip instana-agent-aix-ppc-64bit.tar
-       tar -xvf instana-agent-aix-ppc-64bit.tar
+      Descomprimir el agente Instana en la carpeta
+   
+          gunzip instana-agent-aix-ppc-64bit.tar.gz
+          tar -xvf instana-agent-aix-ppc-64bit.tar
 
-   Descomprimir el archivo IBM OpenJ9 JDK 11
+      **Observación:** Asegurarse de que el comando tar complete su ejecución correctamente, sin generar errores ni advertencias relacionadas con el tamaño excedido.
+   
+      Descomprimir el instalador de Java JDK/J9 11
+   
+          gunzip ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
+   
+          tar -xvf ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar
+   
+      Renombrar la carpeta IBM OpenJ9 JDK 11 descomprimida, a jvm.
+   
+          mv jdk-11.0.14.1+1 jvm
 
-       gunzip ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar.gz
+   - Solaris
 
-       tar -xvf ibm-semeru-open-jdk_ppc64_aix_11.0.14.1_1_openj9-0.30.1.tar
+      Descomprimir el agente Instana en la carpeta
+   
+          gunzip instana-agent-solaris-sparc-64bit.tar.gz
+          tar -xvf instana-agent-solaris-sparc-64bit.tar
 
-   Renombrar la carpeta IBM OpenJ9 JDK 11 descomprimida, a jvm.
+      **Observación:** Asegurarse de que el comando tar complete su ejecución correctamente, sin generar errores ni advertencias relacionadas con el tamaño excedido.
+   
+      Descomprimir el instalador de Java JDK/J9 11
+   
+          unzip zulu11.76.21-ca-jdk11.0.25-solaris_sparcv9.zip
+   
+      Renombrar la carpeta IBM OpenJ9 JDK 11 descomprimida, a jvm.
+   
+          mv zulu11.76.21-ca-jdk11.0.25-solaris jvm
 
-       mv jdk-11.0.14.1+1 jvm
 
    Mover la carpeta jvm hacia la ruta del agente /opt/instana-agent/
 
