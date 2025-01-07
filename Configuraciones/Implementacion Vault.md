@@ -216,36 +216,36 @@
 
 10. Habilitar el método de autenticación de tipo AppRole, luego se utilizará para un servicio externo por ejemplo el agente Instana.
 
-   Ejecutar comando:
+    Ejecutar comando:
 
-    vault auth enable approle
+        vault auth enable approle
 
-   Ejemplo de ejecución:
+    Ejemplo de ejecución:
 
-   ![image](https://github.com/user-attachments/assets/88a1f103-8f8d-4c45-bc24-f147f8b34ccb)
+    ![image](https://github.com/user-attachments/assets/88a1f103-8f8d-4c45-bc24-f147f8b34ccb)
 
 11. Crear nuevo método de autenticación AppRole para el agente Instana con el nombre instana-mysql y asignar la politica bd-mysql, luego listar el approle creado.
 
-   Ejecutar comando:
+    Ejecutar comando:
 
-    vault write auth/approle/role/instana-mysql policies=bd-mysql
-    vault list auth/approle/role
+        vault write auth/approle/role/instana-mysql policies=bd-mysql
+        vault list auth/approle/role
 
-   Ejemplo de ejecución:
+    Ejemplo de ejecución:
 
-   ![image](https://github.com/user-attachments/assets/36dabdaf-b441-4a79-af04-3cbe9d5c6692)
+    ![image](https://github.com/user-attachments/assets/36dabdaf-b441-4a79-af04-3cbe9d5c6692)
 
 
 12. Después de crear el AppRole para Instana, será necesario obtener el role-id y el secret-id generados para dicho AppRole. Estos valores serán utilizados posteriormente para configurar el acceso seguro a Vault.
 
-   Ejecutar comando:
+    Ejecutar comando:
 
-    vault read auth/approle/role/instana-mysql/role-id
-    vault write -force auth/approle/role/instana-mysql/secret-id
+        vault read auth/approle/role/instana-mysql/role-id
+        vault write -force auth/approle/role/instana-mysql/secret-id
 
-   Ejemplo de ejecución:
+    Ejemplo de ejecución:
 
-   ![image](https://github.com/user-attachments/assets/8ef509cb-899b-4567-b5e5-3850785ebb95)
+    ![image](https://github.com/user-attachments/assets/8ef509cb-899b-4567-b5e5-3850785ebb95)
 
 13. Se muestra un ejemplo de integración desde un agente Instana con el servidor Vault configurado en esta guía.
 
