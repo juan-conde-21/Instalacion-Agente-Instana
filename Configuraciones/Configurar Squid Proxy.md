@@ -13,7 +13,7 @@
        yum install -y squid
 
 
-2. Ingresar a la ruta de configuracion de Squid proxy y utilizar el archivo de ejemplo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf]))
+2. Ingresar a la ruta de configuracion de Squid proxy y utilizar el archivo de ejemplo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf))
 
        vi /etc/squid/squid.conf
 
