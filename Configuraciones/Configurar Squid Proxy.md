@@ -85,7 +85,8 @@
 
    ![image](https://github.com/user-attachments/assets/fc8c93bc-1313-4286-9cbc-37dbf7c85371)
 
-12. 
+12. Reemplazar el contenido por el que se tiene a nivel del siguiente archivo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf))
+
 
    
 
