@@ -87,6 +87,9 @@
 
 12. Reemplazar el contenido por el que se tiene a nivel del siguiente archivo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf))
 
+13. Para aplicar la configuración del paso previo, se debe reiniciar el servicio de Squid en Windows a nivel del administrador de tareas de Windows.
+
+    ![image](https://github.com/user-attachments/assets/4a60b9d5-216e-45a4-8abd-0d0780241358)
 
    
 
