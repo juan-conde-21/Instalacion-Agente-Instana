@@ -77,13 +77,13 @@
 
 10. Paa configurar el servidor Squid, dirigirse a la barra inferior derecha de la pantalla y ubicar el icono de Squid, dar clic derecho para continuar.
 
-   ![image](https://github.com/user-attachments/assets/dbabbfaf-586b-45fa-901d-9954b8f82429)
+    ![image](https://github.com/user-attachments/assets/dbabbfaf-586b-45fa-901d-9954b8f82429)
 
 11. Se mostraran las opciones de Squid, donde debemos seleccionar "Open Squid Configuration" para poder editar la configuracion.
 
-   ![image](https://github.com/user-attachments/assets/ac616b68-691a-4166-9422-49170da0683d)
+    ![image](https://github.com/user-attachments/assets/ac616b68-691a-4166-9422-49170da0683d)
 
-   ![image](https://github.com/user-attachments/assets/fc8c93bc-1313-4286-9cbc-37dbf7c85371)
+    ![image](https://github.com/user-attachments/assets/fc8c93bc-1313-4286-9cbc-37dbf7c85371)
 
 12. Reemplazar el contenido por el que se tiene a nivel del siguiente archivo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf))
 
