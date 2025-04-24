@@ -55,8 +55,8 @@ vi /etc/init.d/otelcol-contrib
     # chkconfig: 2345 90 10
     # description: Inicia el agente otelcol-contrib con su configuración personalizada
     
-    DAEMON="/opt/instana-agent/otel-contrib/otelcol-contrib"
-    CONFIG="/opt/instana-agent/otel-contrib/config-super.yaml"
+    DAEMON="/opt/agente_instana/otel/otelcol-contrib"
+    CONFIG="/opt/agente_instana/otel/config.yaml"
     PIDFILE="/var/run/otelcol-contrib.pid"
     LOGFILE="/var/log/otelcol-contrib.log"
     
