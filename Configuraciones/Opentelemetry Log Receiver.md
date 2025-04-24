@@ -13,51 +13,6 @@
         multiline:
           line_start_pattern: '.*:H:.*'
     
-    processors:
-      transform/logs:
-        log_statements:
-          - context: log
-            statements:
-              # Transacción clásica
-              - 'set(cache, ExtractPatterns(body, "TDOC:\\s*(?P<TDOC>\\w+)"))'
-              - 'set(attributes["TDOC"], cache["TDOC"])'
-              - 'set(cache, ExtractPatterns(body, "NDOC:\\s*(?P<NDOC>\\d+)"))'
-              - 'set(attributes["NDOC"], cache["NDOC"])'
-              - 'set(cache, ExtractPatterns(body, "REINDR:\\s*(?P<REINDR>\\d+)"))'
-              - 'set(attributes["REINDR"], cache["REINDR"])'
-              - 'set(cache, ExtractPatterns(body, "NUMORD:\\s*(?P<NUMORD>\\d+)"))'
-              - 'set(attributes["NUMORD"], cache["NUMORD"])'
-              - 'set(cache, ExtractPatterns(body, "IDPGDR:\\s*(?P<IDPGDR>\\d+)"))'
-              - 'set(attributes["IDPGDR"], cache["IDPGDR"])'
-              - 'set(cache, ExtractPatterns(body, "CODAUT:\\s*(?P<CODAUT>\\w+)"))'
-              - 'set(attributes["CODAUT"], cache["CODAUT"])'
-              - 'set(cache, ExtractPatterns(body, "CANBNR:\\s*(?P<CANBNR>\\d+)"))'
-              - 'set(attributes["CANBNR"], cache["CANBNR"])'
-              - 'set(cache, ExtractPatterns(body, "OTHTIM:\\s*(?P<OTHTIM>\\d+)"))'
-              - 'set(attributes["OTHTIM"], cache["OTHTIM"])'
-    
-              # Transacción extendida
-              - 'set(cache, ExtractPatterns(body, "CODEUN:\\s*(?P<CODEUN>\\d+)"))'
-              - 'set(attributes["CODEUN"], cache["CODEUN"])'
-              - 'set(cache, ExtractPatterns(body, "SUNAT:\\s*(?P<SUNAT>\\d+)"))'
-              - 'set(attributes["SUNAT"], cache["SUNAT"])'
-              - 'set(cache, ExtractPatterns(body, "DTESER:\\s*(?P<DTESER>[\\w-]+)"))'
-              - 'set(attributes["DTESER"], cache["DTESER"])'
-              - 'set(cache, ExtractPatterns(body, "DTEDOC:\\s*(?P<DTEDOC>\\d+)"))'
-              - 'set(attributes["DTEDOC"], cache["DTEDOC"])'
-              - 'set(cache, ExtractPatterns(body, "DTEINA:\\s*(?P<DTEINA>\\d+)"))'
-              - 'set(attributes["DTEINA"], cache["DTEINA"])'
-              - 'set(cache, ExtractPatterns(body, "DTEGRA:\\s*(?P<DTEGRA>\\d+)"))'
-              - 'set(attributes["DTEGRA"], cache["DTEGRA"])'
-              - 'set(cache, ExtractPatterns(body, "DTEISC:\\s*(?P<DTEISC>\\d+)"))'
-              - 'set(attributes["DTEISC"], cache["DTEISC"])'
-              - 'set(cache, ExtractPatterns(body, "DTEIGV:\\s*(?P<DTEIGV>\\d+)"))'
-              - 'set(attributes["DTEIGV"], cache["DTEIGV"])'
-              - 'set(cache, ExtractPatterns(body, "POSSRN:\\s*(?P<POSSRN>[\\w-]+)"))'
-              - 'set(attributes["POSSRN"], cache["POSSRN"])'
-              - 'set(cache, ExtractPatterns(body, "CASNBR:\\s*(?P<CASNBR>\\d+)"))'
-              - 'set(attributes["CASNBR"], cache["CASNBR"])'
-    
     exporters:
       debug:
         verbosity: detailed
@@ -70,7 +25,7 @@
       pipelines:
         logs:
           receivers: [filelog]
-          processors: [transform/logs]
+          processors: []
           exporters: [debug, otlphttp]
 
 
