@@ -17,6 +17,8 @@
 
        vi /etc/squid/squid.conf
 
+   *Agregar los segmentos de red de los servidores donde se desplegara el agente Instana en la seccion "Red local de Instana Agents"
+
 3. Modificar las urls publicas de acuerdo con el tenant Instana utilizado, en este ejemplo se utiliza un tenant desplegado en la region orange.
 
    ![image](https://github.com/user-attachments/assets/96058ad3-9ff3-434f-9913-cda274a70469)
@@ -86,6 +88,8 @@
     ![image](https://github.com/user-attachments/assets/fc8c93bc-1313-4286-9cbc-37dbf7c85371)
 
 12. Reemplazar el contenido por el que se tiene a nivel del siguiente archivo ([Configuracion](https://github.com/juan-conde-21/Instalacion-Agente-Instana/blob/main/Configuraciones/squid.conf))
+
+    *Agregar los segmentos de red de los servidores donde se desplegara el agente Instana en la seccion "Red local de Instana Agents"
 
 13. Para aplicar la configuración del paso previo, se debe reiniciar el servicio de Squid en Windows a nivel del administrador de tareas de Windows.
 
