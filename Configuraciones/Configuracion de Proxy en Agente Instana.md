@@ -63,7 +63,11 @@ Se requiere modificar los archivos mvn-settings.xml y com.instana.agent.main.sen
 
    ![image](https://github.com/user-attachments/assets/6de47274-bfd4-4b87-be70-ab3fc5ac8e74)
 
-3. Guardar los cambios en el archivo y reiniciar el agente Instana para aplicar los cambios realizados.
+3. Retirar los comentarios de los parametros correspondientes al proxy, colocar los valores correspondientes al proxy a configurar.
+
+   <img width="808" height="551" alt="image" src="https://github.com/user-attachments/assets/7750ab09-9a35-4319-a78a-56c60eb16deb" />
+
+4. Guardar los cambios en el archivo y reiniciar el agente Instana para aplicar los cambios realizados.
 
 
 
