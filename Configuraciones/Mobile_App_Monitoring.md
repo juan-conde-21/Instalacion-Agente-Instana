@@ -1153,17 +1153,7 @@ Durante la reunión, se recomienda cubrir los siguientes puntos:
 
 ---
 
-# 14. Mensaje sugerido para explicar al cliente
-
-La instalación base del SDK permite que Instana reconozca la aplicación móvil y capture información técnica como sesiones, llamadas HTTP, errores y comportamiento general de la app. Sin embargo, para obtener valor funcional, recomendamos implementar una capa utilitaria de observabilidad por plataforma.
-
-Esta capa centraliza la asignación de vistas, usuarios, metadata y eventos custom. De esta manera, evitamos que cada desarrollador invoque directamente el SDK de Instana de forma dispersa, y logramos que los datos se visualicen con nombres funcionales entendibles, como `Login`, `Selección de pago`, `Confirmación de transferencia` o `Resultado de operación`.
-
-Con este enfoque, Instana no solo muestra que una llamada fue lenta o que ocurrió un error, sino también en qué flujo funcional ocurrió y qué usuarios o sesiones pudieron verse afectados.
-
----
-
-# 15. Recomendación final
+# 14. Recomendación final
 
 Para una implementación profesional, se recomienda abordar la instrumentación móvil en dos fases:
 
@@ -1188,7 +1178,7 @@ Este enfoque permite pasar de una integración técnica básica a una estrategia
 
 ---
 
-# 16. Referencias oficiales
+# 15. Referencias oficiales
 
 - IBM Instana - Monitoring mobile applications: https://www.ibm.com/docs/en/instana-observability?topic=instana-monitoring-mobile-applications
 - IBM Instana - Android monitoring API: https://www.ibm.com/docs/en/instana-observability?topic=applications-android-api
