@@ -7,7 +7,7 @@ El presente documento tiene como objetivo describir el procedimiento base para i
 La documentación se divide en dos capas:
 
 - **Capa base de instrumentación:** instalación del agente o SDK, configuración del `APP_KEY`, `REPORTING_URL` e inicialización de Instana dentro de la aplicación.
-- **Capa de personalización funcional:** definición de vistas, usuarios, metadata y eventos custom mediante una clase utilitaria o capa centralizada de observabilidad.
+- **Capa de personalización funcional:** definición de vistas, usuarios, metadata, eventos custom, exclusión de URLs y redacción de información sensible mediante una clase utilitaria o capa centralizada de observabilidad.
 
 La finalidad no es únicamente que Instana reconozca la aplicación móvil, sino que pueda asociar los datos técnicos a flujos funcionales entendibles para equipos técnicos, funcionales y de negocio.
 
@@ -42,6 +42,15 @@ IBM Instana permite monitorear aplicaciones móviles mediante agentes embebidos 
 - Metadata funcional o técnica.
 - Correlación con backend, cuando se habilita trazabilidad compatible.
 
+El valor de la instrumentación no se limita a capturar llamadas HTTP. La personalización permite responder preguntas como:
+
+- ¿En qué flujo funcional ocurrió el error?
+- ¿Qué vista estaba utilizando el usuario?
+- ¿Qué versión de la aplicación estaba instalada?
+- ¿Qué canal, feature flag o flujo estaba activo?
+- ¿El problema ocurrió antes o después de confirmar una operación?
+- ¿Qué llamadas backend estuvieron asociadas a la experiencia móvil?
+
 La integración debe entenderse en dos niveles:
 
 ```text
@@ -70,6 +79,9 @@ Antes de implementar, se recomienda validar con el cliente:
 - Ambientes donde se probará la instrumentación: desarrollo, QA, preproducción y producción.
 - Definición de nombres funcionales para vistas y eventos.
 - Necesidad de correlación con backend mediante headers de trazabilidad.
+- URLs, dominios o endpoints que no deben ser capturados.
+- Parámetros sensibles que deben ser redactados antes de enviarse a Instana.
+- Headers permitidos para captura y headers que deben excluirse por seguridad.
 
 ---
 
@@ -202,6 +214,28 @@ object InstanaMobileTracker {
         Instana.meta.put(key, value)
     }
 
+    fun addGlobalMetadata(metadata: Map<String, String>) {
+        metadata.forEach { (key, value) ->
+            Instana.meta.put(key, value)
+        }
+    }
+
+    fun clearGlobalMeta(key: String) {
+        Instana.meta.remove(key)
+    }
+
+    fun ignoreUrl(regex: Regex) {
+        Instana.ignoreURLs.add(regex)
+    }
+
+    fun redactHttpQuery(regex: Regex) {
+        Instana.redactHTTPQuery.add(regex)
+    }
+
+    fun captureHeader(regex: Regex) {
+        Instana.captureHeaders.add(regex)
+    }
+
     fun reportEvent(
         eventName: String,
         viewName: String? = null,
@@ -227,7 +261,11 @@ object InstanaMobileTracker {
 }
 ```
 
-### 5.2.4. Uso desde una Activity
+---
+
+## 5.3. Ejemplos de uso en Android
+
+### 5.3.1. Asignar nombre funcional de vista
 
 ```kotlin
 class PaymentActivity : AppCompatActivity() {
@@ -237,21 +275,127 @@ class PaymentActivity : AppCompatActivity() {
 
         InstanaMobileTracker.setView(AppViews.PAYMENT_SELECTION)
     }
+}
+```
 
-    fun onPayButtonClicked() {
-        InstanaMobileTracker.reportEvent(
-            eventName = AppEvents.PAYMENT_STARTED,
-            viewName = AppViews.PAYMENT_SELECTION,
-            meta = mapOf(
-                "payment_method" to "card",
-                "flow" to "checkout"
+### 5.3.2. Registrar evento custom
+
+```kotlin
+fun onPayButtonClicked() {
+    InstanaMobileTracker.reportEvent(
+        eventName = AppEvents.PAYMENT_STARTED,
+        viewName = AppViews.PAYMENT_SELECTION,
+        meta = mapOf(
+            "payment_method" to "card",
+            "flow" to "checkout"
+        )
+    )
+}
+```
+
+### 5.3.3. Agregar metadata global
+
+```kotlin
+InstanaMobileTracker.addGlobalMetadata(
+    mapOf(
+        "environment" to "production",
+        "channel" to "mobile",
+        "platform" to "android",
+        "app_version" to BuildConfig.VERSION_NAME,
+        "feature_flag_new_checkout" to "enabled"
+    )
+)
+```
+
+La metadata global se adjunta a los beacons que envía Instana. Es útil para identificar contexto técnico o funcional, por ejemplo ambiente, canal, versión, feature flag o tipo de flujo.
+
+### 5.3.4. Identificar usuario
+
+```kotlin
+InstanaMobileTracker.identifyUser(
+    userId = "hash_9f86d081884c7d659a2feaa0c55ad015",
+    userEmail = null,
+    userName = "Anonymous"
+)
+```
+
+> Se recomienda utilizar identificadores internos o hasheados. No se recomienda enviar DNI, número de cuenta, número de tarjeta, token, correo personal o información sensible sin validación previa de privacidad.
+
+### 5.3.5. Excluir URLs del monitoreo automático
+
+```kotlin
+class MyApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+
+        Instana.setup(
+            this,
+            InstanaConfig(
+                key = BuildConfig.INSTANA_KEY,
+                reportingURL = BuildConfig.INSTANA_REPORTING_URL
             )
         )
+
+        // Excluir URLs que contienen parámetros sensibles.
+        Instana.ignoreURLs.add(".*([&?])password=.*".toRegex())
+
+        // Excluir endpoint de autenticación, si por política no debe ser capturado.
+        Instana.ignoreURLs.add(".*\/auth\/token.*".toRegex())
+
+        // Excluir endpoints internos de health-check.
+        Instana.ignoreURLs.add(".*\/health.*".toRegex())
     }
 }
 ```
 
-### 5.2.5. Uso desde un Fragment
+> La exclusión aplica sobre URLs monitoreadas automáticamente. Las capturas manuales deben gestionarse directamente en el código que reporta el request.
+
+### 5.3.6. Redactar parámetros sensibles de URL
+
+```kotlin
+class MyApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+
+        Instana.setup(
+            this,
+            InstanaConfig(
+                key = BuildConfig.INSTANA_KEY,
+                reportingURL = BuildConfig.INSTANA_REPORTING_URL
+            )
+        )
+
+        // Redactar valores de parámetros sensibles.
+        Instana.redactHTTPQuery.add("token".toRegex())
+        Instana.redactHTTPQuery.add("secret".toRegex())
+        Instana.redactHTTPQuery.add("password".toRegex())
+        Instana.redactHTTPQuery.add("session_id".toRegex())
+    }
+}
+```
+
+Ejemplo esperado:
+
+```text
+URL original:
+https://api.empresa.com/login?token=abc123&channel=mobile
+
+URL visualizada:
+https://api.empresa.com/login?token=<redacted>&channel=mobile
+```
+
+### 5.3.7. Capturar headers controlados
+
+```kotlin
+Instana.captureHeaders.add("X-Correlation-ID".toRegex())
+Instana.captureHeaders.add("X-Request-ID".toRegex())
+```
+
+> Solo deben capturarse headers no sensibles. No capturar `Authorization`, `Cookie`, `Set-Cookie`, tokens o credenciales.
+
+### 5.3.8. Uso desde un Fragment
 
 ```kotlin
 class TransferFragment : Fragment() {
@@ -266,7 +410,7 @@ class TransferFragment : Fragment() {
 
 ---
 
-## 5.3. Ejemplo equivalente en Java
+## 5.4. Ejemplo equivalente en Java
 
 En proyectos Android que todavía utilizan Java, se puede mantener el mismo enfoque.
 
@@ -476,10 +620,26 @@ final class InstanaMobileTracker {
             viewName: viewName
         )
     }
+
+    static func redactHttpQuery(pattern: String) {
+        if let regex = try? NSRegularExpression(pattern: pattern) {
+            Instana.redactHTTPQuery(matching: [regex])
+        }
+    }
+
+    static func captureHeader(pattern: String) {
+        if let regex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) {
+            Instana.setCaptureHeaders(matching: [regex])
+        }
+    }
 }
 ```
 
-### 6.2.4. Uso desde un `ViewController`
+---
+
+## 6.3. Ejemplos de uso en iOS
+
+### 6.3.1. Asignar nombre funcional de vista
 
 ```swift
 class PaymentViewController: UIViewController {
@@ -489,19 +649,81 @@ class PaymentViewController: UIViewController {
 
         InstanaMobileTracker.setView(AppViews.paymentSelection)
     }
+}
+```
 
-    @IBAction func didTapPayButton(_ sender: UIButton) {
-        InstanaMobileTracker.reportEvent(
-            name: AppEvents.paymentStarted,
-            viewName: AppViews.paymentSelection,
-            meta: [
-                "payment_method": "card",
-                "flow": "checkout"
-            ]
-        )
+### 6.3.2. Registrar evento custom
+
+```swift
+@IBAction func didTapPayButton(_ sender: UIButton) {
+    InstanaMobileTracker.reportEvent(
+        name: AppEvents.paymentStarted,
+        viewName: AppViews.paymentSelection,
+        meta: [
+            "payment_method": "card",
+            "flow": "checkout"
+        ]
+    )
+}
+```
+
+### 6.3.3. Agregar metadata global
+
+```swift
+InstanaMobileTracker.addGlobalMeta(key: "environment", value: "production")
+InstanaMobileTracker.addGlobalMeta(key: "channel", value: "mobile")
+InstanaMobileTracker.addGlobalMeta(key: "platform", value: "ios")
+InstanaMobileTracker.addGlobalMeta(key: "app_version", value: Bundle.main.releaseVersionNumber ?? "unknown")
+InstanaMobileTracker.addGlobalMeta(key: "feature_flag_new_checkout", value: "enabled")
+```
+
+Ejemplo de extensión para obtener la versión de la app:
+
+```swift
+extension Bundle {
+    var releaseVersionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
     }
 }
 ```
+
+### 6.3.4. Identificar usuario
+
+```swift
+InstanaMobileTracker.identifyUser(
+    id: "hash_9f86d081884c7d659a2feaa0c55ad015",
+    email: nil,
+    name: "Anonymous"
+)
+```
+
+### 6.3.5. Redactar parámetros sensibles
+
+```swift
+InstanaMobileTracker.redactHttpQuery(pattern: #"token"#)
+InstanaMobileTracker.redactHttpQuery(pattern: #"secret"#)
+InstanaMobileTracker.redactHttpQuery(pattern: #"password"#)
+InstanaMobileTracker.redactHttpQuery(pattern: #"session_id"#)
+```
+
+Ejemplo esperado:
+
+```text
+URL original:
+https://api.empresa.com/login?password=abc123&channel=mobile
+
+URL visualizada:
+https://api.empresa.com/login?password=<redacted>&channel=mobile
+```
+
+### 6.3.6. Capturar headers controlados
+
+```swift
+InstanaMobileTracker.captureHeader(pattern: #"X-Correlation-ID"#)
+InstanaMobileTracker.captureHeader(pattern: #"X-Request-ID"#)
+```
+
+> Solo deben capturarse headers no sensibles. No capturar `Authorization`, `Cookie`, `Set-Cookie`, tokens o credenciales.
 
 ---
 
@@ -601,6 +823,18 @@ export const InstanaTracker = {
 
   addGlobalMeta(key: string, value: string): void {
     Instana.setMeta(key, value);
+  },
+
+  async ignoreUrls(regexArray: string[]): Promise<void> {
+    await Instana.setIgnoreURLsByRegex(regexArray);
+  },
+
+  async redactHttpQuery(regexArray: string[]): Promise<void> {
+    await Instana.setRedactHTTPQueryByRegex(regexArray);
+  },
+
+  async captureHeaders(regexArray: string[]): Promise<void> {
+    await Instana.setCaptureHeadersByRegex(regexArray);
   },
 
   reportEvent(
@@ -713,6 +947,38 @@ function onPayButtonPressed() {
     }
   );
 }
+```
+
+### 7.2.5. Ejemplo de metadata global
+
+```typescript
+InstanaTracker.addGlobalMeta('environment', 'production');
+InstanaTracker.addGlobalMeta('channel', 'mobile');
+InstanaTracker.addGlobalMeta('platform', 'react-native');
+InstanaTracker.addGlobalMeta('app_version', '3.2.1');
+InstanaTracker.addGlobalMeta('feature_flag_new_checkout', 'enabled');
+```
+
+### 7.2.6. Ejemplo de exclusión y redacción de URLs
+
+```typescript
+await InstanaTracker.ignoreUrls([
+  'http://localhost:8081.*',
+  '.*\/auth\/token.*',
+  '.*\/health.*'
+]);
+
+await InstanaTracker.redactHttpQuery([
+  'token',
+  'secret',
+  'password',
+  'session_id'
+]);
+
+await InstanaTracker.captureHeaders([
+  'X-Correlation-ID',
+  'X-Request-ID'
+]);
 ```
 
 ---
@@ -897,7 +1163,31 @@ class _PaymentPageState extends State<PaymentPage> {
 }
 ```
 
-### 8.2.4. Ejemplo de captura HTTP manual en Flutter
+### 8.2.4. Ejemplo de metadata global
+
+```dart
+await InstanaTracker.addGlobalMeta(
+  key: 'environment',
+  value: 'production',
+);
+
+await InstanaTracker.addGlobalMeta(
+  key: 'channel',
+  value: 'mobile',
+);
+
+await InstanaTracker.addGlobalMeta(
+  key: 'platform',
+  value: 'flutter',
+);
+
+await InstanaTracker.addGlobalMeta(
+  key: 'feature_flag_new_checkout',
+  value: 'enabled',
+);
+```
+
+### 8.2.5. Ejemplo de captura HTTP manual en Flutter
 
 ```dart
 import 'package:http/http.dart';
@@ -1117,6 +1407,66 @@ La vista debe asignarse cuando el usuario realmente visualiza la pantalla, no ú
 
 ---
 
+## 11.6. Exclusión y redacción de URLs
+
+En aplicaciones móviles, las URLs pueden contener parámetros sensibles. Por ello, se recomienda aplicar dos criterios:
+
+| Criterio | Uso recomendado |
+|---|---|
+| Excluir URL | Cuando el endpoint completo no debe monitorearse |
+| Redactar query parameter | Cuando se puede monitorear el endpoint, pero ocultando valores sensibles |
+
+Ejemplo:
+
+```text
+Excluir:
+https://api.empresa.com/auth/token
+
+Redactar:
+https://api.empresa.com/login?token=<redacted>&channel=mobile
+```
+
+No se recomienda exponer:
+
+```text
+password
+token
+secret
+session_id
+authorization_code
+refresh_token
+access_token
+card_number
+account_number
+```
+
+---
+
+## 11.7. Captura de headers
+
+La captura de headers debe ser excepcional y controlada. Puede ser útil para correlación técnica, pero también puede introducir riesgo de exposición de información sensible.
+
+Headers recomendados:
+
+```text
+X-Correlation-ID
+X-Request-ID
+traceparent
+tracestate
+```
+
+Headers no recomendados:
+
+```text
+Authorization
+Cookie
+Set-Cookie
+X-Api-Key
+Proxy-Authorization
+```
+
+---
+
 # 12. Validaciones posteriores a la implementación
 
 Después de implementar la instrumentación, se recomienda validar:
@@ -1131,29 +1481,46 @@ Después de implementar la instrumentación, se recomienda validar:
 - Los errores y crashes se visualizan según configuración.
 - El tráfico local o de desarrollo se encuentra excluido cuando corresponda.
 - Las vistas tienen nombres homogéneos entre Android, iOS y frameworks híbridos.
+- Los parámetros sensibles aparecen redactados.
+- Los endpoints excluidos no aparecen en Instana.
+- Los headers capturados son únicamente los aprobados.
 
 ---
 
-# 13. Checklist para reunión con cliente
+# 13. Plan de implementación sugerido
 
-Durante la reunión, se recomienda cubrir los siguientes puntos:
+La siguiente matriz permite ordenar la implementación por fases, manteniendo una separación clara entre instrumentación técnica y personalización funcional.
 
-- Confirmar tecnología móvil utilizada por el cliente.
-- Confirmar si existen aplicaciones nativas separadas o una sola app híbrida.
-- Solicitar listado de flujos críticos de negocio.
-- Solicitar listado de pantallas principales.
-- Definir catálogo inicial de vistas.
-- Definir catálogo inicial de eventos funcionales.
-- Confirmar si se enviará identificación de usuario.
-- Confirmar restricciones de privacidad y cumplimiento.
-- Confirmar ambientes donde se probará.
-- Confirmar si el backend también se encuentra monitoreado por Instana u OpenTelemetry.
-- Validar necesidad de correlación móvil-backend.
-- Definir responsable técnico por plataforma.
+| Fase | Actividad | Resultado esperado |
+|---|---|---|
+| 1 | Instalar SDK/agente móvil | La aplicación queda preparada para enviar datos a Instana |
+| 2 | Inicializar Instana con `APP_KEY` y `REPORTING_URL` | La app aparece en Mobile App Monitoring |
+| 3 | Validar captura HTTP automática o manual | Se observan requests móviles |
+| 4 | Crear capa utilitaria `InstanaMobileTracker` | El uso del SDK queda centralizado |
+| 5 | Definir catálogo de vistas | Las pantallas se visualizan con nombres funcionales |
+| 6 | Definir catálogo de eventos | Las acciones críticas quedan registradas |
+| 7 | Agregar metadata global controlada | Los beacons tienen contexto técnico y funcional |
+| 8 | Definir estrategia de usuario | Se identifica impacto por usuario sin exponer datos sensibles |
+| 9 | Excluir URLs no permitidas | No se capturan endpoints restringidos |
+| 10 | Redactar parámetros sensibles | Los secretos no llegan a Instana |
+| 11 | Validar en ambiente QA | Se confirma el comportamiento antes de producción |
+| 12 | Promover a producción | La observabilidad queda habilitada en operación real |
 
 ---
 
-# 14. Recomendación final
+# 14. Enfoque recomendado de implementación
+
+La instalación base del SDK permite que IBM Instana reconozca la aplicación móvil y capture información técnica como sesiones, llamadas HTTP, errores y comportamiento general de la app.
+
+Sin embargo, para obtener mayor valor funcional, se recomienda implementar una capa utilitaria de observabilidad por plataforma.
+
+Esta capa centraliza la asignación de vistas, usuarios, metadata, eventos custom, exclusión de URLs y redacción de parámetros sensibles. De esta manera, evitamos que cada desarrollador invoque directamente el SDK de Instana de forma dispersa, y logramos que los datos se visualicen con nombres funcionales entendibles, como `Login`, `Selección de pago`, `Confirmación de transferencia` o `Resultado de operación`.
+
+Con este enfoque, Instana no solo muestra que una llamada fue lenta o que ocurrió un error, sino también en qué flujo funcional ocurrió, qué versión de la aplicación estaba involucrada y qué contexto técnico o funcional acompañó la experiencia del usuario.
+
+---
+
+# 15. Consideraciones finales
 
 Para una implementación profesional, se recomienda abordar la instrumentación móvil en dos fases:
 
@@ -1171,6 +1538,9 @@ Para una implementación profesional, se recomienda abordar la instrumentación 
 - Definir catálogo de eventos.
 - Agregar metadata controlada.
 - Definir estrategia de identificación de usuario.
+- Excluir URLs no permitidas.
+- Redactar parámetros sensibles.
+- Definir headers permitidos.
 - Validar privacidad.
 - Probar flujos críticos.
 
@@ -1178,7 +1548,7 @@ Este enfoque permite pasar de una integración técnica básica a una estrategia
 
 ---
 
-# 15. Referencias oficiales
+# 16. Referencias oficiales
 
 - IBM Instana - Monitoring mobile applications: https://www.ibm.com/docs/en/instana-observability?topic=instana-monitoring-mobile-applications
 - IBM Instana - Android monitoring API: https://www.ibm.com/docs/en/instana-observability?topic=applications-android-api
