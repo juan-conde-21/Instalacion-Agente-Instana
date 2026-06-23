@@ -1,0 +1,13 @@
+# Template base de values para Synthetic PoP
+# Ajustar según los valores oficiales del chart y la versión utilizada.
+
+# Recomendación para air-gapped:
+# imagePullPolicy: IfNotPresent
+
+controller:
+  # location: "pop-airgap;PoP Airgap;Peru;Lima;0;0;PoP airgap k3s"
+  # instanaSyntheticEndpoint: "<endpoint_synthetic>"
+
+# downloadKey: "<download_key>"
+
+# Mantener este archivo como plantilla. No subir secretos reales al repositorio.
