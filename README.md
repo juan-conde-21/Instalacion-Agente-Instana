@@ -29,6 +29,7 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 | Categoría | Contenido |
 |---|---|
 | `Plataformas` | Instalación del agente en Linux, Windows, UNIX, OpenShift y escenarios Kubernetes/OpenShift legacy. |
+| `Instrumentacion` | AutoTrace, tracers, SDK y procedimientos de instrumentación de aplicaciones y runtimes. |
 | `Herramientas` | Scripts de diagnóstico, validación y recopilación de evidencia técnica. |
 | `Configuraciones` | Proxy, Vault, Synthetic Private PoP, monitoreo móvil e integraciones operativas. |
 | `Sensores` | AWS, GCP, IBM i, DataPower, SAP ABAP, VMware, Podman, StatsD, Zabbix, OpenTelemetry y otros sensores. |
@@ -62,7 +63,19 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 
 ---
 
-## 3. AWS y monitoreo serverless
+## 3. Instrumentación de aplicaciones y trazas
+
+| Guía | Descripción |
+|---|---|
+| [IBM ACE - AutoTrace Webhook en OpenShift](Instrumentacion/IBM-ACE/README.md) | Corrección, habilitación controlada, instrumentación y troubleshooting del AutoTrace Webhook para IBM App Connect Enterprise. |
+| [AWS Lambda - Node.js](Plataformas/AWS/Lambda/nodejs.md) | Instrumentación de funciones AWS Lambda desarrolladas en Node.js. |
+| [AWS Lambda - Python](Plataformas/AWS/Lambda/python.md) | Instrumentación de funciones AWS Lambda desarrolladas en Python. |
+| [Java Trace SDK](Sensores/Java_Trace_SDK/Java_Trace_SDK.md) | Instrumentación manual de aplicaciones Java mediante el SDK de trazas de Instana. |
+| [PHP Tracing con OpenTelemetry](Opentelemetry/PHP/Tracing.md) | Trazabilidad de aplicaciones PHP mediante OpenTelemetry. |
+
+---
+
+## 4. AWS y monitoreo serverless
 
 | Guía | Descripción |
 |---|---|
@@ -73,7 +86,7 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 
 ---
 
-## 4. Configuración avanzada e integraciones operativas
+## 5. Configuración avanzada e integraciones operativas
 
 | Guía | Descripción |
 |---|---|
@@ -88,7 +101,7 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 
 ---
 
-## 5. Synthetic Monitoring - Private PoP
+## 6. Synthetic Monitoring - Private PoP
 
 La documentación de Synthetic Private PoP está organizada por modalidad de instalación, sistema operativo, validaciones y troubleshooting.
 
@@ -102,7 +115,7 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 
 ---
 
-## 6. Sensores e integraciones tecnológicas
+## 7. Sensores e integraciones tecnológicas
 
 | Guía | Descripción |
 |---|---|
@@ -123,18 +136,27 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 
 ---
 
-## 7. OpenTelemetry
+## 8. OpenTelemetry
 
 | Recurso | Descripción |
 |---|---|
 | [LLM con Traceloop](Opentelemetry/LLM/Traceloop.md) | Instrumentación de aplicaciones LLM mediante OpenTelemetry y Traceloop. |
 | [Ejemplo chaining.py](Opentelemetry/LLM/chaining.py) | Script de ejemplo para pruebas de trazabilidad. |
 | [PHP Tracing](Opentelemetry/PHP/Tracing.md) | Trazabilidad de aplicaciones PHP mediante OpenTelemetry. |
-| [OpenTelemetry Filelog Receiver](Log%20Monitoring/Opentelemetry%20Filelog%20Receiver.md) | Recolección de logs desde archivos utilizando el receiver Filelog. |
 
 ---
 
-## 8. GitLab y GitOps
+## 9. Log Monitoring
+
+| Recurso | Descripción |
+|---|---|
+| [Índice de Log Monitoring](Log%20Monitoring/README.md) | Punto de entrada para los procedimientos de recolección y envío de logs hacia Instana. |
+| [OpenTelemetry Filelog Receiver](Log%20Monitoring/Opentelemetry%20Filelog%20Receiver.md) | Procedimiento general para leer archivos de log con OpenTelemetry Collector Contrib y enviarlos al agente Instana. |
+| [NGINX Stream con OpenTelemetry Filelog e Instana](Log%20Monitoring/NGINX_Stream_OpenTelemetry_Filelog_Instana.md) | Procedimiento completo para recolectar logs de sesiones TCP/UDP de NGINX Stream, procesarlos con Filelog Receiver y enviarlos a Instana. |
+
+---
+
+## 10. GitLab y GitOps
 
 | Recurso | Descripción |
 |---|---|
@@ -143,7 +165,7 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 
 ---
 
-## 9. Laboratorios y ejemplos reproducibles
+## 11. Laboratorios y ejemplos reproducibles
 
 | Laboratorio | Descripción |
 |---|---|
@@ -156,11 +178,11 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 
 ## Cómo utilizar el repositorio
 
-1. Identificar la plataforma, sensor o escenario que se desea trabajar.
+1. Identificar la plataforma, tecnología o escenario que se desea trabajar.
 2. Abrir la guía correspondiente desde este índice.
 3. Revisar el alcance y los prerrequisitos antes de ejecutar comandos.
 4. Confirmar las versiones utilizadas y contrastarlas con la documentación oficial vigente.
-5. Reemplazar variables de ejemplo por los valores del entorno.
+5. Reemplazar los valores de referencia por los datos del entorno.
 6. Ejecutar los pasos de manera secuencial.
 7. Conservar evidencias de instalación, configuración y validación.
 8. Confirmar en Instana la entidad, métrica, traza, evento o log esperado.
@@ -177,10 +199,16 @@ Instalacion-Agente-Instana/
 ├── Gitlab/
 ├── Herramientas/
 │   └── Diagnostico-Compatibilidad-Windows/
+├── Instrumentacion/
+│   └── IBM-ACE/
+│       └── README.md
 ├── Laboratorios/
 │   ├── Apache-HTTPD-SpringBoot-MySQL/
 │   └── Node14-pm2-postgresql-Ubuntu/
 ├── Log Monitoring/
+│   ├── README.md
+│   ├── Opentelemetry Filelog Receiver.md
+│   └── NGINX_Stream_OpenTelemetry_Filelog_Instana.md
 ├── Opentelemetry/
 │   ├── LLM/
 │   └── PHP/
@@ -208,6 +236,7 @@ Las contribuciones y actualizaciones deberían mantener:
 - Protección de credenciales, tokens y secretos.
 - Enlaces relativos para facilitar la navegación.
 - Referencias a documentación oficial cuando la compatibilidad pueda cambiar.
+- Uso de nombres genéricos en las guías públicas, evitando publicar clientes, dominios internos, direcciones IP, registros privados o identificadores sensibles.
 
 ---
 
@@ -215,6 +244,7 @@ Las contribuciones y actualizaciones deberían mantener:
 
 - Validar siempre la matriz de soporte oficial antes de una implementación productiva.
 - No almacenar credenciales, claves, tokens o certificados privados en el repositorio.
+- No publicar nombres de clientes, dominios internos, direcciones IP, rutas privadas o identificadores propios de un ambiente.
 - Algunas actividades requieren permisos administrativos o acceso a consolas de nube y clústeres.
 - La compatibilidad de runtimes, librerías, agentes, sensores y componentes cambia con el tiempo.
 - En ambientes de cliente, validar conectividad, proxy, inspección TLS, certificados, permisos y alcance antes del despliegue.
