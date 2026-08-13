@@ -31,7 +31,7 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 | `Plataformas` | Instalación del agente en Linux, Windows, UNIX, OpenShift y escenarios Kubernetes/OpenShift legacy. |
 | `Instrumentacion` | AutoTrace, tracers, SDK y procedimientos de instrumentación de aplicaciones y runtimes. |
 | `Herramientas` | Scripts de diagnóstico, validación y recopilación de evidencia técnica. |
-| `Configuraciones` | Proxy, Vault, Synthetic Private PoP, monitoreo móvil e integraciones operativas. |
+| `Configuraciones` | Proxy, Vault, autenticación/SSO, Synthetic Private PoP, monitoreo móvil e integraciones operativas. |
 | `Sensores` | AWS, GCP, IBM i, DataPower, SAP ABAP, VMware, Podman, StatsD, Zabbix, OpenTelemetry y otros sensores. |
 | `Opentelemetry` | Instrumentación y ejemplos específicos para PHP, LLM y otros escenarios. |
 | `Log Monitoring` | Recolección y procesamiento de logs mediante OpenTelemetry. |
@@ -95,6 +95,7 @@ Documentar de manera clara, ordenada y reutilizable los procedimientos necesario
 | [Archivo squid.conf](Configuraciones/squid.conf) | Configuración de referencia para Squid. |
 | [Convertir agente estático a dinámico](Configuraciones/Convertir%20Agente%20Instana%20Estatico%20a%20Dinamico.md) | Ajuste del comportamiento del agente. |
 | [Implementación con Vault](Configuraciones/Implementacion%20Vault.md) | Integración y manejo de secretos mediante Vault. |
+| [Microsoft Entra ID / SAML SSO](Configuraciones/Microsoft-Entra-ID-SAML/README.md) | Integración de Instana con Microsoft Entra ID mediante SAML, intercambio de metadata y mapeo de grupos/roles. |
 | [Mobile App Monitoring](Configuraciones/Mobile_App_Monitoring.md) | Configuración relacionada con monitoreo de aplicaciones móviles. |
 | [OpenTelemetry Log Receiver](Configuraciones/Opentelemetry%20Log%20Receiver.md) | Configuración del receptor de logs mediante OpenTelemetry. |
 | [Integración con Telegram](Configuraciones/Integracion%20Telegram/Configuracion.md) | Integración de eventos o alertas con Telegram. |
@@ -195,6 +196,9 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 Instalacion-Agente-Instana/
 ├── Configuraciones/
 │   ├── Integracion Telegram/
+│   ├── Microsoft-Entra-ID-SAML/
+│   │   ├── README.md
+│   │   └── images/
 │   └── Synthetic-PoP/
 ├── Gitlab/
 ├── Herramientas/
