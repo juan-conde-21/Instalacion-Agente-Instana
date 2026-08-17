@@ -1,0 +1,28 @@
+
+FROM registry.access.redhat.com/ubi9/openjdk-17-runtime:latest
+
+USER 0
+
+RUN mkdir -p \
+      /opt/instana-demo/app/cache \
+      /var/log/instana-demo \
+      /deployments \
+ && chown -R 185:0 \
+      /opt/instana-demo \
+      /var/log/instana-demo \
+      /deployments \
+ && chmod -R g=u \
+      /opt/instana-demo \
+      /var/log/instana-demo \
+      /deployments
+
+COPY retail-app.jar /deployments/retail-app.jar
+
+RUN chown 185:0 /deployments/retail-app.jar
+
+USER 185
+
+EXPOSE 18083
+
+ENTRYPOINT ["java","-Xms64m","-Xmx256m","-jar","/deployments/retail-app.jar"]
+

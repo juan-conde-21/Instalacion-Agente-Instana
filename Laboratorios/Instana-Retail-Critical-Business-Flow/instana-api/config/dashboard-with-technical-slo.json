@@ -1,0 +1,65 @@
+{
+  "id": "jgWLmz2eThKNT9Ey73usyA",
+  "title": "RETAIL - Critical Business Flow",
+  "accessRules": [
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "USER",
+      "relatedId": "6a7fc7ea6e3f1100019f9758"
+    },
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "API_TOKEN",
+      "relatedId": "Igfi9YjZRsiRyDpUIxFeGA"
+    },
+    {
+      "accessType": "READ",
+      "relationType": "GLOBAL",
+      "relatedId": ""
+    }
+  ],
+  "widgets": [
+    {
+      "width": 1,
+      "x": 0,
+      "y": 0,
+      "id": "tgOsNCFMJJTB3wMh",
+      "title": "RETAIL - Business Availability - Indicator",
+      "type": "slo2",
+      "config": {
+        "sloId": "SLOzbID2j0kTsamvBoByO5iUQ",
+        "entityType": "synthetic",
+        "chartType": "INDICATOR"
+      },
+      "height": 1
+    },
+    {
+      "width": 1,
+      "x": 0,
+      "y": 0,
+      "id": "nTckZ9pDBAwa1m1z",
+      "title": "RETAIL - Business Availability - Error Budget",
+      "type": "slo2",
+      "config": {
+        "sloId": "SLOzbID2j0kTsamvBoByO5iUQ",
+        "entityType": "synthetic",
+        "chartType": "ERROR_BUDGET"
+      },
+      "height": 1
+    },
+    {
+      "width": 1,
+      "x": 1,
+      "y": 0,
+      "id": "5670c42486f142b1",
+      "title": "RETAIL - Technical Availability - Indicator",
+      "type": "slo2",
+      "config": {
+        "sloId": "SLO_4QluA1tQk2u8FZs-GgNmw",
+        "entityType": "synthetic",
+        "chartType": "INDICATOR"
+      },
+      "height": 1
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-08-16T23:18:42-04:00",
+  "readyForCleanup": true,
+  "objects": [
+    {
+      "type": "Application Perspective",
+      "id": "5KIJ5Ip4Tsq1AAMc_Rd9-Q",
+      "name": "RETAIL - Critical Promotions Flow",
+      "expectedName": "RETAIL - Critical Promotions Flow",
+      "status": "MATCH"
+    },
+    {
+      "type": "Synthetic Location",
+      "id": "qy0iGSOZIkfPqDg7HnAB",
+      "name": "instana-critical-demo-pop",
+      "expectedName": "instana-critical-demo-pop",
+      "status": "MATCH"
+    },
+    {
+      "type": "Synthetic Technical",
+      "id": "oK460TcajBvkNsvc6aOo",
+      "name": "RETAIL - Technical Availability",
+      "expectedName": "RETAIL - Technical Availability",
+      "status": "MATCH"
+    },
+    {
+      "type": "Synthetic Business",
+      "id": "8wljQ4MVrfBkpCaTaO0F",
+      "name": "RETAIL - Business Transaction",
+      "expectedName": "RETAIL - Business Transaction",
+      "status": "MATCH"
+    },
+    {
+      "type": "Synthetic Smart Alert",
+      "id": "BoVQNsM9RhSG4b3dbRAt0g",
+      "name": "RETAIL - Business Transaction Failed",
+      "expectedName": "RETAIL - Business Transaction Failed",
+      "status": "MATCH"
+    },
+    {
+      "type": "Technical SLO",
+      "id": "SLOfIlMIlIYQM6aha2v4QpjRg",
+      "name": "RETAIL - Technical Availability",
+      "expectedName": "RETAIL - Technical Availability",
+      "status": "MATCH"
+    },
+    {
+      "type": "Business SLO",
+      "id": "SLOzZS43vIRSDmY-V4jOBNuUw",
+      "name": "RETAIL - Business Availability",
+      "expectedName": "RETAIL - Business Availability",
+      "status": "MATCH"
+    },
+    {
+      "type": "Custom Dashboard",
+      "id": "lFleIsVhQT-oTWCAdkJifA",
+      "name": "RETAIL - Critical Business Flow",
+      "expectedName": "RETAIL - Critical Business Flow",
+      "status": "MATCH"
+    }
+  ]
+}

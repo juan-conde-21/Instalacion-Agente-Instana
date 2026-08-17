@@ -172,6 +172,7 @@ La documentación de Synthetic Private PoP está organizada por modalidad de ins
 |---|---|
 | [Apache HTTPD + Spring Boot + MySQL](Laboratorios/Apache-HTTPD-SpringBoot-MySQL/README.md) | Laboratorio para validar host, Apache, Java, Spring Boot, JDBC, MySQL, errores y latencia. |
 | [Node.js 14 + PM2 + PostgreSQL en Ubuntu](Laboratorios/Node14-pm2-postgresql-Ubuntu/README.md) | Laboratorio controlado para Node.js legacy, PM2, PostgreSQL e instrumentación con Instana. |
+| [Flujo crítico de negocio Retail con Instana](Laboratorios/Instana-Retail-Critical-Business-Flow/README.md) | Demo reproducible de un proceso crítico basado en archivos que combina APM, logs, File Monitoring, Synthetic Monitoring, alertas, SLO y dashboard para diferenciar disponibilidad técnica de disponibilidad de negocio. |
 
 > Los laboratorios pueden utilizar versiones heredadas con fines de reproducción técnica. Cada guía indica sus limitaciones y el alcance recomendado.
 
@@ -208,6 +209,7 @@ Instalacion-Agente-Instana/
 │       └── README.md
 ├── Laboratorios/
 │   ├── Apache-HTTPD-SpringBoot-MySQL/
+│   ├── Instana-Retail-Critical-Business-Flow/
 │   └── Node14-pm2-postgresql-Ubuntu/
 ├── Log Monitoring/
 │   ├── README.md

@@ -1,0 +1,18 @@
+{
+  "title": "RETAIL - Critical Business Flow",
+
+  "accessRules": [
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "USER",
+      "relatedId": "6a7fc7ea6e3f1100019f9758"
+    },
+    {
+      "accessType": "READ_WRITE",
+      "relationType": "API_TOKEN",
+      "relatedId": "Igfi9YjZRsiRyDpUIxFeGA"
+    }
+  ],
+
+  "widgets": []
+}

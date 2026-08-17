@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: retail-app
+  namespace: instana-critical-demo
+
+spec:
+  replicas: 1
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app: retail-app
+
+  template:
+    metadata:
+      labels:
+        app: retail-app
+        demo: instana-critical-process
+
+    spec:
+      containers:
+
+        - name: retail-app
+
+          image: docker.io/library/instana-demo-retail:1.0
+          imagePullPolicy: Never
+
+          ports:
+            - name: http
+              containerPort: 18083
+              hostPort: 18083
+              protocol: TCP
+
+          env:
+            - name: DEMO_CENTRAL_URL
+              value: "http://192.168.252.35:18082"
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 18083
+            initialDelaySeconds: 10
+            periodSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 18083
+            initialDelaySeconds: 30
+            periodSeconds: 15
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: retail-app
+  namespace: instana-critical-demo
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: retail-app
+
+  ports:
+    - name: http
+      port: 18083
+      targetPort: 18083
+      protocol: TCP

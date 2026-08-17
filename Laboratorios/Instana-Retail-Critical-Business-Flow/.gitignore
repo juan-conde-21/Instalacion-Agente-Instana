@@ -1,0 +1,25 @@
+# Runtime secrets
+secrets/
+*.token
+*.key
+synthetic.env
+.env
+.env.*
+
+# Runtime output
+logs/
+state/
+golden/
+tmp/
+*.log
+
+# Build artifacts
+target/
+*.jar
+*.tar
+*.tar.gz
+
+# Local tooling
+.claude/
+.agents/
+.codex/

@@ -1,0 +1,276 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: otel-retail-logs
+  namespace: instana-critical-demo
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: otel-retail-logs
+
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+      - namespaces
+      - nodes
+    verbs:
+      - get
+      - list
+      - watch
+
+  - apiGroups:
+      - apps
+    resources:
+      - replicasets
+      - deployments
+    verbs:
+      - get
+      - list
+      - watch
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: otel-retail-logs
+
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: otel-retail-logs
+
+subjects:
+  - kind: ServiceAccount
+    name: otel-retail-logs
+    namespace: instana-critical-demo
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel-retail-logs
+  namespace: instana-critical-demo
+
+data:
+  otel-config.yaml: |
+
+    extensions:
+
+      file_storage:
+        directory: /var/lib/otelcol
+
+
+    receivers:
+
+      filelog/retail:
+
+        include:
+          - /var/log/pods/instana-critical-demo_retail-app-*/*/*.log
+
+        start_at: beginning
+
+        include_file_path: true
+        include_file_name: true
+
+        storage: file_storage
+
+        retry_on_failure:
+          enabled: true
+
+        operators:
+
+          - type: container
+            id: container-parser
+
+          - type: recombine
+            combine_field: body
+            is_first_entry: 'body matches "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"'
+            source_identifier: attributes["log.file.path"]
+
+
+    processors:
+
+      k8sattributes:
+
+        auth_type: serviceAccount
+
+        passthrough: false
+
+        pod_association:
+
+          - sources:
+              - from: resource_attribute
+                name: k8s.pod.uid
+
+          - sources:
+              - from: resource_attribute
+                name: container.id
+
+          - sources:
+              - from: resource_attribute
+                name: k8s.pod.ip
+
+          - sources:
+              - from: connection
+
+        extract:
+
+          metadata:
+
+            - k8s.node.name
+            - k8s.namespace.name
+            - k8s.pod.name
+            - k8s.pod.uid
+            - k8s.deployment.name
+
+            - container.id
+            - container.image.name
+            - container.image.tag
+
+
+      resource/retail:
+
+        attributes:
+
+          - key: service.name
+            value: retail-app
+            action: upsert
+
+          - key: service.namespace
+            value: instana-critical-demo
+            action: upsert
+
+          - key: container.runtime
+            value: containerd
+            action: upsert
+
+          - key: demo.component
+            value: retail
+            action: upsert
+
+
+      transform/severity:
+
+        log_statements:
+
+          - context: log
+
+            statements:
+
+              - set(severity_text, "INFO")
+                where IsMatch(body.string, ".* INFO .*")
+
+              - set(severity_text, "WARN")
+                where IsMatch(body.string, ".* WARN .*")
+
+              - set(severity_text, "ERROR")
+                where IsMatch(body.string, ".* ERROR .*")
+
+
+      batch: {}
+
+
+    exporters:
+
+      otlp/instana:
+
+        endpoint: instana-agent.instana-agent:4317
+
+        tls:
+          insecure: true
+
+
+    service:
+
+      extensions:
+        - file_storage
+
+      pipelines:
+
+        logs:
+
+          receivers:
+            - filelog/retail
+
+          processors:
+            - k8sattributes
+            - resource/retail
+            - transform/severity
+            - batch
+
+          exporters:
+            - otlp/instana
+
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: otel-retail-logs
+  namespace: instana-critical-demo
+
+spec:
+  selector:
+    matchLabels:
+      app: otel-retail-logs
+
+  template:
+    metadata:
+      labels:
+        app: otel-retail-logs
+
+    spec:
+      serviceAccountName: otel-retail-logs
+
+      containers:
+
+        - name: otelcol
+
+          image: otel/opentelemetry-collector-contrib:0.157.0
+          imagePullPolicy: IfNotPresent
+
+          args:
+            - --config=/etc/otelcol/otel-config.yaml
+
+          securityContext:
+            privileged: true
+            runAsUser: 0
+
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
+
+          volumeMounts:
+
+            - name: config
+              mountPath: /etc/otelcol
+
+            - name: varlogpods
+              mountPath: /var/log/pods
+              readOnly: true
+
+            - name: state
+              mountPath: /var/lib/otelcol
+
+      volumes:
+
+        - name: config
+          configMap:
+            name: otel-retail-logs
+
+        - name: varlogpods
+          hostPath:
+            path: /var/log/pods
+            type: Directory
+
+        - name: state
+          hostPath:
+            path: /var/lib/otel-retail-logs
+            type: DirectoryOrCreate

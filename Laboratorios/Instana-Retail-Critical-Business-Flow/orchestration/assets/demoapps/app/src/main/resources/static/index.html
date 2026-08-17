@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+
+    <title>Operación Retail | IBM Instana Demo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f4f4,
+                    #e8f0ff
+                );
+
+            color: #161616;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #161616;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header strong {
+            font-size: 20px;
+        }
+
+        .header span {
+            color: #78a9ff;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
+
+        .hero {
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            margin: 0 0 8px 0;
+            font-size: 34px;
+        }
+
+        .hero p {
+            margin: 0;
+            color: #525252;
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .label {
+            color: #6f6f6f;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+        }
+
+        .value {
+            margin-top: 7px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .ready {
+            color: #0e6027;
+            background: #defbe6;
+        }
+
+        .stale {
+            color: #8a3800;
+            background: #fff1c7;
+        }
+
+        .failed {
+            color: #a2191f;
+            background: #fff1f1;
+        }
+
+        .product {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        button {
+            margin-top: 22px;
+            background: #0f62fe;
+            color: white;
+            border: 0;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0043ce;
+        }
+
+        pre {
+            margin-top: 20px;
+            background: #161616;
+            color: #f4f4f4;
+            padding: 18px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            min-height: 80px;
+        }
+
+        .chain {
+            margin-top: 20px;
+            color: #525252;
+        }
+
+        @media (max-width: 750px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <strong>IBM <span>INSTANA</span></strong>
+    <div>Demo de continuidad operativa</div>
+</div>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Operación Retail</h1>
+
+        <p>
+            Validación funcional de un proceso dependiente
+            de información crítica.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="label">
+                Estado técnico
+            </div>
+
+            <div class="value">
+                Aplicación disponible
+            </div>
+
+            <div class="status ready">
+                HTTP 200
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="label">
+                Estado funcional
+            </div>
+
+            <div id="functionalState"
+                 class="value">
+                Consultando...
+            </div>
+
+            <div id="statusBadge"
+                 class="status">
+                ...
+            </div>
+
+        </div>
+
+
+        <div class="card full">
+
+            <div class="label">
+                Información activa
+            </div>
+
+            <div class="product">
+
+                <div class="product-row">
+                    <span>Versión del archivo</span>
+                    <strong id="version">
+                        -
+                    </strong>
+                </div>
+
+                <div class="product-row">
+                    <span>Edad del archivo</span>
+                    <strong>
+                        <span id="age">-</span>
+                        segundos
+                    </strong>
+                </div>
+
+                <div class="product-row">
+                    <span>Registros cargados</span>
+                    <strong id="records">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card full">
+
+            <div class="label">
+                Transacción de negocio
+            </div>
+
+            <h2>Producto demo</h2>
+
+            <div class="product-row">
+                <span>SKU</span>
+                <strong>P00001</strong>
+            </div>
+
+            <button
+                id="operationButton"
+                onclick="executeOperation()">
+                REALIZAR OPERACIÓN
+            </button>
+
+            <pre id="operationResult">
+Esperando operación...
+            </pre>
+
+        </div>
+
+
+        <div class="card full">
+
+            <div class="label">
+                Flujo observado
+            </div>
+
+            <div class="chain">
+                Fuente ? Archivo ? Distribución ?
+                Aplicación ? Usuario
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+async function refreshStatus() {
+
+    const badge =
+        document.getElementById("statusBadge");
+
+    try {
+
+        const response =
+            await fetch("/api/status");
+
+        const data =
+            await response.json();
+
+        document.getElementById("version")
+            .textContent =
+            data.version;
+
+        document.getElementById("age")
+            .textContent =
+            data.ageSeconds;
+
+        document.getElementById("records")
+            .textContent =
+            data.records;
+
+        const state =
+            document.getElementById(
+                "functionalState"
+            );
+
+        if (data.status === "READY") {
+
+            state.textContent =
+                "Proceso listo para operar";
+
+            badge.textContent =
+                "OPERATIVO";
+
+            badge.className =
+                "status ready";
+
+        } else {
+
+            state.textContent =
+                "Información desactualizada";
+
+            badge.textContent =
+                "RIESGO OPERATIVO";
+
+            badge.className =
+                "status stale";
+        }
+
+    } catch (error) {
+
+        document.getElementById(
+            "functionalState"
+        ).textContent =
+            "No disponible";
+
+        badge.textContent =
+            "ERROR";
+
+        badge.className =
+            "status failed";
+    }
+}
+
+
+async function executeOperation() {
+
+    const result =
+        document.getElementById(
+            "operationResult"
+        );
+
+    result.textContent =
+        "Procesando...";
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/operation/P00001"
+            );
+
+        const data =
+            await response.json();
+
+        result.textContent =
+            JSON.stringify(
+                data,
+                null,
+                2
+            );
+
+        result.setAttribute(
+            "data-result",
+            data.status
+        );
+
+    } catch (error) {
+
+        result.textContent =
+            "ERROR: " + error;
+
+        result.setAttribute(
+            "data-result",
+            "FAILED"
+        );
+    }
+}
+
+
+refreshStatus();
+
+setInterval(
+    refreshStatus,
+    5000
+);
+
+</script>
+
+</body>
+</html>

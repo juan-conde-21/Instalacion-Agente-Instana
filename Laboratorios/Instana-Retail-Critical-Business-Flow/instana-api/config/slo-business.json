@@ -1,0 +1,66 @@
+{
+  "name": "RETAIL - Business Availability",
+  "target": 0.995,
+  "lastUpdated": 1786939658144,
+
+  "entity": {
+    "type": "synthetic",
+    "syntheticTestIds": [
+      "p1ZofeHsTNbaXgM74PPU"
+    ],
+    "tagFilterExpression": {
+      "type": "EXPRESSION",
+      "logicalOperator": "AND",
+      "elements": []
+    }
+  },
+
+  "indicator": {
+    "type": "eventBased",
+    "threshold": 0,
+    "operator": null,
+    "aggregation": null,
+
+    "badEventsFilter": {
+      "type": "TAG_FILTER",
+      "name": "call.erroneous",
+      "stringValue": null,
+      "numberValue": null,
+      "booleanValue": true,
+      "floatValue": null,
+      "key": null,
+      "value": null,
+      "operator": "EQUALS",
+      "entity": "NOT_APPLICABLE"
+    },
+
+    "goodEventsFilter": {
+      "type": "TAG_FILTER",
+      "name": "call.erroneous",
+      "stringValue": null,
+      "numberValue": null,
+      "booleanValue": false,
+      "floatValue": null,
+      "key": null,
+      "value": null,
+      "operator": "EQUALS",
+      "entity": "NOT_APPLICABLE"
+    },
+
+    "blueprint": "availability"
+  },
+
+  "timeWindow": {
+    "type": "rolling",
+    "duration": 1,
+    "durationUnit": "week"
+  },
+
+  "tags": [
+    "retail",
+    "business",
+    "synthetic",
+    "availability",
+    "demo"
+  ]
+}
