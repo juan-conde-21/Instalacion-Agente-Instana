@@ -1,0 +1,26 @@
+PID=1
+PID=42
+7123799cf000-7123799d2000 r--s 00000000 00:50 1370971                    /home/site/wwwroot/Instana.Tracing.Api.dll
+7164a74ef000-7164a7500000 r--s 00000000 00:50 1370974                    /home/site/wwwroot/Instana.Tracing.Core.Transport.dll
+7164a76e1000-7164a770a000 r--s 00000000 00:50 1370972                    /home/site/wwwroot/Instana.Tracing.Core.Common.dll
+7164a7733000-7164a775a000 r--s 00000000 00:50 1370975                    /home/site/wwwroot/Instana.Tracing.Core.dll
+7164a781c000-7164a7822000 r--s 00000000 00:50 1370978                    /home/site/wwwroot/InstanaCrashLab.dll
+7164aa81b000-7164aa8ae000 r--p 00000000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7164aa8ae000-7164aa9fa000 r-xp 00093000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7164aa9fa000-7164aaa5c000 r--p 001df000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7164aaa5c000-7164aaa5d000 ---p 00241000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7164aaa5d000-7164aaa68000 r--p 00241000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7164aaa68000-7164aaa6b000 rw-p 0024c000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+PID=73
+PID=9
+7736945b8000-77369460d000 r--s 00000000 00:50 1370973                    /home/site/wwwroot/Instana.Tracing.Core.Instrumentation.dll
+7736a80ad000-7736a80b0000 r--s 00000000 00:50 1370971                    /home/site/wwwroot/Instana.Tracing.Api.dll
+77780f81f000-77780f830000 r--s 00000000 00:50 1370974                    /home/site/wwwroot/Instana.Tracing.Core.Transport.dll
+77780f834000-77780f85d000 r--s 00000000 00:50 1370972                    /home/site/wwwroot/Instana.Tracing.Core.Common.dll
+77780f890000-77780f8b7000 r--s 00000000 00:50 1370975                    /home/site/wwwroot/Instana.Tracing.Core.dll
+777813067000-7778130fa000 r--p 00000000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7778130fa000-777813246000 r-xp 00093000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+777813246000-7778132a8000 r--p 001df000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7778132a8000-7778132a9000 ---p 00241000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7778132a9000-7778132b4000 r--p 00241000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7778132b4000-7778132b7000 rw-p 0024c000 00:50 1371022                    /home/site/wwwroot/instana_tracing/CoreProfiler.so

@@ -1,0 +1,5 @@
+Docker container -> host.docker.internal:42699
+Result: PASS
+HTTP status: 200
+Network mechanism: --add-host=host.docker.internal:host-gateway
+Private addresses omitted from public evidence.

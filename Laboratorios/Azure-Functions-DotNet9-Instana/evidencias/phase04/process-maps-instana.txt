@@ -1,0 +1,25 @@
+PID=1
+PID=42
+7516c00e7000-7516c00f8000 r--s 00000000 00:39 818544                     /home/site/wwwroot/Instana.Tracing.Core.Transport.dll
+7516c02db000-7516c0304000 r--s 00000000 00:39 818542                     /home/site/wwwroot/Instana.Tracing.Core.Common.dll
+7516c032b000-7516c0352000 r--s 00000000 00:39 818545                     /home/site/wwwroot/Instana.Tracing.Core.dll
+7516c0417000-7516c041b000 r--s 00000000 00:39 818548                     /home/site/wwwroot/InstanaCrashLab.dll
+7516c3413000-7516c34a6000 r--p 00000000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7516c34a6000-7516c35f2000 r-xp 00093000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7516c35f2000-7516c3654000 r--p 001df000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7516c3654000-7516c3655000 ---p 00241000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7516c3655000-7516c3660000 r--p 00241000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7516c3660000-7516c3663000 rw-p 0024c000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+PID=8
+7ac489a01000-7ac489a56000 r--s 00000000 00:39 818543                     /home/site/wwwroot/Instana.Tracing.Core.Instrumentation.dll
+7b05982aa000-7b05982ad000 r--s 00000000 00:39 818541                     /home/site/wwwroot/Instana.Tracing.Api.dll
+7b0612607000-7b0612618000 r--s 00000000 00:39 818544                     /home/site/wwwroot/Instana.Tracing.Core.Transport.dll
+7b0612663000-7b061268c000 r--s 00000000 00:39 818542                     /home/site/wwwroot/Instana.Tracing.Core.Common.dll
+7b06126bf000-7b06126e6000 r--s 00000000 00:39 818545                     /home/site/wwwroot/Instana.Tracing.Core.dll
+7b0615e97000-7b0615f2a000 r--p 00000000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7b0615f2a000-7b0616076000 r-xp 00093000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7b0616076000-7b06160d8000 r--p 001df000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7b06160d8000-7b06160d9000 ---p 00241000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7b06160d9000-7b06160e4000 r--p 00241000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+7b06160e4000-7b06160e7000 rw-p 0024c000 00:39 818592                     /home/site/wwwroot/instana_tracing/CoreProfiler.so
+PID=97

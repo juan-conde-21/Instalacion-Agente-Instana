@@ -1,0 +1,71 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.clean
+#1 transferring dockerfile: 614B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:9.0
+#2 DONE 0.1s
+
+#3 [internal] load metadata for mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 34B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [final 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 resolve mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9 0.1s done
+#6 DONE 0.1s
+
+#7 [build 1/6] FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30
+#7 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30
+#7 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30 0.1s done
+#7 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 281B 0.0s done
+#5 DONE 0.1s
+
+#8 [build 2/6] WORKDIR /src
+#8 CACHED
+
+#9 [build 3/6] COPY src/InstanaCrashLab/InstanaCrashLab.csproj src/InstanaCrashLab/
+#9 CACHED
+
+#10 [build 4/6] RUN dotnet restore src/InstanaCrashLab/InstanaCrashLab.csproj
+#10 CACHED
+
+#11 [build 5/6] COPY src/InstanaCrashLab/ src/InstanaCrashLab/
+#11 DONE 0.2s
+
+#12 [build 6/6] RUN dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out --no-restore
+#12 9.811   Determining projects to restore...
+#12 22.14   Restored /src/src/InstanaCrashLab/obj/Release/net9.0/WorkerExtensions/WorkerExtensions.csproj (in 11.73 sec).
+#12 22.92   WorkerExtensions -> /src/src/InstanaCrashLab/obj/Release/net9.0/WorkerExtensions/buildout/Microsoft.Azure.Functions.Worker.Extensions.dll
+#12 25.54   InstanaCrashLab -> /src/src/InstanaCrashLab/bin/Release/net9.0/InstanaCrashLab.dll
+#12 25.67   InstanaCrashLab -> /out/
+#12 DONE 30.0s
+
+#6 [final 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 CACHED
+
+#13 [final 2/2] COPY --from=build /out /home/site/wwwroot
+#13 DONE 0.6s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.8s done
+#14 exporting manifest sha256:e29c4f50fe663ec7a98ef41d6df94b2275613b9271b09162b54db42f8be7ef74
+#14 exporting manifest sha256:e29c4f50fe663ec7a98ef41d6df94b2275613b9271b09162b54db42f8be7ef74 0.1s done
+#14 exporting config sha256:651ca8564b30d32331e9e592f3cabc70c310e726bb8498301b09ac709210e9cb 0.1s done
+#14 exporting attestation manifest sha256:cba1a04c3860382633e8e21dbcbbe65628349422999e220d722bf12147c4aa39 0.1s done
+#14 exporting manifest list sha256:6fa5d638a3d2c16b72195a038378abda53b6a37008b96ae757a10bff18d70f6c
+#14 exporting manifest list sha256:6fa5d638a3d2c16b72195a038378abda53b6a37008b96ae757a10bff18d70f6c 0.1s done
+#14 naming to docker.io/library/instana-dotnet9-lab:clean 0.0s done
+#14 unpacking to docker.io/library/instana-dotnet9-lab:clean
+#14 unpacking to docker.io/library/instana-dotnet9-lab:clean 0.3s done
+#14 DONE 1.7s

@@ -1,0 +1,9 @@
+DOTNET_USE_POLLING_FILE_WATCHER=true
+DOTNET_RUNNING_IN_CONTAINER=true
+DOTNET_VERSION=8.0.30
+FUNCTIONS_WORKER_RUNTIME=dotnet-isolated
+/home/site/wwwroot/InstanaCrashLab.dll
+/home/site/wwwroot/InstanaCrashLab.pdb
+/home/site/wwwroot/InstanaCrashLab.deps.json
+/home/site/wwwroot/InstanaCrashLab
+/home/site/wwwroot/InstanaCrashLab.runtimeconfig.json

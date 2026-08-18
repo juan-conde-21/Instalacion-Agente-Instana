@@ -1,0 +1,2 @@
+2026-08-18T15:53:31Z
+/bin/bash: line 1: coredumpctl: command not found

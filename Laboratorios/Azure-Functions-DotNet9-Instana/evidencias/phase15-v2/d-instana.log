@@ -1,0 +1,187 @@
+2026-08-18T17:40:09.763652376Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-18T17:40:12.318732244Z info: Host.Triggers.Warmup[0]
+2026-08-18T17:40:12.318764427Z       Initializing Warmup Extension.
+2026-08-18T17:40:12.523022173Z info: Host.Startup[503]
+2026-08-18T17:40:12.523051982Z       Initializing Host. OperationId: '9f69750d-6785-4e66-8720-bfcdd8ffc1bc'.
+2026-08-18T17:40:12.537130457Z info: Host.Startup[504]
+2026-08-18T17:40:12.537150166Z       Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=9f69750d-6785-4e66-8720-bfcdd8ffc1bc
+2026-08-18T17:40:12.591346908Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.591374573Z       ScriptJobHostOptions
+2026-08-18T17:40:12.591379743Z       {
+2026-08-18T17:40:12.591383851Z         "FileWatchingEnabled": true,
+2026-08-18T17:40:12.591523575Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T17:40:12.591533654Z         "FunctionTimeout": "00:30:00",
+2026-08-18T17:40:12.591537241Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T17:40:12.591540558Z       }
+2026-08-18T17:40:12.592065377Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592075527Z       LoggerFilterOptions
+2026-08-18T17:40:12.592079665Z       {
+2026-08-18T17:40:12.592083813Z         "MinLevel": "None",
+2026-08-18T17:40:12.592088121Z         "Rules": [
+2026-08-18T17:40:12.592092299Z           {
+2026-08-18T17:40:12.592095736Z             "ProviderName": null,
+2026-08-18T17:40:12.592099243Z             "CategoryName": null,
+2026-08-18T17:40:12.592242754Z             "LogLevel": null,
+2026-08-18T17:40:12.592361463Z             "Filter": "<AddFilter>b__0"
+2026-08-18T17:40:12.592371392Z           },
+2026-08-18T17:40:12.592375641Z           {
+2026-08-18T17:40:12.592379088Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T17:40:12.592382735Z             "CategoryName": null,
+2026-08-18T17:40:12.592386181Z             "LogLevel": "None",
+2026-08-18T17:40:12.592389769Z             "Filter": null
+2026-08-18T17:40:12.592393085Z           },
+2026-08-18T17:40:12.592396221Z           {
+2026-08-18T17:40:12.592399888Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T17:40:12.592403155Z             "CategoryName": null,
+2026-08-18T17:40:12.592406932Z             "LogLevel": null,
+2026-08-18T17:40:12.592410900Z             "Filter": "<AddFilter>b__0"
+2026-08-18T17:40:12.592414517Z           },
+2026-08-18T17:40:12.592433534Z           {
+2026-08-18T17:40:12.592437773Z             "ProviderName": null,
+2026-08-18T17:40:12.592441179Z             "CategoryName": null,
+2026-08-18T17:40:12.592444786Z             "LogLevel": null,
+2026-08-18T17:40:12.592576314Z             "Filter": "<AddFilter>b__0"
+2026-08-18T17:40:12.592604590Z           },
+2026-08-18T17:40:12.592609429Z           {
+2026-08-18T17:40:12.592613527Z             "ProviderName": null,
+2026-08-18T17:40:12.592616904Z             "CategoryName": null,
+2026-08-18T17:40:12.592619990Z             "LogLevel": "Information",
+2026-08-18T17:40:12.592623707Z             "Filter": null
+2026-08-18T17:40:12.592627394Z           },
+2026-08-18T17:40:12.592630480Z           {
+2026-08-18T17:40:12.592634037Z             "ProviderName": null,
+2026-08-18T17:40:12.592637895Z             "CategoryName": "Host.Function.ToolingConsoleLog",
+2026-08-18T17:40:12.592641712Z             "LogLevel": "Information",
+2026-08-18T17:40:12.592645059Z             "Filter": null
+2026-08-18T17:40:12.592648335Z           },
+2026-08-18T17:40:12.592651812Z           {
+2026-08-18T17:40:12.592654918Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T17:40:12.592658425Z             "CategoryName": null,
+2026-08-18T17:40:12.592661932Z             "LogLevel": "None",
+2026-08-18T17:40:12.592665830Z             "Filter": null
+2026-08-18T17:40:12.592669757Z           },
+2026-08-18T17:40:12.592673284Z           {
+2026-08-18T17:40:12.592676671Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T17:40:12.592679787Z             "CategoryName": null,
+2026-08-18T17:40:12.592682793Z             "LogLevel": null,
+2026-08-18T17:40:12.592686109Z             "Filter": "<AddFilter>b__0"
+2026-08-18T17:40:12.592689867Z           }
+2026-08-18T17:40:12.592693314Z         ]
+2026-08-18T17:40:12.592696570Z       }
+2026-08-18T17:40:12.592699977Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592703544Z       HttpWorkerOptions
+2026-08-18T17:40:12.592706980Z       {
+2026-08-18T17:40:12.592710247Z         "Type": 0,
+2026-08-18T17:40:12.592713894Z         "Description": null,
+2026-08-18T17:40:12.592717391Z         "Arguments": null,
+2026-08-18T17:40:12.592720036Z         "Port": 45917,
+2026-08-18T17:40:12.592722651Z         "IsPortManuallySet": false,
+2026-08-18T17:40:12.592732160Z         "EnableForwardingHttpRequest": false,
+2026-08-18T17:40:12.592734424Z         "EnableProxyingHttpRequest": false,
+2026-08-18T17:40:12.592736498Z         "InitializationTimeout": "00:00:30",
+2026-08-18T17:40:12.592738783Z         "CustomRoutesEnabled": false,
+2026-08-18T17:40:12.592740877Z         "Http": null
+2026-08-18T17:40:12.592743011Z       }
+2026-08-18T17:40:12.592745015Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592747099Z       ScriptJobHostOptions
+2026-08-18T17:40:12.592749143Z       {
+2026-08-18T17:40:12.592752710Z         "FileWatchingEnabled": true,
+2026-08-18T17:40:12.592754904Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T17:40:12.592757048Z         "FunctionTimeout": "00:30:00",
+2026-08-18T17:40:12.592759143Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T17:40:12.592761257Z       }
+2026-08-18T17:40:12.592763261Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592765315Z       FunctionResultAggregatorOptions
+2026-08-18T17:40:12.592767329Z       {
+2026-08-18T17:40:12.592769343Z         "BatchSize": 1000,
+2026-08-18T17:40:12.592771407Z         "FlushTimeout": "00:00:30",
+2026-08-18T17:40:12.592773531Z         "IsEnabled": true
+2026-08-18T17:40:12.592775615Z       }
+2026-08-18T17:40:12.592777749Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592779823Z       ConcurrencyOptions
+2026-08-18T17:40:12.592781857Z       {
+2026-08-18T17:40:12.592783851Z         "DynamicConcurrencyEnabled": false,
+2026-08-18T17:40:12.592785975Z         "MaximumFunctionConcurrency": 500,
+2026-08-18T17:40:12.592788069Z         "CPUThreshold": 0.8,
+2026-08-18T17:40:12.592790123Z         "SnapshotPersistenceEnabled": true
+2026-08-18T17:40:12.592792187Z       }
+2026-08-18T17:40:12.592794191Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592796255Z       SingletonOptions
+2026-08-18T17:40:12.592798289Z       {
+2026-08-18T17:40:12.592800273Z         "LockPeriod": "00:00:15",
+2026-08-18T17:40:12.592802337Z         "ListenerLockPeriod": "00:01:00",
+2026-08-18T17:40:12.592804421Z         "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+2026-08-18T17:40:12.592806555Z         "LockAcquisitionPollingInterval": "00:00:05",
+2026-08-18T17:40:12.592808650Z         "ListenerLockRecoveryPollingInterval": "00:01:00"
+2026-08-18T17:40:12.592810774Z       }
+2026-08-18T17:40:12.592812768Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592818429Z       TimerTriggerPlatformOptions
+2026-08-18T17:40:12.592820613Z       {
+2026-08-18T17:40:12.592822617Z         "NonCronScheduleBehavior": "Allow"
+2026-08-18T17:40:12.592824721Z       }
+2026-08-18T17:40:12.592826675Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:12.592828739Z       ScaleOptions
+2026-08-18T17:40:12.592830763Z       {
+2026-08-18T17:40:12.592832747Z         "ScaleMetricsMaxAge": "00:02:00",
+2026-08-18T17:40:12.592834841Z         "ScaleMetricsSampleInterval": "00:00:10",
+2026-08-18T17:40:12.592836905Z         "MetricsPurgeEnabled": true,
+2026-08-18T17:40:12.592838959Z         "IsTargetScalingEnabled": true,
+2026-08-18T17:40:12.592841033Z         "IsRuntimeScalingEnabled": false
+2026-08-18T17:40:12.592843107Z       }
+2026-08-18T17:40:12.594156365Z info: Microsoft.Azure.WebJobs.Hosting.JobHostService[0]
+2026-08-18T17:40:12.594171214Z       Starting JobHost
+2026-08-18T17:40:12.598203870Z info: Host.Startup[401]
+2026-08-18T17:40:12.598228588Z       Starting Host (HostId=000ce08a281a-2137340777, InstanceId=17b8ea9c-a2bc-409b-a5a6-215b51a1ec07, Version=4.1052.300.1, ProcessId=9, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+2026-08-18T17:40:12.606588986Z info: Host.Startup[314]
+2026-08-18T17:40:12.606612542Z       Loading functions metadata
+2026-08-18T17:40:13.722583897Z info: Host.Startup[326]
+2026-08-18T17:40:13.722618655Z       Reading functions metadata (Custom)
+2026-08-18T17:40:13.748394651Z info: Host.Startup[327]
+2026-08-18T17:40:13.748427134Z       0 functions found (Custom)
+2026-08-18T17:40:13.772596894Z info: Host.Startup[315]
+2026-08-18T17:40:13.772623156Z       3 functions loaded
+2026-08-18T17:40:13.820774421Z info: Host.Startup[0]
+2026-08-18T17:40:13.820805903Z       Generating 3 job function(s)
+2026-08-18T17:40:13.824728272Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T17:40:13.824752029Z       Worker process started and initialized.
+2026-08-18T17:40:13.867055035Z info: Host.Startup[0]
+2026-08-18T17:40:13.867086026Z       Found the following functions:
+2026-08-18T17:40:13.867090564Z       Host.Functions.Error
+2026-08-18T17:40:13.867093851Z       Host.Functions.Health
+2026-08-18T17:40:13.867097097Z       Host.Functions.Test
+2026-08-18T17:40:13.867100564Z       
+2026-08-18T17:40:13.875296720Z info: Microsoft.Azure.WebJobs.Script.WebHost.WebScriptHostHttpRoutesManager[0]
+2026-08-18T17:40:13.875322010Z       Initializing function HTTP routes
+2026-08-18T17:40:13.875326669Z       Mapped function route 'api/error' [get] to 'Error'
+2026-08-18T17:40:13.875345937Z       Mapped function route 'api/health' [get] to 'Health'
+2026-08-18T17:40:13.875349394Z       Mapped function route 'api/test' [get] to 'Test'
+2026-08-18T17:40:13.875352369Z       
+2026-08-18T17:40:13.876959950Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T17:40:13.876976773Z       HttpOptions
+2026-08-18T17:40:13.876981172Z       {
+2026-08-18T17:40:13.876985711Z         "DynamicThrottlesEnabled": false,
+2026-08-18T17:40:13.876989849Z         "EnableChunkedRequestBinding": false,
+2026-08-18T17:40:13.876993326Z         "MaxConcurrentRequests": -1,
+2026-08-18T17:40:13.876996432Z         "MaxOutstandingRequests": -1,
+2026-08-18T17:40:13.877000059Z         "RoutePrefix": "api"
+2026-08-18T17:40:13.877003566Z       }
+2026-08-18T17:40:13.883619199Z info: Host.Startup[412]
+2026-08-18T17:40:13.883645671Z       Host initialized (1276ms)
+2026-08-18T17:40:13.903150037Z info: Host.Startup[413]
+2026-08-18T17:40:13.903172391Z       Host started (1301ms)
+2026-08-18T17:40:13.903175487Z info: Host.Startup[0]
+2026-08-18T17:40:13.903177771Z       Job host started
+2026-08-18T17:40:18.142868706Z info: Host.General[337]
+2026-08-18T17:40:18.142906050Z       Host lock lease acquired by instance ID '0000000000000000000000003A31ECB4'.
+2026-08-18T17:40:18.996009359Z warn: Microsoft.Azure.WebJobs.Script.Diagnostics.HealthChecks.TelemetryHealthCheckPublisher[0]
+2026-08-18T17:40:18.996045169Z       [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to create client for AzureWebJobsStorage"}}
+2026-08-18T17:40:20.063862389Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T17:40:20.063894171Z       Worker process started and initialized.
+2026-08-18T17:40:30.986499717Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T17:40:30.986537020Z       Worker process started and initialized.
+2026-08-18T17:40:35.359917591Z fail: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T17:40:35.359955836Z       Exceeded language worker restart retry count for runtime:dotnet-isolated. Shutting down and proactively recycling the Functions Host to recover
+2026-08-18T17:40:35.399979101Z info: Microsoft.Azure.WebJobs.Hosting.JobHostService[0]
+2026-08-18T17:40:35.400010853Z       Stopping JobHost
+2026-08-18T17:40:35.403935244Z info: Host.Startup[0]
+2026-08-18T17:40:35.403956175Z       Job host stopped

@@ -1,0 +1,83 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.instana-debug
+#1 transferring dockerfile: 474B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/instana-dotnet9-lab:frozen-d-instana-expanded
+#2 DONE 0.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 34B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/instana-dotnet9-lab:frozen-d-instana-expanded@sha256:39c26dc8fba84b6ae115abbfc631e0b9b4594311c95b351e2de292f772b58493
+#4 resolve docker.io/library/instana-dotnet9-lab:frozen-d-instana-expanded@sha256:39c26dc8fba84b6ae115abbfc631e0b9b4594311c95b351e2de292f772b58493 0.1s done
+#4 DONE 0.4s
+
+#5 [2/2] RUN apt-get update     && apt-get install -y --no-install-recommends strace procps     && rm -rf /var/lib/apt/lists/*     && mkdir -p /dumps     && chmod 0777 /dumps
+#5 0.800 Hit:1 http://deb.debian.org/debian bookworm InRelease
+#5 0.804 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#5 0.997 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#5 1.156 Get:4 https://packages.microsoft.com/debian/12/prod bookworm InRelease [3618 B]
+#5 1.426 Get:5 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [338 kB]
+#5 1.470 Get:6 https://packages.microsoft.com/debian/12/prod bookworm/main amd64 Packages [307 kB]
+#5 1.636 Get:7 https://packages.microsoft.com/debian/12/prod bookworm/main arm64 Packages [183 kB]
+#5 1.652 Get:8 https://packages.microsoft.com/debian/12/prod bookworm/main armhf Packages [20.9 kB]
+#5 1.706 Fetched 943 kB in 1s (821 kB/s)
+#5 1.706 Reading package lists...
+#5 3.007 Reading package lists...
+#5 4.078 Building dependency tree...
+#5 4.355 Reading state information...
+#5 4.699 The following additional packages will be installed:
+#5 4.701   libncursesw6 libproc2-0 libunwind8
+#5 4.703 Recommended packages:
+#5 4.703   libgpm2 psmisc
+#5 4.789 The following NEW packages will be installed:
+#5 4.792   libncursesw6 libproc2-0 libunwind8 procps strace
+#5 5.057 0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+#5 5.057 Need to get 2270 kB of archives.
+#5 5.057 After this operation, 5908 kB of additional disk space will be used.
+#5 5.057 Get:1 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
+#5 5.316 Get:2 http://deb.debian.org/debian bookworm/main amd64 libproc2-0 amd64 2:4.0.2-3 [62.8 kB]
+#5 5.336 Get:3 http://deb.debian.org/debian bookworm/main amd64 procps amd64 2:4.0.2-3 [709 kB]
+#5 5.447 Get:4 http://deb.debian.org/debian bookworm/main amd64 libunwind8 amd64 1.6.2-3 [51.2 kB]
+#5 5.483 Get:5 http://deb.debian.org/debian bookworm/main amd64 strace amd64 6.1-0.1 [1314 kB]
+#5 6.012 debconf: delaying package configuration, since apt-utils is not installed
+#5 6.330 Fetched 2270 kB in 1s (3088 kB/s)
+#5 6.413 Selecting previously unselected package libncursesw6:amd64.
+#5 6.413 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12208 files and directories currently installed.)
+#5 6.443 Preparing to unpack .../libncursesw6_6.4-4_amd64.deb ...
+#5 6.481 Unpacking libncursesw6:amd64 (6.4-4) ...
+#5 6.632 Selecting previously unselected package libproc2-0:amd64.
+#5 6.632 Preparing to unpack .../libproc2-0_2%3a4.0.2-3_amd64.deb ...
+#5 6.647 Unpacking libproc2-0:amd64 (2:4.0.2-3) ...
+#5 6.786 Selecting previously unselected package procps.
+#5 6.790 Preparing to unpack .../procps_2%3a4.0.2-3_amd64.deb ...
+#5 6.866 Unpacking procps (2:4.0.2-3) ...
+#5 7.056 Selecting previously unselected package libunwind8:amd64.
+#5 7.060 Preparing to unpack .../libunwind8_1.6.2-3_amd64.deb ...
+#5 7.079 Unpacking libunwind8:amd64 (1.6.2-3) ...
+#5 7.191 Selecting previously unselected package strace.
+#5 7.194 Preparing to unpack .../strace_6.1-0.1_amd64.deb ...
+#5 7.208 Unpacking strace (6.1-0.1) ...
+#5 7.463 Setting up libunwind8:amd64 (1.6.2-3) ...
+#5 7.540 Setting up strace (6.1-0.1) ...
+#5 7.588 Setting up libproc2-0:amd64 (2:4.0.2-3) ...
+#5 7.650 Setting up libncursesw6:amd64 (6.4-4) ...
+#5 7.716 Setting up procps (2:4.0.2-3) ...
+#5 7.878 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#5 DONE 9.7s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 0.8s done
+#6 exporting manifest sha256:4de3035e7f3df0d34d91173e76b6880bee04ba12fd2803b901165939aabbb743 0.1s done
+#6 exporting config sha256:f6e8c728d06ca1657272a42e9d2dd94be69315e05488717d14b4e53187279e3a 0.1s done
+#6 exporting attestation manifest sha256:6f4545bd642b790f8f28426809f91383a90b7d46096797c3c0b28bee8f34a31b 0.1s done
+#6 exporting manifest list sha256:e2235f54fdee1a3fec97a8464b6ef5e4436a16abb77555d6092276044c472123
+#6 exporting manifest list sha256:e2235f54fdee1a3fec97a8464b6ef5e4436a16abb77555d6092276044c472123 0.1s done
+#6 naming to docker.io/library/instana-dotnet9-lab:instana-debug 0.0s done
+#6 unpacking to docker.io/library/instana-dotnet9-lab:instana-debug
+#6 unpacking to docker.io/library/instana-dotnet9-lab:instana-debug 0.2s done
+#6 DONE 1.6s

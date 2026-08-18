@@ -1,0 +1,5 @@
+Standard BuildKit build was blocked before execution: host filesystem had 0 bytes available to the unprivileged user; global cache prune was deliberately not performed.
+D Instana was materialized as the exact application delta from D clean over C Instana: InstanaCrashLab.dll, InstanaCrashLab.pdb, and functions.metadata only.
+Result image: instana-dotnet9-lab:matrix-d-v2-instana sha256:e9b5751cd4f19276f07573903f4837cc35271dee5216cbca04f804bde1967fcf
+Writable delta observed: 69632 bytes.
+No base image, runtime, tracer, dependency, or environment change.

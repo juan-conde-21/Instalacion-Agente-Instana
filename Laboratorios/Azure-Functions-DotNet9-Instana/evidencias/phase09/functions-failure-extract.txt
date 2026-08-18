@@ -1,0 +1,47 @@
+7:2026-08-18T15:40:26.306327852Z       Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=2ebfbb22-567c-43ed-b3f6-71df9717f902
+72:2026-08-18T15:40:26.358362868Z       HttpWorkerOptions
+145:2026-08-18T15:40:27.800644679Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+146:2026-08-18T15:40:27.800669337Z       Worker process started and initialized.
+149:2026-08-18T15:40:27.844977542Z       Host.Functions.Error
+155:2026-08-18T15:40:27.857609611Z       Mapped function route 'api/error' [get] to 'Error'
+180:2026-08-18T15:40:32.706207845Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+181:2026-08-18T15:40:32.706237974Z       Worker process started and initialized.
+184:2026-08-18T15:40:43.599260683Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+185:2026-08-18T15:40:43.599571397Z       Worker process started and initialized.
+194:2026-08-18T15:40:47.013977506Z info: Function.Error[1]
+195:2026-08-18T15:40:47.014008586Z       Executing 'Functions.Error' (Reason='This function was programmatically called via the host APIs.', Id=cc223e36-0a2a-4c26-b141-aeeeb70c24e7)
+196:2026-08-18T15:40:47.052637888Z fail: Function.Error.User[0]
+197:2026-08-18T15:40:47.052665692Z       Function 'Error', Invocation id 'cc223e36-0a2a-4c26-b141-aeeeb70c24e7': An exception was thrown by the invocation.
+198:2026-08-18T15:40:47.052670161Z       Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Function 'Error', Invocation id 'cc223e36-0a2a-4c26-b141-aeeeb70c24e7': An exception was thrown by the invocation.
+200:2026-08-18T15:40:47.052676974Z       Exception: System.InvalidOperationException: Controlled laboratory exception from /api/error
+201:2026-08-18T15:40:47.052681062Z          at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+202:2026-08-18T15:40:47.052685020Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+203:2026-08-18T15:40:47.052688717Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+204:2026-08-18T15:40:47.052692755Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+205:2026-08-18T15:40:47.052696272Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+206:2026-08-18T15:40:47.052699819Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+207:2026-08-18T15:40:47.052704197Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+208:2026-08-18T15:40:47.052726901Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+209:2026-08-18T15:40:47.062428383Z fail: Function.Error[3]
+210:2026-08-18T15:40:47.062574788Z       Executed 'Functions.Error' (Failed, Id=cc223e36-0a2a-4c26-b141-aeeeb70c24e7, Duration=47ms)
+211:2026-08-18T15:40:47.062579988Z       Microsoft.Azure.WebJobs.Host.FunctionInvocationException: Exception while executing function: Functions.Error
+212:2026-08-18T15:40:47.062583955Z        ---> Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Failure
+214:2026-08-18T15:40:47.062591741Z       Exception: Controlled laboratory exception from /api/error
+215:2026-08-18T15:40:47.062595127Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+216:2026-08-18T15:40:47.062598784Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+217:2026-08-18T15:40:47.062602251Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+218:2026-08-18T15:40:47.062606068Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+219:2026-08-18T15:40:47.062609806Z          at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 89
+220:2026-08-18T15:40:47.062613503Z          at Microsoft.Azure.WebJobs.Script.Description.WorkerFunctionInvoker.InvokeCore(Object[] parameters, FunctionInvocationContext context) in /src/azure-functions-host/src/WebJobs.Script.Grpc/WorkerFunctionInvoker.cs:line 103
+230:2026-08-18T15:40:47.065576038Z fail: Host.Results[0]
+231:2026-08-18T15:40:47.065591949Z       Microsoft.Azure.WebJobs.Host.FunctionInvocationException: Exception while executing function: Functions.Error
+232:2026-08-18T15:40:47.065595676Z        ---> Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Failure
+234:2026-08-18T15:40:47.065602079Z       Exception: Controlled laboratory exception from /api/error
+235:2026-08-18T15:40:47.065604914Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+236:2026-08-18T15:40:47.065607950Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+237:2026-08-18T15:40:47.065610986Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+238:2026-08-18T15:40:47.065614493Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+239:2026-08-18T15:40:47.065617539Z          at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 89
+240:2026-08-18T15:40:47.065620785Z          at Microsoft.Azure.WebJobs.Script.Description.WorkerFunctionInvoker.InvokeCore(Object[] parameters, FunctionInvocationContext context) in /src/azure-functions-host/src/WebJobs.Script.Grpc/WorkerFunctionInvoker.cs:line 103
+250:2026-08-18T15:40:48.085470502Z fail: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+251:2026-08-18T15:40:48.085503657Z       Exceeded language worker restart retry count for runtime:dotnet-isolated. Shutting down and proactively recycling the Functions Host to recover

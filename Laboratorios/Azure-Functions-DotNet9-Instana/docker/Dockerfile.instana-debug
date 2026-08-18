@@ -1,0 +1,12 @@
+FROM instana-dotnet9-lab:frozen-d-instana-expanded
+USER root
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends strace procps \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /dumps \
+    && chmod 0777 /dumps
+ENV DOTNET_DbgEnableMiniDump=1 \
+    DOTNET_DbgMiniDumpType=3 \
+    DOTNET_DbgMiniDumpName=/dumps/coredump.%e.%p.%t \
+    DOTNET_EnableCrashReport=1 \
+    DOTNET_CreateDumpDiagnostics=1

@@ -1,0 +1,18 @@
+--- /lab/src/variants/B/HealthFunction.cs	2026-08-18 16:42:13.807724675 +0000
++++ /lab/src/variants/C/HealthFunction.cs	2026-08-18 16:42:13.821725459 +0000
+@@ -32,6 +32,15 @@
+         return response;
+     }
+ 
++    [Function("Error")]
++    public HttpResponseData Error(
++        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "error")] HttpRequestData request)
++    {
++        var response = request.CreateResponse(HttpStatusCode.InternalServerError);
++        response.WriteString("controlled error");
++        return response;
++    }
++
+     private static bool IsInstrumented() =>
+         Environment.GetEnvironmentVariables().Keys.Cast<object>()
+             .Select(key => key.ToString() ?? string.Empty)

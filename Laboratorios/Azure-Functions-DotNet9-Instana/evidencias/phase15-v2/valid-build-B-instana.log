@@ -1,0 +1,398 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.matrix-instana
+#1 transferring dockerfile: 1.13kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:9.0
+#2 DONE 0.1s
+
+#3 [internal] load metadata for mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 34B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [stage-1 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 resolve mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 ...
+
+#7 [build 1/4] FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30
+#7 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30 0.2s done
+#7 DONE 0.2s
+
+#6 [stage-1 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 resolve mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9 0.1s done
+#6 DONE 0.2s
+
+#5 [internal] load build context
+#5 transferring context: 288B done
+#5 DONE 0.0s
+
+#8 [build 2/4] WORKDIR /src
+#8 CACHED
+
+#9 [build 3/4] COPY src/variants/B/ src/InstanaCrashLab/
+#9 CACHED
+
+#10 [build 4/4] RUN dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core --version 1.321.2  && dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core.Rewriter.Linux --version 1.321.2  && dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out
+#10 2.027   Determining projects to restore...
+#10 2.290   Writing /tmp/tmplSYOwq.tmp
+#10 2.620 info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.317/trustedroots/codesignctl.pem'.
+#10 2.733 info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.317/trustedroots/timestampctl.pem'.
+#10 2.738 info : Adding PackageReference for package 'Instana.Tracing.Core' into project 'src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 2.955 info : Restoring packages for /src/src/InstanaCrashLab/InstanaCrashLab.csproj...
+#10 3.955 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.http/index.json
+#10 3.955 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker/index.json
+#10 3.955 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk/index.json
+#10 3.955 info :   GET https://api.nuget.org/v3-flatcontainer/instana.tracing.core/index.json
+#10 3.980 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk/index.json 21ms
+#10 4.010 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker/index.json 56ms
+#10 4.109 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk/2.0.0/microsoft.azure.functions.worker.sdk.2.0.0.nupkg
+#10 4.110 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker/2.0.0/microsoft.azure.functions.worker.2.0.0.nupkg
+#10 4.118 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.http/index.json 158ms
+#10 4.140 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk/2.0.0/microsoft.azure.functions.worker.sdk.2.0.0.nupkg 30ms
+#10 4.144 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.http/3.3.0/microsoft.azure.functions.worker.extensions.http.3.3.0.nupkg
+#10 4.229 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker/2.0.0/microsoft.azure.functions.worker.2.0.0.nupkg 109ms
+#10 4.276 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.http/3.3.0/microsoft.azure.functions.worker.extensions.http.3.3.0.nupkg 133ms
+#10 4.318 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.grpc/index.json
+#10 4.331 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/index.json
+#10 4.335 info :   OK https://api.nuget.org/v3-flatcontainer/instana.tracing.core/index.json 379ms
+#10 4.335 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.abstractions/index.json
+#10 4.335 info :   GET https://api.nuget.org/v3-flatcontainer/instana.tracing.core/1.321.2/instana.tracing.core.1.321.2.nupkg
+#10 4.357 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/index.json 24ms
+#10 4.358 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.abstractions/index.json 24ms
+#10 4.361 info :   OK https://api.nuget.org/v3-flatcontainer/instana.tracing.core/1.321.2/instana.tracing.core.1.321.2.nupkg 22ms
+#10 4.369 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.abstractions/1.3.0/microsoft.azure.functions.worker.extensions.abstractions.1.3.0.nupkg
+#10 4.369 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/1.19.0/microsoft.azure.functions.worker.core.1.19.0.nupkg
+#10 4.369 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/2.0.0/microsoft.azure.functions.worker.core.2.0.0.nupkg
+#10 4.378 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.grpc/index.json 41ms
+#10 4.380 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.grpc/2.0.0/microsoft.azure.functions.worker.grpc.2.0.0.nupkg
+#10 4.384 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.extensions.abstractions/1.3.0/microsoft.azure.functions.worker.extensions.abstractions.1.3.0.nupkg 16ms
+#10 4.455 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/1.19.0/microsoft.azure.functions.worker.core.1.19.0.nupkg 80ms
+#10 4.474 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.core/2.0.0/microsoft.azure.functions.worker.core.2.0.0.nupkg 86ms
+#10 4.503 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.grpc/2.0.0/microsoft.azure.functions.worker.grpc.2.0.0.nupkg 121ms
+#10 5.834 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.analyzers/index.json
+#10 5.840 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.generators/index.json
+#10 5.846 info :   GET https://api.nuget.org/v3-flatcontainer/azure.core/index.json
+#10 5.851 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.clientfactory/index.json
+#10 5.854 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting/index.json
+#10 5.859 info :   GET https://api.nuget.org/v3-flatcontainer/google.protobuf/index.json
+#10 6.062 info :   OK https://api.nuget.org/v3-flatcontainer/azure.core/index.json 210ms
+#10 6.062 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting/index.json 206ms
+#10 6.067 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting/9.0.0/microsoft.extensions.hosting.9.0.0.nupkg
+#10 6.074 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.generators/index.json 225ms
+#10 6.077 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.analyzers/index.json 232ms
+#10 6.077 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.analyzers/1.2.2/microsoft.azure.functions.worker.sdk.analyzers.1.2.2.nupkg
+#10 6.078 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.generators/1.3.4/microsoft.azure.functions.worker.sdk.generators.1.3.4.nupkg
+#10 6.078 info :   GET https://api.nuget.org/v3-flatcontainer/azure.core/1.44.1/azure.core.1.44.1.nupkg
+#10 6.080 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting/9.0.0/microsoft.extensions.hosting.9.0.0.nupkg 11ms
+#10 6.086 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.analyzers/1.2.2/microsoft.azure.functions.worker.sdk.analyzers.1.2.2.nupkg 9ms
+#10 6.091 info :   OK https://api.nuget.org/v3-flatcontainer/azure.core/1.44.1/azure.core.1.44.1.nupkg 12ms
+#10 6.100 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.azure.functions.worker.sdk.generators/1.3.4/microsoft.azure.functions.worker.sdk.generators.1.3.4.nupkg 17ms
+#10 6.105 info :   OK https://api.nuget.org/v3-flatcontainer/google.protobuf/index.json 243ms
+#10 6.109 info :   GET https://api.nuget.org/v3-flatcontainer/google.protobuf/3.28.0/google.protobuf.3.28.0.nupkg
+#10 6.171 info :   OK https://api.nuget.org/v3-flatcontainer/google.protobuf/3.28.0/google.protobuf.3.28.0.nupkg 55ms
+#10 6.256 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/index.json
+#10 6.263 info :   GET https://api.nuget.org/v3-flatcontainer/system.clientmodel/index.json
+#10 6.271 info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/index.json
+#10 6.274 info :   GET https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/index.json
+#10 6.280 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/index.json 22ms
+#10 6.280 info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/index.json 7ms
+#10 6.285 info :   GET https://api.nuget.org/v3-flatcontainer/system.memory.data/index.json
+#10 6.286 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/index.json
+#10 6.289 info :   GET https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/index.json
+#10 6.301 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/index.json
+#10 6.312 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg
+#10 6.313 info :   OK https://api.nuget.org/v3-flatcontainer/system.memory.data/index.json 28ms
+#10 6.314 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/index.json 27ms
+#10 6.318 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.10/system.text.json.6.0.10.nupkg
+#10 6.325 info :   OK https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/index.json 16ms
+#10 6.325 info :   OK https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/index.json 15ms
+#10 6.327 info :   GET https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg
+#10 6.332 info :   OK https://api.nuget.org/v3-flatcontainer/system.clientmodel/index.json 71ms
+#10 6.335 info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg
+#10 6.338 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/index.json
+#10 6.339 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/index.json
+#10 6.347 info :   GET https://api.nuget.org/v3-flatcontainer/system.memory.data/6.0.0/system.memory.data.6.0.0.nupkg
+#10 6.350 info :   GET https://api.nuget.org/v3-flatcontainer/system.clientmodel/1.1.0/system.clientmodel.1.1.0.nupkg
+#10 6.350 info :   GET https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg
+#10 6.350 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.10/system.text.json.6.0.10.nupkg 20ms
+#10 6.350 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.binder/index.json
+#10 6.350 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.commandline/index.json
+#10 6.351 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventsource/index.json
+#10 6.351 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.environmentvariables/index.json
+#10 6.352 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventlog/index.json
+#10 6.354 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.json/index.json
+#10 6.354 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.fileextensions/index.json
+#10 6.358 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.usersecrets/index.json
+#10 6.368 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.physical/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting.abstractions/index.json
+#10 6.508 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg 66ms
+#10 6.508 info :   OK https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg 47ms
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/index.json
+#10 6.508 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/index.json 76ms
+#10 6.508 info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg 45ms
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.abstractions/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.configuration/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.console/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/index.json
+#10 6.508 info :   OK https://api.nuget.org/v3-flatcontainer/system.memory.data/6.0.0/system.memory.data.6.0.0.nupkg 88ms
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/index.json
+#10 6.508 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.debug/index.json
+#10 6.526 info :   OK https://api.nuget.org/v3-flatcontainer/system.clientmodel/1.1.0/system.clientmodel.1.1.0.nupkg 160ms
+#10 6.541 info :   OK https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg 176ms
+#10 6.557 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.clientfactory/index.json 703ms
+#10 6.602 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.binder/index.json 211ms
+#10 6.616 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg
+#10 6.622 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.clientfactory/2.65.0/grpc.net.clientfactory.2.65.0.nupkg
+#10 6.639 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/index.json 292ms
+#10 6.644 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/9.0.0/microsoft.extensions.logging.9.0.0.nupkg
+#10 6.694 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/index.json 355ms
+#10 6.700 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/9.0.0/microsoft.extensions.options.9.0.0.nupkg
+#10 6.729 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration/index.json 357ms
+#10 6.729 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics/index.json 352ms
+#10 6.730 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics/9.0.0/microsoft.extensions.diagnostics.9.0.0.nupkg
+#10 6.730 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg
+#10 6.737 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventsource/index.json 386ms
+#10 6.740 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventsource/9.0.0/microsoft.extensions.logging.eventsource.9.0.0.nupkg
+#10 6.761 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.commandline/index.json 410ms
+#10 6.763 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.commandline/9.0.0/microsoft.extensions.configuration.commandline.9.0.0.nupkg
+#10 6.764 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.json/index.json 409ms
+#10 6.766 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.json/9.0.0/microsoft.extensions.configuration.json.9.0.0.nupkg
+#10 6.798 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting.abstractions/index.json 419ms
+#10 6.801 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting.abstractions/9.0.0/microsoft.extensions.hosting.abstractions.9.0.0.nupkg
+#10 6.812 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg 419ms
+#10 6.817 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.fileextensions/index.json 460ms
+#10 6.823 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.fileextensions/9.0.0/microsoft.extensions.configuration.fileextensions.9.0.0.nupkg
+#10 6.833 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.abstractions/index.json 447ms
+#10 6.835 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.abstractions/9.0.0/microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg
+#10 6.840 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.usersecrets/index.json 485ms
+#10 6.841 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventlog/index.json 480ms
+#10 6.856 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.usersecrets/9.0.0/microsoft.extensions.configuration.usersecrets.9.0.0.nupkg
+#10 6.859 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventlog/9.0.0/microsoft.extensions.logging.eventlog.9.0.0.nupkg
+#10 6.859 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg 243ms
+#10 6.864 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.environmentvariables/index.json 508ms
+#10 6.866 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.clientfactory/2.65.0/grpc.net.clientfactory.2.65.0.nupkg 245ms
+#10 6.872 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.environmentvariables/9.0.0/microsoft.extensions.configuration.environmentvariables.9.0.0.nupkg
+#10 6.887 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/9.0.0/microsoft.extensions.logging.9.0.0.nupkg 233ms
+#10 6.887 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/index.json 518ms
+#10 6.895 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/9.0.0/microsoft.extensions.options.9.0.0.nupkg 185ms
+#10 6.899 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg
+#10 6.916 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg 184ms
+#10 6.917 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics/9.0.0/microsoft.extensions.diagnostics.9.0.0.nupkg 184ms
+#10 6.919 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.client/index.json
+#10 6.930 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.http/index.json
+#10 6.930 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.0/system.text.json.6.0.0.nupkg
+#10 6.930 info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/index.json
+#10 6.930 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.commandline/9.0.0/microsoft.extensions.configuration.commandline.9.0.0.nupkg 161ms
+#10 6.930 info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.9/system.text.json.6.0.9.nupkg
+#10 6.930 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventsource/9.0.0/microsoft.extensions.logging.eventsource.9.0.0.nupkg 188ms
+#10 6.930 info :   GET https://api.nuget.org/v3-flatcontainer/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg
+#10 6.955 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.json/9.0.0/microsoft.extensions.configuration.json.9.0.0.nupkg 173ms
+#10 6.957 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/index.json 577ms
+#10 6.961 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg
+#10 6.964 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.physical/index.json 580ms
+#10 6.970 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/index.json 581ms
+#10 6.970 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.physical/9.0.0/microsoft.extensions.fileproviders.physical.9.0.0.nupkg
+#10 6.977 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.hosting.abstractions/9.0.0/microsoft.extensions.hosting.abstractions.9.0.0.nupkg 174ms
+#10 6.981 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/9.0.0/microsoft.extensions.logging.abstractions.9.0.0.nupkg
+#10 6.981 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.abstractions/9.0.0/microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg 139ms
+#10 6.981 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.fileextensions/9.0.0/microsoft.extensions.configuration.fileextensions.9.0.0.nupkg 150ms
+#10 7.005 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.usersecrets/9.0.0/microsoft.extensions.configuration.usersecrets.9.0.0.nupkg 144ms
+#10 7.014 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.environmentvariables/9.0.0/microsoft.extensions.configuration.environmentvariables.9.0.0.nupkg 134ms
+#10 7.042 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.eventlog/9.0.0/microsoft.extensions.logging.eventlog.9.0.0.nupkg 149ms
+#10 7.044 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.configuration/index.json 657ms
+#10 7.052 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg 153ms
+#10 7.052 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.console/index.json 664ms
+#10 7.058 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.console/9.0.0/microsoft.extensions.logging.console.9.0.0.nupkg
+#10 7.065 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.configuration/9.0.0/microsoft.extensions.logging.configuration.9.0.0.nupkg
+#10 7.065 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/index.json
+#10 7.073 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.0/system.text.json.6.0.0.nupkg 139ms
+#10 7.090 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.debug/index.json 616ms
+#10 7.106 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg 112ms
+#10 7.106 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/9.0.0/microsoft.extensions.logging.abstractions.9.0.0.nupkg 105ms
+#10 7.106 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.debug/9.0.0/microsoft.extensions.logging.debug.9.0.0.nupkg
+#10 7.106 info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/6.0.9/system.text.json.6.0.9.nupkg 178ms
+#10 7.114 info :   OK https://api.nuget.org/v3-flatcontainer/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg 181ms
+#10 7.114 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.console/9.0.0/microsoft.extensions.logging.console.9.0.0.nupkg 54ms
+#10 7.115 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.fileproviders.physical/9.0.0/microsoft.extensions.fileproviders.physical.9.0.0.nupkg 136ms
+#10 7.119 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.http/index.json 194ms
+#10 7.131 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.http/6.0.0/microsoft.extensions.http.6.0.0.nupkg
+#10 7.215 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/index.json 732ms
+#10 7.215 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.configuration/9.0.0/microsoft.extensions.logging.configuration.9.0.0.nupkg 140ms
+#10 7.220 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.debug/9.0.0/microsoft.extensions.logging.debug.9.0.0.nupkg 111ms
+#10 7.272 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg
+#10 7.283 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.http/6.0.0/microsoft.extensions.http.6.0.0.nupkg 151ms
+#10 7.285 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.client/index.json 365ms
+#10 7.318 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/index.json 224ms
+#10 7.333 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/9.0.0/microsoft.extensions.primitives.9.0.0.nupkg
+#10 7.342 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.client/2.65.0/grpc.net.client.2.65.0.nupkg
+#10 7.360 info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/index.json 435ms
+#10 7.377 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg 94ms
+#10 7.378 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/9.0.0/microsoft.extensions.primitives.9.0.0.nupkg 37ms
+#10 7.391 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.client/2.65.0/grpc.net.client.2.65.0.nupkg 32ms
+#10 7.427 info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg
+#10 7.438 info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.eventlog/index.json
+#10 7.439 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options.configurationextensions/index.json
+#10 7.439 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics.abstractions/index.json
+#10 7.439 info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg 8ms
+#10 7.439 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.filesystemglobbing/index.json
+#10 7.515 info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.eventlog/index.json 82ms
+#10 7.517 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics.abstractions/index.json 79ms
+#10 7.518 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics.abstractions/9.0.0/microsoft.extensions.diagnostics.abstractions.9.0.0.nupkg
+#10 7.519 info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.eventlog/9.0.0/system.diagnostics.eventlog.9.0.0.nupkg
+#10 7.546 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options.configurationextensions/index.json 81ms
+#10 7.556 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options.configurationextensions/9.0.0/microsoft.extensions.options.configurationextensions.9.0.0.nupkg
+#10 7.571 info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.eventlog/9.0.0/system.diagnostics.eventlog.9.0.0.nupkg 49ms
+#10 7.571 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.diagnostics.abstractions/9.0.0/microsoft.extensions.diagnostics.abstractions.9.0.0.nupkg 50ms
+#10 7.571 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options.configurationextensions/9.0.0/microsoft.extensions.options.configurationextensions.9.0.0.nupkg 15ms
+#10 7.646 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg
+#10 7.658 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.common/index.json
+#10 7.658 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg
+#10 7.658 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg
+#10 7.673 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.filesystemglobbing/index.json 210ms
+#10 7.673 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg
+#10 7.673 info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.filesystemglobbing/9.0.0/microsoft.extensions.filesystemglobbing.9.0.0.nupkg
+#10 7.725 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg 65ms
+#10 7.741 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg 71ms
+#10 7.741 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg 70ms
+#10 7.741 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg 69ms
+#10 7.741 info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.filesystemglobbing/9.0.0/microsoft.extensions.filesystemglobbing.9.0.0.nupkg 61ms
+#10 7.864 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.common/index.json 207ms
+#10 7.867 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.net.common/2.65.0/grpc.net.common.2.65.0.nupkg
+#10 7.884 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.net.common/2.65.0/grpc.net.common.2.65.0.nupkg 14ms
+#10 7.916 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.core.api/index.json
+#10 8.141 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.core.api/index.json 221ms
+#10 8.141 info :   GET https://api.nuget.org/v3-flatcontainer/grpc.core.api/2.65.0/grpc.core.api.2.65.0.nupkg
+#10 8.154 info :   OK https://api.nuget.org/v3-flatcontainer/grpc.core.api/2.65.0/grpc.core.api.2.65.0.nupkg 13ms
+#10 8.930 info : Installed Microsoft.Extensions.FileSystemGlobbing 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.filesystemglobbing/9.0.0 with content hash jGFKZiXs2HNseK3NK/rfwHNNovER71jSj4BD1a/649ml9+h6oEtYd0GSALZDNW8jZ2Rh+oAeadOa6sagYW1F2A==.
+#10 8.930 info : Installed Microsoft.Extensions.FileProviders.Physical 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.fileproviders.physical/9.0.0 with content hash 3+ZUSpOSmie+o8NnLIRqCxSh65XL/ExU7JYnFOg58awDRlY3lVpZ9A369jkoZL1rpsq7LDhEfkn2ghhGaY1y5Q==.
+#10 8.933 info : Installed Microsoft.Azure.Functions.Worker.Sdk.Generators 1.3.4 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.sdk.generators/1.3.4 with content hash viNRmVxE5Woviu/kQem3M6qujauuRjbgGbnrrYvXNVdck2opsmhcpr8DfZx9hWzkImsAxLUBy9UTVsaeLCX/yw==.
+#10 8.963 info : Installed Microsoft.Extensions.DependencyInjection 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0 with content hash MCPrg7v3QgNMr0vX4vzRXvkNGgLg8vKWX0nKCWUxu2uPyMsaRgiRc1tHBnbTcfJMhMKj2slE/j2M9oGkd25DNw==.
+#10 8.992 info : Installed System.ClientModel 1.1.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.clientmodel/1.1.0 with content hash UocOlCkxLZrG2CKMAAImPcldJTxeesHnHGHwhJ0pNlZEvEXcWKuQvVOER2/NiOkJGRJk978SNdw3j6/7O9H1lg==.
+#10 8.996 info : Installed System.Text.Json 6.0.9 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.text.json/6.0.9 with content hash 2j16oUgtIzl7Xtk7demG0i/v5aU/ZvULcAnJvPb63U3ZhXJ494UYcxuEj5Fs49i3XDrk5kU/8I+6l9zRCw3cJw==.
+#10 9.000 info : Installed Microsoft.Extensions.Logging.Debug 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.debug/9.0.0 with content hash 4wGlHsrLhYjLw4sFkfRixu2w4DK7dv60OjbvgbLGhUJk0eUPxYHhnszZ/P18nnAkfrPryvtOJ3ZTVev0kpqM6A==.
+#10 9.072 info : Installed Microsoft.Extensions.Diagnostics 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.diagnostics/9.0.0 with content hash 0CF9ZrNw5RAlRfbZuVIvzzhP8QeWqHiUmMBU/2H7Nmit8/vwP3/SbHeEctth7D4Gz2fBnEbokPc1NU8/j/1ZLw==.
+#10 9.107 info : Installed Microsoft.Extensions.Hosting 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.hosting/9.0.0 with content hash wNmQWRCa83HYbpxQ3wH7xBn8oyGjONSj1k8svzrFUFyJMfg/Ja/g0NfI0p85wxlUxBh97A6ypmL8X5vVUA5y2Q==.
+#10 9.114 info : Installed Grpc.Net.Common 2.65.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/grpc.net.common/2.65.0 with content hash XbRegnfDrWoXZJ4GGdJat+KXnmCCkR6XQmWnIZxxIjphyZkWZgI0FN1PtGXU4RZ5a5C85qg1cscz1ju2biVXGg==.
+#10 9.128 info : Installed Microsoft.Extensions.Logging.Console 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.console/9.0.0 with content hash yDZ4zsjl7N0K+R/1QTNpXBd79Kaf4qNLHtjk4NaG82UtNg2Z6etJywwv6OarOv3Rp7ocU7uIaRY4CrzHRO/d3w==.
+#10 9.137 info : Installed Microsoft.Extensions.Configuration.FileExtensions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.fileextensions/9.0.0 with content hash 4EK93Jcd2lQG4GY6PAw8jGss0ZzFP0vPc1J85mES5fKNuDTqgFXHba9onBw2s18fs3I4vdo2AWyfD1mPAxWSQQ==.
+#10 9.167 info : Installed Google.Protobuf 3.28.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/google.protobuf/3.28.0 with content hash lVsLcLIHpkOABswgydr0sjkIhSN5XE9C6AgLXxvMsa6pSSJIpmAIPvK/NZpuF+HTB6xp1R8T5nhLausWVOrU/w==.
+#10 9.176 info : Installed Microsoft.Azure.Functions.Worker.Core 1.19.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.core/1.19.0 with content hash srGJHtJNJRI/cxBkKSZd9+mA8V8nBbsCx3mwFBZKY2M6/EF3mP8EoUosd4W8AjrKOAEXjgXVEp3K0fQyPXcquA==.
+#10 9.194 info : Installed Microsoft.Extensions.Configuration 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration/9.0.0 with content hash YIMO9T3JL8MeEXgVozKt2v79hquo/EFtnY0vgxmLnUvk1Rei/halI7kOWZL2RBeV9FMGzgM9LZA8CVaNwFMaNA==.
+#10 9.209 info : Installed Microsoft.Extensions.Hosting.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.hosting.abstractions/9.0.0 with content hash yUKJgu81ExjvqbNWqZKshBbLntZMbMVz/P7Way2SBx7bMqA08Mfdc9O7hWDKAiSp+zPUGT6LKcSCQIPeDK+CCw==.
+#10 9.516 info : Installed Microsoft.Extensions.Configuration.Binder 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0 with content hash RiScL99DcyngY9zJA2ROrri7Br8tn5N4hP4YNvGdTN/bvg1A3dwvDOxHnNZ3Im7x2SJ5i4LkX1uPiR/MfSFBLQ==.
+#10 9.516 info : Installed Microsoft.Extensions.Options 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.options/9.0.0 with content hash y2146b3jrPI3Q0lokKXdKLpmXqakYbDIPDV6r3M8SqvSf45WwOTzkyfDpxnZXJsJQEpAsAqjUq5Pu8RCJMjubg==.
+#10 9.520 info : Installed Microsoft.Extensions.Options.ConfigurationExtensions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.options.configurationextensions/9.0.0 with content hash Ob3FXsXkcSMQmGZi7qP07EQ39kZpSBlTcAZLbJLdI4FIf0Jug8biv2HTavWmnTirchctPlq9bl/26CXtQRguzA==.
+#10 9.520 info : Installed Microsoft.Extensions.Logging 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging/9.0.0 with content hash crjWyORoug0kK7RSNJBTeSE6VX8IQgLf3nUpTB9m62bPXp/tzbnOsnbe8TXEG0AASNaKZddnpHKw7fET8E++Pg==.
+#10 9.535 info : Installed System.Threading.Tasks.Extensions 4.5.4 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.threading.tasks.extensions/4.5.4 with content hash zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==.
+#10 9.553 info : Installed Microsoft.Extensions.Logging.EventLog 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.eventlog/9.0.0 with content hash /B8I5bScondnLMNULA3PBu/7Gvmv/P7L83j7gVrmLh6R+HCgHqUNIwVvzCok4ZjIXN2KxrsONHjFYwoBK5EJgQ==.
+#10 9.564 info : Installed System.Diagnostics.EventLog 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.diagnostics.eventlog/9.0.0 with content hash qd01+AqPhbAG14KtdtIqFk+cxHQFZ/oqRSCoxU1F+Q6Kv0cl726sl7RzU9yLFGd4BUOKdN4XojXF0pQf/R6YeA==.
+#10 9.582 info : Installed Microsoft.Extensions.Configuration.Json 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.json/9.0.0 with content hash WiTK0LrnsqmedrbzwL7f4ZUo+/wByqy2eKab39I380i2rd8ImfCRMrtkqJVGDmfqlkP/YzhckVOwPc5MPrSNpg==.
+#10 9.600 info : Installed Microsoft.Extensions.Logging.Configuration 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.configuration/9.0.0 with content hash H05HiqaNmg6GjH34ocYE9Wm1twm3Oz2aXZko8GTwGBzM7op2brpAA8pJ5yyD1OpS1mXUtModBYOlcZ/wXeWsSg==.
+#10 9.796 info : Installed Microsoft.Azure.Functions.Worker.Extensions.Abstractions 1.3.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.extensions.abstractions/1.3.0 with content hash +6+/Yb/ouWUweaSQhesbbiIVSmwYEzkSfjIHrBnNqIiCYnx2iLeoYyWjN/wHP3Fnn5COtyDXRDwHKr5A/tCL9Q==.
+#10 9.796 info : Installed System.Memory.Data 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.memory.data/6.0.0 with content hash ntFHArH3I4Lpjf5m4DCXQHJuGwWPNVJPaAvM95Jy/u+2Yzt2ryiyIN04LAogkjP9DeRcEOiviAjQotfmPq/FrQ==.
+#10 9.806 info : Installed System.Runtime.CompilerServices.Unsafe 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0 with content hash /iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==.
+#10 9.808 info : Installed System.Text.Encodings.Web 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.text.encodings.web/6.0.0 with content hash Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==.
+#10 9.816 info : Installed Microsoft.Extensions.DependencyInjection.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0 with content hash +6f2qv2a3dLwd5w6JanPIPs47CxRbnk+ZocMJUhv9NxP88VlOcJYZs9jY+MYSjxvady08bUZn6qgiNh7DadGgg==.
+#10 9.827 info : Installed System.Numerics.Vectors 4.5.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.numerics.vectors/4.5.0 with content hash QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==.
+#10 9.836 info : Installed Microsoft.Extensions.Http 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.http/6.0.0 with content hash 15+pa2G0bAMHbHewaQIdr/y6ag2H3yh4rd9hTXavtWDzQBkvpe2RMqFg8BxDpcQWssmjmBApGPcw93QRz6YcMg==.
+#10 9.836 info : Installed Microsoft.Bcl.AsyncInterfaces 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0 with content hash UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==.
+#10 9.852 info : Installed Microsoft.Extensions.Configuration.CommandLine 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.commandline/9.0.0 with content hash qD+hdkBtR9Ps7AxfhTJCnoVakkadHgHlD1WRN0QHGHod+SDuca1ao1kF4G2rmpAz2AEKrE2N2vE8CCCZ+ILnNw==.
+#10 9.896 info : Installed Microsoft.Extensions.Configuration.UserSecrets 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.usersecrets/9.0.0 with content hash FShWw8OysquwV7wQHYkkz0VWsJSo6ETUu4h7tJRMtnG0uR+tzKOldhcO8xB1pGSOI3Ng6v3N1Q94YO8Rzq1P6A==.
+#10 10.04 info : Installed Microsoft.Extensions.Logging.Abstractions 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0 with content hash /HggWBbTwy8TgebGSX5DBZ24ndhzi93sHUBDvP1IxbZD7FDokYzdAr6+vbWGjw2XAfR2EJ1sfKUotpjHnFWPxA==.
+#10 10.06 info : Installed Microsoft.Extensions.Options 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.options/6.0.0 with content hash dzXN0+V1AyjOe2xcJ86Qbo233KHuLEY0njf/P2Kw8SfJU+d45HNS2ctJdnEnrWbM9Ye2eFgaC5Mj9otRMU6IsQ==.
+#10 10.06 info : Installed Azure.Core 1.44.1 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/azure.core/1.44.1 with content hash YyznXLQZCregzHvioip07/BkzjuWNXogJEVz9T5W6TwjNr17ax41YGzYMptlo2G10oLCuVPoyva62y0SIRDixg==.
+#10 10.07 info : Installed Microsoft.Extensions.Configuration.EnvironmentVariables 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.environmentvariables/9.0.0 with content hash v5R638eNMxksfXb7MFnkPwLPp+Ym4W/SIGNuoe8qFVVyvygQD5DdLusybmYSJEr9zc1UzWzim/ATKeIOVvOFDg==.
+#10 10.07 info : Installed Grpc.Net.ClientFactory 2.65.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/grpc.net.clientfactory/2.65.0 with content hash iVJ8/uoaPccipMeyD0uwpbX6lRhFEo4aLJmGhLsdigQWi1tDdf/PHfRNZudX3lqZGuqyxl+wC2CfuApIIKPMhg==.
+#10 10.09 info : Installed Microsoft.Extensions.Logging 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging/6.0.0 with content hash eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==.
+#10 10.09 info : Installed Microsoft.Extensions.Logging.EventSource 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.eventsource/9.0.0 with content hash zvSjdOAb3HW3aJPM5jf+PR9UoIkoci9id80RXmBgrDEozWI0GDw8tdmpyZgZSwFDvGCwHFodFLNQaeH8879rlA==.
+#10 10.11 info : Installed Microsoft.Azure.Functions.Worker 2.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker/2.0.0 with content hash vK0+XApQq2vDSbJxqrflliGLVILRl66gMfZrlv8yemGKdoh2KI7l4zQPW8ibCThznC2PEMp60+a1D3wp09ZXEg==.
+#10 10.15 info : Installed Microsoft.Extensions.Logging.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.0 with content hash g0UfujELzlLbHoVG8kPKVBaW470Ewi+jnptGS9KUi6jcb+k2StujtK3m26DFSGGwQ/+bVgZfsWqNzlP6YOejvw==.
+#10 10.18 info : Installed Grpc.Core.Api 2.65.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/grpc.core.api/2.65.0 with content hash VHElVX8XpJoaoddHkxhSHrXqn+7k3cZRmAxvZFh0NElkZK5oAT0/QOPM2FJtt5/xIxjQPumz3TOkzrUT6b8V6g==.
+#10 10.21 info : Installed Microsoft.Azure.Functions.Worker.Sdk.Analyzers 1.2.2 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.sdk.analyzers/1.2.2 with content hash v+GWIfC2Or3nxriew6JLT0yRGmhqYI84ALLqbQSyj/j9Z6ZQi2dh9iO9i3jmHAqiVFmIC2Aing/0eYQ0pObU4w==.
+#10 10.21 info : Installed System.Memory.Data 1.0.2 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.memory.data/1.0.2 with content hash JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==.
+#10 10.24 info : Installed Microsoft.Extensions.Primitives 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.primitives/9.0.0 with content hash N3qEBzmLMYiASUlKxxFIISP4AiwuPTHF5uCh+2CWSwwzAJiIYx0kBJsS30cp1nvhSySFAVi30jecD307jV+8Kg==.
+#10 10.30 info : Installed Microsoft.Azure.Functions.Worker.Grpc 2.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.grpc/2.0.0 with content hash NiOm+1EWQy7fz1kl08hCmIym2L36jREXXvQPao75zh7Tx7UCpV2IoH/BxmssWaGJPpup9cyKg3NsXEVFhc7qkQ==.
+#10 10.30 info : Installed Instana.Tracing.Core 1.321.2 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/instana.tracing.core/1.321.2 with content hash gLRwcGSZpjHxy/u7M/Ximcac6yiej+F1OWaoHaXsRA933u0lFJZcifGElMToE/qrQ7QV+Iero9+4BWKc7IHFtg==.
+#10 10.31 info : Installed Microsoft.Extensions.Diagnostics.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.diagnostics.abstractions/9.0.0 with content hash 1K8P7XzuzX8W8pmXcZjcrqS6x5eSSdvhQohmcpgiQNY/HlDAlnrhR9dvlURfFz428A+RTCJpUyB+aKTA6AgVcQ==.
+#10 10.32 info : Installed Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.extensions.http/3.3.0 with content hash a1W5bpOQCrYP0kbSJUFrK6PYeQAfg3UXQR+kPdt1YLvWrc/JTaNWyOA1DRKGrvRRo87xSM9NdFZuDULEMAxl4Q==.
+#10 10.33 info : Installed Grpc.Net.Client 2.65.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/grpc.net.client/2.65.0 with content hash ys1Rz7pxV0XR2pm4BVMkm/PrJ2BQu8OXFTvnXzzelTvQ+19OiHbUSb1kSZ2X4V7FziaxrtWY52ssXK3MFjQxbg==.
+#10 10.34 info : Installed Microsoft.Extensions.Configuration.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0 with content hash lqvd7W3FGKUO1+ZoUEMaZ5XDJeWvjpy2/M/ptCGz3tXLD4HWVaSzjufsAsjemasBEg+2SxXVtYVvGt5r2nKDlg==.
+#10 10.34 info : Installed Microsoft.Extensions.DependencyInjection.Abstractions 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0 with content hash xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==.
+#10 10.34 info : Installed System.Diagnostics.DiagnosticSource 6.0.1 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1 with content hash KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==.
+#10 10.34 info : Installed System.Text.Json 6.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.text.json/6.0.0 with content hash zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==.
+#10 10.34 info : Installed Microsoft.Extensions.FileProviders.Abstractions 9.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.extensions.fileproviders.abstractions/9.0.0 with content hash uK439QzYR0q2emLVtYzwyK3x+T5bTY4yWsd/k/ZUS9LR6Sflp8MIdhGXW8kQCd86dQD4tLqvcbLkku8qHY263Q==.
+#10 10.34 info : Installed Microsoft.Azure.Functions.Worker.Core 2.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.core/2.0.0 with content hash nzat+mbFtsNQv2QtqzHpGTCmR6LarjyzreNH7+1JZHjSyqntGVDyjBM6xqyv13zOH0swn5I3vJMKgpPlasdqCA==.
+#10 10.39 info : Installed System.Text.Json 6.0.10 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/system.text.json/6.0.10 with content hash NSB0kDipxn2ychp88NXWfFRFlmi1bst/xynOutbnpEfRCT9JZkZ7KOmF/I/hNKo2dILiMGnqblm+j1sggdLB9g==.
+#10 10.53 info : Installed Microsoft.Azure.Functions.Worker.Sdk 2.0.0 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/microsoft.azure.functions.worker.sdk/2.0.0 with content hash hx54pboEq9js7FAiQxPVHUMq12c9bm4ewSbz8wTJDxEzjye0Fjrd30l+cbp/bYWlqHvNmWem0TuqrvRcrq9DLw==.
+#10 10.56 info :   GET https://api.nuget.org/v3/vulnerabilities/index.json
+#10 10.69 info :   OK https://api.nuget.org/v3/vulnerabilities/index.json 123ms
+#10 10.70 info :   GET https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/vulnerability.base.json
+#10 10.70 info :   GET https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/2026.08.18.05.36.10/vulnerability.update.json
+#10 10.82 info :   OK https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/vulnerability.base.json 118ms
+#10 10.83 info :   OK https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/2026.08.18.05.36.10/vulnerability.update.json 127ms
+#10 11.15 info : Package 'Instana.Tracing.Core' is compatible with all the specified frameworks in project 'src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 12.18 info : PackageReference for package 'Instana.Tracing.Core' version '1.321.2' added to file '/src/src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 12.29 info : Generating MSBuild file /src/src/InstanaCrashLab/obj/InstanaCrashLab.csproj.nuget.g.props.
+#10 12.29 info : Generating MSBuild file /src/src/InstanaCrashLab/obj/InstanaCrashLab.csproj.nuget.g.targets.
+#10 12.30 info : Writing assets file to disk. Path: /src/src/InstanaCrashLab/obj/project.assets.json
+#10 12.32 log  : Restored /src/src/InstanaCrashLab/InstanaCrashLab.csproj (in 8.23 sec).
+#10 14.85   Determining projects to restore...
+#10 15.18   Writing /tmp/tmpykJ58f.tmp
+#10 15.56 info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.317/trustedroots/codesignctl.pem'.
+#10 15.68 info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/9.0.317/trustedroots/timestampctl.pem'.
+#10 15.68 info : Adding PackageReference for package 'Instana.Tracing.Core.Rewriter.Linux' into project 'src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 16.14 info : Restoring packages for /src/src/InstanaCrashLab/InstanaCrashLab.csproj...
+#10 16.36 info :   GET https://api.nuget.org/v3-flatcontainer/instana.tracing.core.rewriter.linux/index.json
+#10 16.97 info :   OK https://api.nuget.org/v3-flatcontainer/instana.tracing.core.rewriter.linux/index.json 606ms
+#10 17.03 info :   GET https://api.nuget.org/v3-flatcontainer/instana.tracing.core.rewriter.linux/1.321.2/instana.tracing.core.rewriter.linux.1.321.2.nupkg
+#10 17.05 info :   OK https://api.nuget.org/v3-flatcontainer/instana.tracing.core.rewriter.linux/1.321.2/instana.tracing.core.rewriter.linux.1.321.2.nupkg 27ms
+#10 17.57 info : Installed Instana.Tracing.Core.Rewriter.Linux 1.321.2 from https://api.nuget.org/v3/index.json to /root/.nuget/packages/instana.tracing.core.rewriter.linux/1.321.2 with content hash EpHiFnUDxry2zSMU/Ypf4p+Q0MFQrir3BMZ3Wh1bCj+i69K0hApJEErNI6jD1Ha0Qz63dJPjPGji+z8lHMIGDw==.
+#10 17.59 info :   CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+#10 17.61 info :   CACHE https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/vulnerability.base.json
+#10 17.63 info :   CACHE https://api.nuget.org/v3-vulnerabilities/2026.08.18.05.36.10/2026.08.18.05.36.10/vulnerability.update.json
+#10 17.86 info : Package 'Instana.Tracing.Core.Rewriter.Linux' is compatible with all the specified frameworks in project 'src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 18.43 info : PackageReference for package 'Instana.Tracing.Core.Rewriter.Linux' version '1.321.2' added to file '/src/src/InstanaCrashLab/InstanaCrashLab.csproj'.
+#10 18.45 info : Generating MSBuild file /src/src/InstanaCrashLab/obj/InstanaCrashLab.csproj.nuget.g.props.
+#10 18.46 info : Writing assets file to disk. Path: /src/src/InstanaCrashLab/obj/project.assets.json
+#10 18.47 log  : Restored /src/src/InstanaCrashLab/InstanaCrashLab.csproj (in 1.84 sec).
+#10 21.67   Determining projects to restore...
+#10 23.65   All projects are up-to-date for restore.
+#10 31.90   Determining projects to restore...
+#10 51.17   Restored /src/src/InstanaCrashLab/obj/Release/net9.0/WorkerExtensions/WorkerExtensions.csproj (in 18.95 sec).
+#10 51.87   WorkerExtensions -> /src/src/InstanaCrashLab/obj/Release/net9.0/WorkerExtensions/buildout/Microsoft.Azure.Functions.Worker.Extensions.dll
+#10 54.84   InstanaCrashLab -> /src/src/InstanaCrashLab/bin/Release/net9.0/InstanaCrashLab.dll
+#10 55.42   InstanaCrashLab -> /out/
+#10 DONE 59.8s
+
+#6 [stage-1 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 CACHED
+
+#11 [stage-1 2/2] COPY --from=build /out /home/site/wwwroot
+#11 DONE 1.6s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.2s done
+#12 exporting manifest sha256:f3dc32855ebeb002968704e12ad6a9c08684ebc9a3a13c49e5ff8f39fbb3601b 0.1s done
+#12 exporting config sha256:5e3fa4449dbe3c219727bf1de07764938f98e2726f634f52c8b0f217010822bf
+#12 exporting config sha256:5e3fa4449dbe3c219727bf1de07764938f98e2726f634f52c8b0f217010822bf 0.1s done
+#12 exporting attestation manifest sha256:cc3819156fd04e1e18d9f4c2b56417f8f16fd1ac09b249d909bbdcad8202d580
+#12 exporting attestation manifest sha256:cc3819156fd04e1e18d9f4c2b56417f8f16fd1ac09b249d909bbdcad8202d580 0.2s done
+#12 exporting manifest list sha256:07c138847296e1b702cc2d986fc301a362357ab428c3085067c388d8d6067dac
+#12 exporting manifest list sha256:07c138847296e1b702cc2d986fc301a362357ab428c3085067c388d8d6067dac 0.1s done
+#12 naming to docker.io/library/instana-dotnet9-lab:matrix-b-v2-instana
+#12 naming to docker.io/library/instana-dotnet9-lab:matrix-b-v2-instana 0.0s done
+#12 unpacking to docker.io/library/instana-dotnet9-lab:matrix-b-v2-instana
+#12 unpacking to docker.io/library/instana-dotnet9-lab:matrix-b-v2-instana 0.4s done
+#12 DONE 2.3s

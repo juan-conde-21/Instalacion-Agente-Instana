@@ -1,0 +1,255 @@
+2026-08-18T15:40:23.552155909Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-18T15:40:26.058666195Z info: Host.Triggers.Warmup[0]
+2026-08-18T15:40:26.058706884Z       Initializing Warmup Extension.
+2026-08-18T15:40:26.288967834Z info: Host.Startup[503]
+2026-08-18T15:40:26.288997873Z       Initializing Host. OperationId: '2ebfbb22-567c-43ed-b3f6-71df9717f902'.
+2026-08-18T15:40:26.306299046Z info: Host.Startup[504]
+2026-08-18T15:40:26.306327852Z       Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=2ebfbb22-567c-43ed-b3f6-71df9717f902
+2026-08-18T15:40:26.358062493Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358095828Z       ScriptJobHostOptions
+2026-08-18T15:40:26.358101499Z       {
+2026-08-18T15:40:26.358105637Z         "FileWatchingEnabled": true,
+2026-08-18T15:40:26.358110106Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T15:40:26.358114885Z         "FunctionTimeout": "00:30:00",
+2026-08-18T15:40:26.358143511Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T15:40:26.358149573Z       }
+2026-08-18T15:40:26.358153660Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358157758Z       LoggerFilterOptions
+2026-08-18T15:40:26.358161937Z       {
+2026-08-18T15:40:26.358166105Z         "MinLevel": "None",
+2026-08-18T15:40:26.358170543Z         "Rules": [
+2026-08-18T15:40:26.358174381Z           {
+2026-08-18T15:40:26.358178318Z             "ProviderName": null,
+2026-08-18T15:40:26.358182988Z             "CategoryName": null,
+2026-08-18T15:40:26.358187396Z             "LogLevel": null,
+2026-08-18T15:40:26.358191274Z             "Filter": "<AddFilter>b__0"
+2026-08-18T15:40:26.358195482Z           },
+2026-08-18T15:40:26.358199239Z           {
+2026-08-18T15:40:26.358203387Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T15:40:26.358208808Z             "CategoryName": null,
+2026-08-18T15:40:26.358213236Z             "LogLevel": "None",
+2026-08-18T15:40:26.358217525Z             "Filter": null
+2026-08-18T15:40:26.358221232Z           },
+2026-08-18T15:40:26.358224859Z           {
+2026-08-18T15:40:26.358228987Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T15:40:26.358233967Z             "CategoryName": null,
+2026-08-18T15:40:26.358238666Z             "LogLevel": null,
+2026-08-18T15:40:26.358242984Z             "Filter": "<AddFilter>b__0"
+2026-08-18T15:40:26.358247663Z           },
+2026-08-18T15:40:26.358270708Z           {
+2026-08-18T15:40:26.358275728Z             "ProviderName": null,
+2026-08-18T15:40:26.358279135Z             "CategoryName": null,
+2026-08-18T15:40:26.358282251Z             "LogLevel": null,
+2026-08-18T15:40:26.358284886Z             "Filter": "<AddFilter>b__0"
+2026-08-18T15:40:26.358287561Z           },
+2026-08-18T15:40:26.358290136Z           {
+2026-08-18T15:40:26.358292731Z             "ProviderName": null,
+2026-08-18T15:40:26.358295346Z             "CategoryName": null,
+2026-08-18T15:40:26.358298001Z             "LogLevel": "Information",
+2026-08-18T15:40:26.358300727Z             "Filter": null
+2026-08-18T15:40:26.358303362Z           },
+2026-08-18T15:40:26.358305937Z           {
+2026-08-18T15:40:26.358308472Z             "ProviderName": null,
+2026-08-18T15:40:26.358311097Z             "CategoryName": "Host.Function.ToolingConsoleLog",
+2026-08-18T15:40:26.358313792Z             "LogLevel": "Information",
+2026-08-18T15:40:26.358316407Z             "Filter": null
+2026-08-18T15:40:26.358319032Z           },
+2026-08-18T15:40:26.358321547Z           {
+2026-08-18T15:40:26.358324122Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T15:40:26.358326908Z             "CategoryName": null,
+2026-08-18T15:40:26.358329523Z             "LogLevel": "None",
+2026-08-18T15:40:26.358332198Z             "Filter": null
+2026-08-18T15:40:26.358334793Z           },
+2026-08-18T15:40:26.358337338Z           {
+2026-08-18T15:40:26.358339913Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T15:40:26.358342658Z             "CategoryName": null,
+2026-08-18T15:40:26.358345243Z             "LogLevel": null,
+2026-08-18T15:40:26.358347848Z             "Filter": "<AddFilter>b__0"
+2026-08-18T15:40:26.358350534Z           }
+2026-08-18T15:40:26.358353069Z         ]
+2026-08-18T15:40:26.358355634Z       }
+2026-08-18T15:40:26.358360062Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358362868Z       HttpWorkerOptions
+2026-08-18T15:40:26.358365493Z       {
+2026-08-18T15:40:26.358368028Z         "Type": 0,
+2026-08-18T15:40:26.358370693Z         "Description": null,
+2026-08-18T15:40:26.358373338Z         "Arguments": null,
+2026-08-18T15:40:26.358376063Z         "Port": 37813,
+2026-08-18T15:40:26.358378759Z         "IsPortManuallySet": false,
+2026-08-18T15:40:26.358386844Z         "EnableForwardingHttpRequest": false,
+2026-08-18T15:40:26.358389640Z         "EnableProxyingHttpRequest": false,
+2026-08-18T15:40:26.358392295Z         "InitializationTimeout": "00:00:30",
+2026-08-18T15:40:26.358395010Z         "CustomRoutesEnabled": false,
+2026-08-18T15:40:26.358397635Z         "Http": null
+2026-08-18T15:40:26.358400281Z       }
+2026-08-18T15:40:26.358402415Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358404529Z       ScriptJobHostOptions
+2026-08-18T15:40:26.358406603Z       {
+2026-08-18T15:40:26.358408657Z         "FileWatchingEnabled": true,
+2026-08-18T15:40:26.358410761Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T15:40:26.358412935Z         "FunctionTimeout": "00:30:00",
+2026-08-18T15:40:26.358415069Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T15:40:26.358417264Z       }
+2026-08-18T15:40:26.358419298Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358421412Z       FunctionResultAggregatorOptions
+2026-08-18T15:40:26.358423486Z       {
+2026-08-18T15:40:26.358425530Z         "BatchSize": 1000,
+2026-08-18T15:40:26.358427624Z         "FlushTimeout": "00:00:30",
+2026-08-18T15:40:26.358429748Z         "IsEnabled": true
+2026-08-18T15:40:26.358431832Z       }
+2026-08-18T15:40:26.358433846Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358435930Z       ConcurrencyOptions
+2026-08-18T15:40:26.358438004Z       {
+2026-08-18T15:40:26.358440038Z         "DynamicConcurrencyEnabled": false,
+2026-08-18T15:40:26.358442172Z         "MaximumFunctionConcurrency": 500,
+2026-08-18T15:40:26.358444286Z         "CPUThreshold": 0.8,
+2026-08-18T15:40:26.358446410Z         "SnapshotPersistenceEnabled": true
+2026-08-18T15:40:26.358448544Z       }
+2026-08-18T15:40:26.358450568Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358452662Z       SingletonOptions
+2026-08-18T15:40:26.358454706Z       {
+2026-08-18T15:40:26.358456720Z         "LockPeriod": "00:00:15",
+2026-08-18T15:40:26.358458855Z         "ListenerLockPeriod": "00:01:00",
+2026-08-18T15:40:26.358460999Z         "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+2026-08-18T15:40:26.358463173Z         "LockAcquisitionPollingInterval": "00:00:05",
+2026-08-18T15:40:26.358465317Z         "ListenerLockRecoveryPollingInterval": "00:01:00"
+2026-08-18T15:40:26.358467501Z       }
+2026-08-18T15:40:26.358469515Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358480507Z       TimerTriggerPlatformOptions
+2026-08-18T15:40:26.358482711Z       {
+2026-08-18T15:40:26.358484745Z         "NonCronScheduleBehavior": "Allow"
+2026-08-18T15:40:26.358486879Z       }
+2026-08-18T15:40:26.358488913Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:26.358491017Z       ScaleOptions
+2026-08-18T15:40:26.358493071Z       {
+2026-08-18T15:40:26.358495105Z         "ScaleMetricsMaxAge": "00:02:00",
+2026-08-18T15:40:26.358497219Z         "ScaleMetricsSampleInterval": "00:00:10",
+2026-08-18T15:40:26.358499333Z         "MetricsPurgeEnabled": true,
+2026-08-18T15:40:26.358501437Z         "IsTargetScalingEnabled": true,
+2026-08-18T15:40:26.358503562Z         "IsRuntimeScalingEnabled": false
+2026-08-18T15:40:26.358505716Z       }
+2026-08-18T15:40:26.359937205Z info: Microsoft.Azure.WebJobs.Hosting.JobHostService[0]
+2026-08-18T15:40:26.359953717Z       Starting JobHost
+2026-08-18T15:40:26.365164907Z info: Host.Startup[401]
+2026-08-18T15:40:26.365199424Z       Starting Host (HostId=bd8d37996430-2137340777, InstanceId=ce3e4baa-6013-4d73-9222-2927fc8a8f15, Version=4.1052.300.1, ProcessId=9, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+2026-08-18T15:40:26.378027849Z info: Host.Startup[314]
+2026-08-18T15:40:26.378052116Z       Loading functions metadata
+2026-08-18T15:40:27.673097873Z info: Host.Startup[326]
+2026-08-18T15:40:27.673122360Z       Reading functions metadata (Custom)
+2026-08-18T15:40:27.712762374Z info: Host.Startup[327]
+2026-08-18T15:40:27.712788815Z       0 functions found (Custom)
+2026-08-18T15:40:27.734579880Z info: Host.Startup[315]
+2026-08-18T15:40:27.734601462Z       3 functions loaded
+2026-08-18T15:40:27.797826965Z info: Host.Startup[0]
+2026-08-18T15:40:27.797853015Z       Generating 3 job function(s)
+2026-08-18T15:40:27.800644679Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T15:40:27.800669337Z       Worker process started and initialized.
+2026-08-18T15:40:27.844949026Z info: Host.Startup[0]
+2026-08-18T15:40:27.844974356Z       Found the following functions:
+2026-08-18T15:40:27.844977542Z       Host.Functions.Error
+2026-08-18T15:40:27.844979986Z       Host.Functions.Health
+2026-08-18T15:40:27.844982101Z       Host.Functions.Test
+2026-08-18T15:40:27.844984135Z       
+2026-08-18T15:40:27.857557820Z info: Microsoft.Azure.WebJobs.Script.WebHost.WebScriptHostHttpRoutesManager[0]
+2026-08-18T15:40:27.857589361Z       Initializing function HTTP routes
+2026-08-18T15:40:27.857609611Z       Mapped function route 'api/error' [get] to 'Error'
+2026-08-18T15:40:27.857614110Z       Mapped function route 'api/health' [get] to 'Health'
+2026-08-18T15:40:27.857617566Z       Mapped function route 'api/test' [get] to 'Test'
+2026-08-18T15:40:27.857620783Z       
+2026-08-18T15:40:27.857697942Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T15:40:27.857706228Z       HttpOptions
+2026-08-18T15:40:27.857710025Z       {
+2026-08-18T15:40:27.857713402Z         "DynamicThrottlesEnabled": false,
+2026-08-18T15:40:27.857717290Z         "EnableChunkedRequestBinding": false,
+2026-08-18T15:40:27.857720897Z         "MaxConcurrentRequests": -1,
+2026-08-18T15:40:27.857724363Z         "MaxOutstandingRequests": -1,
+2026-08-18T15:40:27.857728020Z         "RoutePrefix": "api"
+2026-08-18T15:40:27.857731688Z       }
+2026-08-18T15:40:27.865027800Z info: Host.Startup[412]
+2026-08-18T15:40:27.865050955Z       Host initialized (1491ms)
+2026-08-18T15:40:27.885213541Z info: Host.Startup[413]
+2026-08-18T15:40:27.885361699Z       Host started (1519ms)
+2026-08-18T15:40:27.885368603Z info: Host.Startup[0]
+2026-08-18T15:40:27.885372931Z       Job host started
+2026-08-18T15:40:29.261233017Z info: Function.Health[1]
+2026-08-18T15:40:29.261271913Z       Executing 'Functions.Health' (Reason='This function was programmatically called via the host APIs.', Id=b25ce851-1854-47fc-8867-ea3f8de93359)
+2026-08-18T15:40:29.481844813Z info: Function.Health[2]
+2026-08-18T15:40:29.481878047Z       Executed 'Functions.Health' (Succeeded, Id=b25ce851-1854-47fc-8867-ea3f8de93359, Duration=237ms)
+2026-08-18T15:40:31.360830075Z info: Host.General[337]
+2026-08-18T15:40:31.360868801Z       Host lock lease acquired by instance ID '00000000000000000000000057BC4AA4'.
+2026-08-18T15:40:32.706207845Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T15:40:32.706237974Z       Worker process started and initialized.
+2026-08-18T15:40:32.970180028Z warn: Microsoft.Azure.WebJobs.Script.Diagnostics.HealthChecks.TelemetryHealthCheckPublisher[0]
+2026-08-18T15:40:32.970210607Z       [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to create client for AzureWebJobsStorage"}}
+2026-08-18T15:40:43.599260683Z info: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T15:40:43.599571397Z       Worker process started and initialized.
+2026-08-18T15:40:46.767419540Z info: Function.Health[1]
+2026-08-18T15:40:46.767449769Z       Executing 'Functions.Health' (Reason='This function was programmatically called via the host APIs.', Id=53cdaacb-6dac-468f-842b-bf070aad2e1a)
+2026-08-18T15:40:46.898835645Z info: Function.Health[2]
+2026-08-18T15:40:46.898868659Z       Executed 'Functions.Health' (Succeeded, Id=53cdaacb-6dac-468f-842b-bf070aad2e1a, Duration=137ms)
+2026-08-18T15:40:46.934412931Z info: Function.Test[1]
+2026-08-18T15:40:46.934600236Z       Executing 'Functions.Test' (Reason='This function was programmatically called via the host APIs.', Id=fb958508-1cc4-4cb2-bda0-381b142f0a9f)
+2026-08-18T15:40:46.981993444Z info: Function.Test[2]
+2026-08-18T15:40:46.982023402Z       Executed 'Functions.Test' (Succeeded, Id=fb958508-1cc4-4cb2-bda0-381b142f0a9f, Duration=48ms)
+2026-08-18T15:40:47.013977506Z info: Function.Error[1]
+2026-08-18T15:40:47.014008586Z       Executing 'Functions.Error' (Reason='This function was programmatically called via the host APIs.', Id=cc223e36-0a2a-4c26-b141-aeeeb70c24e7)
+2026-08-18T15:40:47.052637888Z fail: Function.Error.User[0]
+2026-08-18T15:40:47.052665692Z       Function 'Error', Invocation id 'cc223e36-0a2a-4c26-b141-aeeeb70c24e7': An exception was thrown by the invocation.
+2026-08-18T15:40:47.052670161Z       Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Function 'Error', Invocation id 'cc223e36-0a2a-4c26-b141-aeeeb70c24e7': An exception was thrown by the invocation.
+2026-08-18T15:40:47.052673868Z       Type: 
+2026-08-18T15:40:47.052676974Z       Exception: System.InvalidOperationException: Controlled laboratory exception from /api/error
+2026-08-18T15:40:47.052681062Z          at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+2026-08-18T15:40:47.052685020Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+2026-08-18T15:40:47.052688717Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+2026-08-18T15:40:47.052692755Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+2026-08-18T15:40:47.052696272Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+2026-08-18T15:40:47.052699819Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+2026-08-18T15:40:47.052704197Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+2026-08-18T15:40:47.052726901Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+2026-08-18T15:40:47.062428383Z fail: Function.Error[3]
+2026-08-18T15:40:47.062574788Z       Executed 'Functions.Error' (Failed, Id=cc223e36-0a2a-4c26-b141-aeeeb70c24e7, Duration=47ms)
+2026-08-18T15:40:47.062579988Z       Microsoft.Azure.WebJobs.Host.FunctionInvocationException: Exception while executing function: Functions.Error
+2026-08-18T15:40:47.062583955Z        ---> Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Failure
+2026-08-18T15:40:47.062588093Z       Type: System.InvalidOperationException
+2026-08-18T15:40:47.062591741Z       Exception: Controlled laboratory exception from /api/error
+2026-08-18T15:40:47.062595127Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+2026-08-18T15:40:47.062598784Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+2026-08-18T15:40:47.062602251Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+2026-08-18T15:40:47.062606068Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+2026-08-18T15:40:47.062609806Z          at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 89
+2026-08-18T15:40:47.062613503Z          at Microsoft.Azure.WebJobs.Script.Description.WorkerFunctionInvoker.InvokeCore(Object[] parameters, FunctionInvocationContext context) in /src/azure-functions-host/src/WebJobs.Script.Grpc/WorkerFunctionInvoker.cs:line 103
+2026-08-18T15:40:47.062616990Z          at Microsoft.Azure.WebJobs.Script.Description.FunctionInvokerBase.Invoke(Object[] parameters) in /src/azure-functions-host/src/WebJobs.Script/Description/FunctionInvokerBase.cs:line 82
+2026-08-18T15:40:47.062622410Z          at Microsoft.Azure.WebJobs.Script.Description.FunctionGenerator.Coerce[T](Task`1 src) in /src/azure-functions-host/src/WebJobs.Script/Description/FunctionGenerator.cs:line 225
+2026-08-18T15:40:47.062625897Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionInvoker`2.InvokeAsync(Object instance, Object[] arguments) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionInvoker.cs:line 53
+2026-08-18T15:40:47.062629835Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.InvokeWithTimeoutAsync(IFunctionInvoker invoker, ParameterHelper parameterHelper, CancellationTokenSource timeoutTokenSource, CancellationTokenSource functionCancellationTokenSource, Boolean throwOnTimeout, TimeSpan timerInterval, IFunctionInstance instance) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 590
+2026-08-18T15:40:47.062650244Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithWatchersAsync(IFunctionInstanceEx instance, ParameterHelper parameterHelper, ILogger logger, CancellationTokenSource functionCancellationTokenSource) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 532
+2026-08-18T15:40:47.062654433Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithLoggingAsync(IFunctionInstanceEx instance, FunctionStartedMessage message, FunctionInstanceLogEntry instanceLogEntry, ParameterHelper parameterHelper, ILogger logger, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 315
+2026-08-18T15:40:47.062658541Z          --- End of inner exception stack trace ---
+2026-08-18T15:40:47.062661757Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithLoggingAsync(IFunctionInstanceEx instance, FunctionStartedMessage message, FunctionInstanceLogEntry instanceLogEntry, ParameterHelper parameterHelper, ILogger logger, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 361
+2026-08-18T15:40:47.062665083Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.TryExecuteAsync(IFunctionInstance functionInstance, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 113
+2026-08-18T15:40:47.065576038Z fail: Host.Results[0]
+2026-08-18T15:40:47.065591949Z       Microsoft.Azure.WebJobs.Host.FunctionInvocationException: Exception while executing function: Functions.Error
+2026-08-18T15:40:47.065595676Z        ---> Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcException: Result: Failure
+2026-08-18T15:40:47.065598933Z       Type: System.InvalidOperationException
+2026-08-18T15:40:47.065602079Z       Exception: Controlled laboratory exception from /api/error
+2026-08-18T15:40:47.065604914Z       Stack:    at InstanaCrashLab.HealthFunction.Error(HttpRequestData request) in /src/src/InstanaCrashLab/HealthFunction.cs:line 49
+2026-08-18T15:40:47.065607950Z          at InstanaCrashLab.DirectFunctionExecutor.ExecuteAsync(FunctionContext context) in /src/src/InstanaCrashLab/obj/Release/net9.0/Microsoft.Azure.Functions.Worker.Sdk.Generators/Microsoft.Azure.Functions.Worker.Sdk.Generators.FunctionExecutorGenerator/GeneratedFunctionExecutor.g.cs:line 52
+2026-08-18T15:40:47.065610986Z          at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+2026-08-18T15:40:47.065614493Z          at Microsoft.Azure.Functions.Worker.FunctionsApplication.InvokeFunctionAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\FunctionsApplication.cs:line 96
+2026-08-18T15:40:47.065617539Z          at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 89
+2026-08-18T15:40:47.065620785Z          at Microsoft.Azure.WebJobs.Script.Description.WorkerFunctionInvoker.InvokeCore(Object[] parameters, FunctionInvocationContext context) in /src/azure-functions-host/src/WebJobs.Script.Grpc/WorkerFunctionInvoker.cs:line 103
+2026-08-18T15:40:47.065638530Z          at Microsoft.Azure.WebJobs.Script.Description.FunctionInvokerBase.Invoke(Object[] parameters) in /src/azure-functions-host/src/WebJobs.Script/Description/FunctionInvokerBase.cs:line 82
+2026-08-18T15:40:47.065642998Z          at Microsoft.Azure.WebJobs.Script.Description.FunctionGenerator.Coerce[T](Task`1 src) in /src/azure-functions-host/src/WebJobs.Script/Description/FunctionGenerator.cs:line 225
+2026-08-18T15:40:47.065646665Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionInvoker`2.InvokeAsync(Object instance, Object[] arguments) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionInvoker.cs:line 53
+2026-08-18T15:40:47.065649641Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.InvokeWithTimeoutAsync(IFunctionInvoker invoker, ParameterHelper parameterHelper, CancellationTokenSource timeoutTokenSource, CancellationTokenSource functionCancellationTokenSource, Boolean throwOnTimeout, TimeSpan timerInterval, IFunctionInstance instance) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 590
+2026-08-18T15:40:47.065653198Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithWatchersAsync(IFunctionInstanceEx instance, ParameterHelper parameterHelper, ILogger logger, CancellationTokenSource functionCancellationTokenSource) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 532
+2026-08-18T15:40:47.065656585Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithLoggingAsync(IFunctionInstanceEx instance, FunctionStartedMessage message, FunctionInstanceLogEntry instanceLogEntry, ParameterHelper parameterHelper, ILogger logger, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 315
+2026-08-18T15:40:47.065660262Z          --- End of inner exception stack trace ---
+2026-08-18T15:40:47.065663478Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.ExecuteWithLoggingAsync(IFunctionInstanceEx instance, FunctionStartedMessage message, FunctionInstanceLogEntry instanceLogEntry, ParameterHelper parameterHelper, ILogger logger, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 361
+2026-08-18T15:40:47.065667366Z          at Microsoft.Azure.WebJobs.Host.Executors.FunctionExecutor.TryExecuteAsync(IFunctionInstance functionInstance, CancellationToken cancellationToken) in /_/src/Microsoft.Azure.WebJobs.Host/Executors/FunctionExecutor.cs:line 113
+2026-08-18T15:40:48.085470502Z fail: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T15:40:48.085503657Z       Exceeded language worker restart retry count for runtime:dotnet-isolated. Shutting down and proactively recycling the Functions Host to recover
+2026-08-18T15:40:48.133812566Z info: Microsoft.Azure.WebJobs.Hosting.JobHostService[0]
+2026-08-18T15:40:48.133837675Z       Stopping JobHost
+2026-08-18T15:40:48.144072138Z info: Host.Startup[0]
+2026-08-18T15:40:48.144103499Z       Job host stopped

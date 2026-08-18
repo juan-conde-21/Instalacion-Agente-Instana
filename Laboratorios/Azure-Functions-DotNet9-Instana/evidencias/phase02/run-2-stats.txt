@@ -1,0 +1,2 @@
+CONTAINER ID   NAME                      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O     PIDS
+810b4546a9ee   instana-dotnet9-clean-2   0.47%     73.38MiB / 11.92GiB   0.60%     1.63kB / 961B   0B / 8.19kB   47

@@ -1,0 +1,6 @@
+coredump.dotnet.103.1787069742	17387520 bytes
+coredump.dotnet.103.1787069742.crashreport.json	103224 bytes
+coredump.dotnet.42.1787069724	17383424 bytes
+coredump.dotnet.42.1787069724.crashreport.json	103235 bytes
+coredump.dotnet.76.1787069731	17416192 bytes
+coredump.dotnet.76.1787069731.crashreport.json	109972 bytes

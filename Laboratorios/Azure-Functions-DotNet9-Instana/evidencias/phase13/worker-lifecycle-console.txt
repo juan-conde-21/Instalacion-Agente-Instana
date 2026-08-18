@@ -1,0 +1,5 @@
+timestamp	pid	ppid	state	command	event
+2026-08-18T16:14:02.786Z	112845	111504	R	dotnet /home/site/wwwroot/InstanaCrashLab.dll --host 127.0.0.1 --port 33233 --workerId 04c22bcf-565a-4bac-9ff0-376fbfb91eb8 --requestId 5beaaae3-fc32-4077-95c1-6ff936e5c710 --grpcMaxMessageLength 2147483647 --functions-uri http://127.0.0.1:33233/ --functions-worker-id 04c22bcf-565a-4bac-9ff0-376fbfb91eb8 --functions-request-id 5beaaae3-fc32-4077-95c1-6ff936e5c710 --functions-grpc-max-message-length 2147483647	START
+2026-08-18T16:14:06.413Z	113217	112845	R	dotnet /home/site/wwwroot/InstanaCrashLab.dll --host 127.0.0.1 --port 33233 --workerId 04c22bcf-565a-4bac-9ff0-376fbfb91eb8 --requestId 5beaaae3-fc32-4077-95c1-6ff936e5c710 --grpcMaxMessageLength 2147483647 --functions-uri http://127.0.0.1:33233/ --functions-worker-id 04c22bcf-565a-4bac-9ff0-376fbfb91eb8 --functions-request-id 5beaaae3-fc32-4077-95c1-6ff936e5c710 --functions-grpc-max-message-length 2147483647	START
+2026-08-18T16:14:06.767Z	113217	-	-	-	END_OBSERVED
+2026-08-18T16:14:09.334Z	112845	-	-	-	END_OBSERVED

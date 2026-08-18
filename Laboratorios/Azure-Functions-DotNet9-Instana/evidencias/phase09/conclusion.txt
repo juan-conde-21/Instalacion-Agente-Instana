@@ -1,0 +1,5 @@
+Classification: tracer loaded; Agent reachable; isolated worker unstable during idle in the expanded assembly scenario.
+Container-level ExitCode 139: not observed.
+OOMKilled: false.
+Backend/UI visibility: not demonstrated by this evidence.
+Host, container IDs and private addresses omitted.

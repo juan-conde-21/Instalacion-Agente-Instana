@@ -1,0 +1,21 @@
+ARG VARIANT=A
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG VARIANT
+WORKDIR /src
+COPY src/variants/${VARIANT}/ src/InstanaCrashLab/
+RUN dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core --version 1.321.2 \
+ && dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core.Rewriter.Linux --version 1.321.2 \
+ && dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out
+FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+ AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
+ DOTNET_STARTUP_HOOKS=/home/site/wwwroot/Instana.Tracing.Core.dll \
+ CORECLR_ENABLE_PROFILING=1 \
+ CORECLR_PROFILER={cf0d821e-299b-5307-a3d8-b283c03916dd} \
+ CORECLR_PROFILER_PATH=/home/site/wwwroot/instana_tracing/CoreProfiler.so \
+ DOTNET_DbgEnableMiniDump=1 \
+ DOTNET_DbgMiniDumpType=3 \
+ DOTNET_DbgMiniDumpName=/dumps/coredump.%e.%p.%t \
+ DOTNET_EnableCrashReport=1 \
+ DOTNET_CreateDumpDiagnostics=1
+COPY --from=build /out /home/site/wwwroot

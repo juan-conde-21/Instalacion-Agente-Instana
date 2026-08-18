@@ -1,0 +1,4 @@
+/usr/bin/strace
+strace -- version 6.8
+/usr/bin/pstree
+/usr/bin/sha256sum

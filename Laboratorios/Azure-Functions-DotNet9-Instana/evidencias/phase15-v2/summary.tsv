@@ -1,0 +1,9 @@
+variant	mode	started	idle_seconds	health	test	error	stable	worker_initialized	restart_limit_events	docker_exit	oom	notes
+A	clean	2026-08-18T17:35:05Z	20	200	NA	NA	YES	1	0	controlled-stop	false	Historical baseline
+B	clean	2026-08-18T17:35:46Z	20	200	200	NA	YES	1	0	controlled-stop	false	A plus constant /test
+C	clean	2026-08-18T17:36:26Z	20	200	200	500	YES	1	0	controlled-stop	false	Controlled HTTP 500
+D	clean	2026-08-18T17:37:06Z	20	200	200	500	YES	1	0	controlled-stop	false	Controlled exception maps to 500
+A	instana	2026-08-18T17:38:16Z	30	200	NA	NA	YES	1	0	controlled-stop	false	Endpoint called only after idle PASS
+B	instana	2026-08-18T17:39:07Z	30	NOT_TESTED	NA	NA	NO	3	1	0	false	Failed idle before traffic
+C	instana	2026-08-18T17:39:38Z	30	NOT_TESTED	NA	NA	NO	3	1	0	false	Failed idle before traffic
+D	instana	2026-08-18T17:40:09Z	30	NOT_TESTED	NA	NA	NO	3	1	0	false	Failed idle before traffic

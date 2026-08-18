@@ -1,0 +1,25 @@
+7:2026-08-18T16:14:01.945956027Z       Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=093817ae-4b8f-4fbb-9b45-e020659c3156
+72:2026-08-18T16:14:02.262142664Z       HttpWorkerOptions
+140:2026-08-18T16:14:08.578744588Z       [createdump] 004efaba TickFrequency: 1000000 ticks per ms
+142:2026-08-18T16:14:08.582690991Z       [createdump] 004efabc PAGE_SIZE 4096
+144:2026-08-18T16:14:08.582967361Z       [createdump] Gathering state for process 46 dotnet
+146:2026-08-18T16:14:08.583336273Z       [createdump] Crashing thread 0037 signal 11 (000b)
+147:2026-08-18T16:14:08.657519910Z fail: Host.Function.Console[0]
+148:2026-08-18T16:14:08.657549348Z       [createdump] Problem suspending thread: ptrace(ATTACH, 46) FAILED Operation not permitted (1)
+150:2026-08-18T16:14:08.706324891Z       [createdump] Target process is alive
+151:2026-08-18T16:14:08.708011021Z fail: Host.Function.Console[0]
+152:2026-08-18T16:14:08.708024086Z       [createdump] Failure took 62ms
+153:2026-08-18T16:14:09.581436490Z fail: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+154:2026-08-18T16:14:09.581623837Z       Exceeded language worker restart retry count for runtime:dotnet-isolated. Shutting down and proactively recycling the Functions Host to recover
+161:2026-08-18T16:14:10.224888598Z fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+162:2026-08-18T16:14:10.224916162Z       Hosting failed to start
+166:2026-08-18T16:14:10.226278950Z          at Microsoft.Azure.WebJobs.Script.ScriptHost.InitializeFunctionDescriptorsAsync(IEnumerable`1 functionMetadata, String workerRuntime, CancellationToken cancellationToken) in /src/azure-functions-host/src/WebJobs.Script/Host/ScriptHost.cs:line 550
+171:2026-08-18T16:14:10.598850915Z Unhandled exception. System.AggregateException: One or more errors occurred. (A task was canceled.)
+185:2026-08-18T16:14:10.786168749Z [createdump] 004f03af TickFrequency: 1000000 ticks per ms
+186:2026-08-18T16:14:10.788594896Z [createdump] 004f03b1 PAGE_SIZE 4096
+187:2026-08-18T16:14:10.796584738Z [createdump] Gathering state for process 12 Microsoft.Azure
+188:2026-08-18T16:14:10.799392262Z [createdump] Crashing thread 000c signal 6 (0006)
+189:2026-08-18T16:14:10.801485338Z [createdump] Problem suspending thread: ptrace(ATTACH, 12) FAILED Operation not permitted (1)
+190:2026-08-18T16:14:10.804127574Z [createdump] Target process is alive
+191:2026-08-18T16:14:10.806327860Z [createdump] Failure took 23ms
+192:2026-08-18T16:14:11.063361592Z /opt/startup/start_nonappservice.sh: line 4:    12 Aborted                 (core dumped) /azure-functions-host/Microsoft.Azure.WebJobs.Script.WebHost

@@ -1,0 +1,1 @@
+/opt/instana-dotnet9-functions-lab/evidencias/phase04/CoreProfiler.so: ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=9d5f737539086a00d02d5c00225ad4d08229c8dd, not stripped

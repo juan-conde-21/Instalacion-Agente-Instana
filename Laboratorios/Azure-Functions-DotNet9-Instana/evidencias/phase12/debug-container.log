@@ -1,0 +1,192 @@
+2026-08-18T16:13:48.700542663Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-18T16:14:01.358857209Z info: Host.Triggers.Warmup[0]
+2026-08-18T16:14:01.358890584Z       Initializing Warmup Extension.
+2026-08-18T16:14:01.881008789Z info: Host.Startup[503]
+2026-08-18T16:14:01.881052375Z       Initializing Host. OperationId: '093817ae-4b8f-4fbb-9b45-e020659c3156'.
+2026-08-18T16:14:01.945930868Z info: Host.Startup[504]
+2026-08-18T16:14:01.945956027Z       Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=093817ae-4b8f-4fbb-9b45-e020659c3156
+2026-08-18T16:14:02.254694157Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.254722603Z       ScriptJobHostOptions
+2026-08-18T16:14:02.254726400Z       {
+2026-08-18T16:14:02.254729326Z         "FileWatchingEnabled": true,
+2026-08-18T16:14:02.254732422Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T16:14:02.254735348Z         "FunctionTimeout": "00:30:00",
+2026-08-18T16:14:02.255670067Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T16:14:02.255683012Z       }
+2026-08-18T16:14:02.257385174Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.257395805Z       LoggerFilterOptions
+2026-08-18T16:14:02.257399292Z       {
+2026-08-18T16:14:02.257402047Z         "MinLevel": "None",
+2026-08-18T16:14:02.257404983Z         "Rules": [
+2026-08-18T16:14:02.257407869Z           {
+2026-08-18T16:14:02.257410574Z             "ProviderName": null,
+2026-08-18T16:14:02.257413360Z             "CategoryName": null,
+2026-08-18T16:14:02.257416095Z             "LogLevel": null,
+2026-08-18T16:14:02.257933347Z             "Filter": "<AddFilter>b__0"
+2026-08-18T16:14:02.257947996Z           },
+2026-08-18T16:14:02.257951162Z           {
+2026-08-18T16:14:02.257953887Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T16:14:02.257956963Z             "CategoryName": null,
+2026-08-18T16:14:02.257959809Z             "LogLevel": "None",
+2026-08-18T16:14:02.258836123Z             "Filter": null
+2026-08-18T16:14:02.258854439Z           },
+2026-08-18T16:14:02.258859328Z           {
+2026-08-18T16:14:02.258863897Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.WebHostSystemLoggerProvider",
+2026-08-18T16:14:02.258868737Z             "CategoryName": null,
+2026-08-18T16:14:02.258873276Z             "LogLevel": null,
+2026-08-18T16:14:02.258877343Z             "Filter": "<AddFilter>b__0"
+2026-08-18T16:14:02.259755317Z           },
+2026-08-18T16:14:02.259919449Z           {
+2026-08-18T16:14:02.259925400Z             "ProviderName": null,
+2026-08-18T16:14:02.259928877Z             "CategoryName": null,
+2026-08-18T16:14:02.259932003Z             "LogLevel": null,
+2026-08-18T16:14:02.259934969Z             "Filter": "<AddFilter>b__0"
+2026-08-18T16:14:02.259938706Z           },
+2026-08-18T16:14:02.259941572Z           {
+2026-08-18T16:14:02.259944197Z             "ProviderName": null,
+2026-08-18T16:14:02.259946962Z             "CategoryName": null,
+2026-08-18T16:14:02.260390200Z             "LogLevel": "Information",
+2026-08-18T16:14:02.260397745Z             "Filter": null
+2026-08-18T16:14:02.260400871Z           },
+2026-08-18T16:14:02.260403586Z           {
+2026-08-18T16:14:02.260406402Z             "ProviderName": null,
+2026-08-18T16:14:02.260409237Z             "CategoryName": "Host.Function.ToolingConsoleLog",
+2026-08-18T16:14:02.260412143Z             "LogLevel": "Information",
+2026-08-18T16:14:02.260414978Z             "Filter": null
+2026-08-18T16:14:02.261114702Z           },
+2026-08-18T16:14:02.261126936Z           {
+2026-08-18T16:14:02.261130293Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T16:14:02.261133419Z             "CategoryName": null,
+2026-08-18T16:14:02.261136284Z             "LogLevel": "None",
+2026-08-18T16:14:02.261139360Z             "Filter": null
+2026-08-18T16:14:02.261142457Z           },
+2026-08-18T16:14:02.261145212Z           {
+2026-08-18T16:14:02.261502361Z             "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2026-08-18T16:14:02.261510567Z             "CategoryName": null,
+2026-08-18T16:14:02.261513533Z             "LogLevel": null,
+2026-08-18T16:14:02.261516358Z             "Filter": "<AddFilter>b__0"
+2026-08-18T16:14:02.261519454Z           }
+2026-08-18T16:14:02.261522029Z         ]
+2026-08-18T16:14:02.261524544Z       }
+2026-08-18T16:14:02.262130771Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.262142664Z       HttpWorkerOptions
+2026-08-18T16:14:02.262145730Z       {
+2026-08-18T16:14:02.262149237Z         "Type": 0,
+2026-08-18T16:14:02.262152193Z         "Description": null,
+2026-08-18T16:14:02.262155038Z         "Arguments": null,
+2026-08-18T16:14:02.262157854Z         "Port": 40953,
+2026-08-18T16:14:02.262160609Z         "IsPortManuallySet": false,
+2026-08-18T16:14:02.264880067Z         "EnableForwardingHttpRequest": false,
+2026-08-18T16:14:02.264904405Z         "EnableProxyingHttpRequest": false,
+2026-08-18T16:14:02.264911338Z         "InitializationTimeout": "00:00:30",
+2026-08-18T16:14:02.264914384Z         "CustomRoutesEnabled": false,
+2026-08-18T16:14:02.264917250Z         "Http": null
+2026-08-18T16:14:02.264920226Z       }
+2026-08-18T16:14:02.265631558Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.265649383Z       ScriptJobHostOptions
+2026-08-18T16:14:02.265653260Z       {
+2026-08-18T16:14:02.265656376Z         "FileWatchingEnabled": true,
+2026-08-18T16:14:02.265659673Z         "FileLoggingMode": "DebugOnly",
+2026-08-18T16:14:02.265662939Z         "FunctionTimeout": "00:30:00",
+2026-08-18T16:14:02.266070417Z         "TelemetryMode": "ApplicationInsights"
+2026-08-18T16:14:02.266080356Z       }
+2026-08-18T16:14:02.267189076Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.267201941Z       FunctionResultAggregatorOptions
+2026-08-18T16:14:02.267205137Z       {
+2026-08-18T16:14:02.267208043Z         "BatchSize": 1000,
+2026-08-18T16:14:02.267211129Z         "FlushTimeout": "00:00:30",
+2026-08-18T16:14:02.267214405Z         "IsEnabled": true
+2026-08-18T16:14:02.267217331Z       }
+2026-08-18T16:14:02.268440786Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.268458821Z       ConcurrencyOptions
+2026-08-18T16:14:02.268462439Z       {
+2026-08-18T16:14:02.268465344Z         "DynamicConcurrencyEnabled": false,
+2026-08-18T16:14:02.268468450Z         "MaximumFunctionConcurrency": 500,
+2026-08-18T16:14:02.268471827Z         "CPUThreshold": 0.8,
+2026-08-18T16:14:02.268474683Z         "SnapshotPersistenceEnabled": true
+2026-08-18T16:14:02.270348179Z       }
+2026-08-18T16:14:02.271920566Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.271939132Z       SingletonOptions
+2026-08-18T16:14:02.271943260Z       {
+2026-08-18T16:14:02.271946647Z         "LockPeriod": "00:00:15",
+2026-08-18T16:14:02.271949943Z         "ListenerLockPeriod": "00:01:00",
+2026-08-18T16:14:02.271953210Z         "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+2026-08-18T16:14:02.272329526Z         "LockAcquisitionPollingInterval": "00:00:05",
+2026-08-18T16:14:02.272340147Z         "ListenerLockRecoveryPollingInterval": "00:01:00"
+2026-08-18T16:14:02.272343834Z       }
+2026-08-18T16:14:02.273325807Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.273363982Z       TimerTriggerPlatformOptions
+2026-08-18T16:14:02.273370264Z       {
+2026-08-18T16:14:02.273374903Z         "NonCronScheduleBehavior": "Allow"
+2026-08-18T16:14:02.273379422Z       }
+2026-08-18T16:14:02.275801987Z info: Microsoft.Azure.WebJobs.Hosting.OptionsLoggingService[0]
+2026-08-18T16:14:02.275827527Z       ScaleOptions
+2026-08-18T16:14:02.275831785Z       {
+2026-08-18T16:14:02.275835583Z         "ScaleMetricsMaxAge": "00:02:00",
+2026-08-18T16:14:02.275839300Z         "ScaleMetricsSampleInterval": "00:00:10",
+2026-08-18T16:14:02.275843137Z         "MetricsPurgeEnabled": true,
+2026-08-18T16:14:02.277275616Z         "IsTargetScalingEnabled": true,
+2026-08-18T16:14:02.277487982Z         "IsRuntimeScalingEnabled": false
+2026-08-18T16:14:02.277498472Z       }
+2026-08-18T16:14:02.277904953Z info: Microsoft.Azure.WebJobs.Hosting.JobHostService[0]
+2026-08-18T16:14:02.277914081Z       Starting JobHost
+2026-08-18T16:14:02.278932735Z info: Host.Startup[401]
+2026-08-18T16:14:02.278944458Z       Starting Host (HostId=86afe4eb6e6b-2137340777, InstanceId=7c15972d-857c-422d-a3a9-13a481cd1083, Version=4.1052.300.1, ProcessId=12, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+2026-08-18T16:14:02.300227185Z info: Host.Startup[314]
+2026-08-18T16:14:02.300260390Z       Loading functions metadata
+2026-08-18T16:14:07.270973412Z info: Host.General[337]
+2026-08-18T16:14:07.275133308Z       Host lock lease acquired by instance ID '000000000000000000000000946ACFA1'.
+2026-08-18T16:14:08.578709670Z info: Host.Function.Console[0]
+2026-08-18T16:14:08.578744588Z       [createdump] 004efaba TickFrequency: 1000000 ticks per ms
+2026-08-18T16:14:08.582664930Z info: Host.Function.Console[0]
+2026-08-18T16:14:08.582690991Z       [createdump] 004efabc PAGE_SIZE 4096
+2026-08-18T16:14:08.582959286Z info: Host.Function.Console[0]
+2026-08-18T16:14:08.582967361Z       [createdump] Gathering state for process 46 dotnet
+2026-08-18T16:14:08.583327997Z info: Host.Function.Console[0]
+2026-08-18T16:14:08.583336273Z       [createdump] Crashing thread 0037 signal 11 (000b)
+2026-08-18T16:14:08.657519910Z fail: Host.Function.Console[0]
+2026-08-18T16:14:08.657549348Z       [createdump] Problem suspending thread: ptrace(ATTACH, 46) FAILED Operation not permitted (1)
+2026-08-18T16:14:08.706298499Z info: Host.Function.Console[0]
+2026-08-18T16:14:08.706324891Z       [createdump] Target process is alive
+2026-08-18T16:14:08.708011021Z fail: Host.Function.Console[0]
+2026-08-18T16:14:08.708024086Z       [createdump] Failure took 62ms
+2026-08-18T16:14:09.581436490Z fail: Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher[0]
+2026-08-18T16:14:09.581623837Z       Exceeded language worker restart retry count for runtime:dotnet-isolated. Shutting down and proactively recycling the Functions Host to recover
+2026-08-18T16:14:09.741358758Z info: Host.Startup[326]
+2026-08-18T16:14:09.741385902Z       Reading functions metadata (Custom)
+2026-08-18T16:14:09.971324008Z info: Host.Startup[327]
+2026-08-18T16:14:09.971347905Z       0 functions found (Custom)
+2026-08-18T16:14:10.116104513Z info: Host.Startup[315]
+2026-08-18T16:14:10.116133280Z       0 functions loaded
+2026-08-18T16:14:10.224888598Z fail: Microsoft.Extensions.Hosting.Internal.Host[11]
+2026-08-18T16:14:10.224916162Z       Hosting failed to start
+2026-08-18T16:14:10.224920801Z       System.OperationCanceledException: The operation was canceled.
+2026-08-18T16:14:10.224924568Z          at System.Threading.CancellationToken.ThrowOperationCanceledException()
+2026-08-18T16:14:10.225545885Z          at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+2026-08-18T16:14:10.226278950Z          at Microsoft.Azure.WebJobs.Script.ScriptHost.InitializeFunctionDescriptorsAsync(IEnumerable`1 functionMetadata, String workerRuntime, CancellationToken cancellationToken) in /src/azure-functions-host/src/WebJobs.Script/Host/ScriptHost.cs:line 550
+2026-08-18T16:14:10.226295803Z          at Microsoft.Azure.WebJobs.Script.ScriptHost.InitializeAsync(CancellationToken cancellationToken) in /src/azure-functions-host/src/WebJobs.Script/Host/ScriptHost.cs:line 325
+2026-08-18T16:14:10.227708100Z          at Microsoft.Azure.WebJobs.Script.ScriptHost.StartAsyncCore(CancellationToken cancellationToken) in /src/azure-functions-host/src/WebJobs.Script/Host/ScriptHost.cs:line 267
+2026-08-18T16:14:10.228218536Z          at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+2026-08-18T16:14:10.228226411Z          at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-08-18T16:14:10.598850915Z Unhandled exception. System.AggregateException: One or more errors occurred. (A task was canceled.)
+2026-08-18T16:14:10.598880553Z  ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+2026-08-18T16:14:10.598884712Z    at System.Threading.Tasks.Task.GetExceptions(Boolean includeTaskCanceledExceptions)
+2026-08-18T16:14:10.598888078Z    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+2026-08-18T16:14:10.598891114Z    at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+2026-08-18T16:14:10.598894130Z    at System.Threading.Tasks.Task.Wait()
+2026-08-18T16:14:10.598897006Z    at Microsoft.Azure.WebJobs.Script.WebHost.Program.Main(String[] args) in /src/azure-functions-host/src/WebJobs.Script.WebHost/Program.cs:line 29
+2026-08-18T16:14:10.598900242Z --- End of stack trace from previous location ---
+2026-08-18T16:14:10.598933627Z 
+2026-08-18T16:14:10.598937876Z    --- End of inner exception stack trace ---
+2026-08-18T16:14:10.598940952Z    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+2026-08-18T16:14:10.598943947Z    at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+2026-08-18T16:14:10.598946913Z    at System.Threading.Tasks.Task.Wait()
+2026-08-18T16:14:10.598954338Z    at Microsoft.Azure.WebJobs.Script.WebHost.Program.Main(String[] args) in /src/azure-functions-host/src/WebJobs.Script.WebHost/Program.cs:line 29
+2026-08-18T16:14:10.786168749Z [createdump] 004f03af TickFrequency: 1000000 ticks per ms
+2026-08-18T16:14:10.788594896Z [createdump] 004f03b1 PAGE_SIZE 4096
+2026-08-18T16:14:10.796584738Z [createdump] Gathering state for process 12 Microsoft.Azure
+2026-08-18T16:14:10.799392262Z [createdump] Crashing thread 000c signal 6 (0006)
+2026-08-18T16:14:10.801485338Z [createdump] Problem suspending thread: ptrace(ATTACH, 12) FAILED Operation not permitted (1)
+2026-08-18T16:14:10.804127574Z [createdump] Target process is alive
+2026-08-18T16:14:10.806327860Z [createdump] Failure took 23ms
+2026-08-18T16:14:11.063361592Z /opt/startup/start_nonappservice.sh: line 4:    12 Aborted                 (core dumped) /azure-functions-host/Microsoft.Azure.WebJobs.Script.WebHost

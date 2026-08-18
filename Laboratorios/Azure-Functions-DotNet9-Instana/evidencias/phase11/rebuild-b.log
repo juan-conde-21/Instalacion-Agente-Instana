@@ -1,0 +1,61 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.instana
+#1 transferring dockerfile: 962B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:9.0
+#2 DONE 0.1s
+
+#3 [internal] load metadata for mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0
+#3 DONE 0.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 34B done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [final 1/2] FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 resolve mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9
+#6 resolve mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0@sha256:4ba0a8dffed0cfa2445c304fd92e730397b4cb8039eac7b4ac5e4afa07dbcfa9 0.1s done
+#6 DONE 0.2s
+
+#7 [instana-build 1/5] FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30
+#7 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30
+#7 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:35048e3a81e6a07c316e7bbbd80d80d2ba705fe5f23a8ed42b6638c8f4c20d30 0.1s done
+#7 DONE 0.3s
+
+#5 [internal] load build context
+#5 transferring context: 281B done
+#5 DONE 0.0s
+
+#8 [instana-build 4/5] RUN dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core --version 1.321.2 &&     dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core.Rewriter.Linux --version 1.321.2
+#8 CACHED
+
+#9 [instana-build 5/5] RUN dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out
+#9 CACHED
+
+#10 [instana-build 2/5] WORKDIR /src
+#10 CACHED
+
+#11 [instana-build 3/5] COPY src/InstanaCrashLab/ src/InstanaCrashLab/
+#11 CACHED
+
+#12 [final 2/2] COPY --from=instana-build /out /home/site/wwwroot
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers 0.0s done
+#13 exporting manifest sha256:852e9b32f62253d088fee9bf377d8b1ac3f390a6404b8be7139a64bc90c00776 0.0s done
+#13 exporting config sha256:609f62307a1f808e4c6b30ef367cd98919ca46f284b8b102ba8c0d097f640856
+#13 exporting config sha256:609f62307a1f808e4c6b30ef367cd98919ca46f284b8b102ba8c0d097f640856 0.0s done
+#13 exporting attestation manifest sha256:6d8d41b2cb7d4d9798d5bae45a552534c72b2d62d3c05aeeb6eef54aa6276bda
+#13 exporting attestation manifest sha256:6d8d41b2cb7d4d9798d5bae45a552534c72b2d62d3c05aeeb6eef54aa6276bda 0.2s done
+#13 exporting manifest list sha256:bd6686859783e4128b2cb470c3557036d50b6005fdb97267dbe7fec99d01c500
+#13 exporting manifest list sha256:bd6686859783e4128b2cb470c3557036d50b6005fdb97267dbe7fec99d01c500 0.2s done
+#13 naming to docker.io/library/instana-dotnet9-lab:frozen-b-instana-health
+#13 naming to docker.io/library/instana-dotnet9-lab:frozen-b-instana-health 0.0s done
+#13 unpacking to docker.io/library/instana-dotnet9-lab:frozen-b-instana-health 0.1s done
+#13 DONE 1.0s

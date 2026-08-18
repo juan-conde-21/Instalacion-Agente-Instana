@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS instana-build
+WORKDIR /src
+COPY src/InstanaCrashLab/ src/InstanaCrashLab/
+RUN dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core --version 1.321.2 && \
+    dotnet add src/InstanaCrashLab/InstanaCrashLab.csproj package Instana.Tracing.Core.Rewriter.Linux --version 1.321.2
+RUN dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out
+FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0 AS final
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+    AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
+    DOTNET_STARTUP_HOOKS=/home/site/wwwroot/Instana.Tracing.Core.dll \
+    CORECLR_ENABLE_PROFILING=1 \
+    CORECLR_PROFILER={cf0d821e-299b-5307-a3d8-b283c03916dd} \
+    CORECLR_PROFILER_PATH=/home/site/wwwroot/instana_tracing/CoreProfiler.so
+COPY --from=instana-build /out /home/site/wwwroot
+

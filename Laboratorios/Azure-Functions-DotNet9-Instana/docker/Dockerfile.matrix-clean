@@ -1,0 +1,9 @@
+ARG VARIANT=A
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG VARIANT
+WORKDIR /src
+COPY src/variants/${VARIANT}/ src/InstanaCrashLab/
+RUN dotnet publish src/InstanaCrashLab/InstanaCrashLab.csproj -c Release -o /out
+FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated9.0
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+COPY --from=build /out /home/site/wwwroot

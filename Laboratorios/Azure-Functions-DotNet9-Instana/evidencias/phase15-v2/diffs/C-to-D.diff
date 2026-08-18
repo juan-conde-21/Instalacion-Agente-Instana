@@ -1,0 +1,13 @@
+--- /lab/src/variants/C/HealthFunction.cs	2026-08-18 16:42:13.821725459 +0000
++++ /lab/src/variants/D/HealthFunction.cs	2026-08-18 16:42:13.833726131 +0000
+@@ -36,9 +36,7 @@
+     public HttpResponseData Error(
+         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "error")] HttpRequestData request)
+     {
+-        var response = request.CreateResponse(HttpStatusCode.InternalServerError);
+-        response.WriteString("controlled error");
+-        return response;
++        throw new InvalidOperationException("controlled exception");
+     }
+ 
+     private static bool IsInstrumented() =>
