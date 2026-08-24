@@ -280,20 +280,32 @@ fi
 if [[ -f "${JAVA_SRC}" ]] \
    && grep -q '/api/sync' "${JAVA_SRC}" \
    && grep -q '/api/status' "${JAVA_SRC}" \
+   && grep -q '/api/profiles' "${JAVA_SRC}" \
+   && grep -q '/api/catalog' "${JAVA_SRC}" \
+   && grep -q '/api/checkout' "${JAVA_SRC}" \
+   && grep -q '/api/orders/{userId}' "${JAVA_SRC}" \
    && grep -q '/api/operation/{sku}' "${JAVA_SRC}" \
-   && grep -q 'PROMOTIONS_FILE_STALE' "${JAVA_SRC}"
+   && grep -q 'PROMOTIONS_FILE_STALE' "${JAVA_SRC}" \
+   && grep -q 'event=checkout_success' "${JAVA_SRC}" \
+   && grep -q 'event=checkout_rejected' "${JAVA_SRC}"
 then
-    ok "RETAIL Java source" "VALID"
+    ok "RETAIL Java source" "NOVA V4 / VALID"
 else
     fail "RETAIL Java source" "INVALID / MISSING"
 fi
 
 
 if [[ -f "${INDEX}" ]] \
-   && grep -q 'Operación Retail' "${INDEX}" \
-   && grep -q 'REALIZAR OPERACIÓN' "${INDEX}"
+   && grep -q 'name="instana-demo-app" content="nova-market"' "${INDEX}" \
+   && grep -q 'name="instana-demo-version" content="4"' "${INDEX}" \
+   && grep -q '/api/profiles' "${INDEX}" \
+   && grep -q '/api/catalog' "${INDEX}" \
+   && grep -q '/api/checkout' "${INDEX}" \
+   && grep -q '/api/orders/' "${INDEX}" \
+   && grep -q 'checkout-success' "${INDEX}" \
+   && grep -q 'checkout-error' "${INDEX}"
 then
-    ok "RETAIL web UI" "PRESENT"
+    ok "RETAIL web UI" "NOVA V4 / VALID"
 else
     fail "RETAIL web UI" "INVALID / MISSING"
 fi
@@ -646,9 +658,9 @@ fi
 if echo "${OTEL_CONFIG}" \
    | grep -q 'endpoint: instana-agent.instana-agent:4317'
 then
-    ok "OTel ? Instana" "instana-agent:4317"
+    ok "OTel -> Instana" "instana-agent:4317"
 else
-    fail "OTel ? Instana" "INVALID"
+    fail "OTel -> Instana" "INVALID"
 fi
 
 if echo "${OTEL_CONFIG}" \
