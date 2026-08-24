@@ -1,102 +1,63 @@
 #!/usr/bin/env bash
 
-# Este archivo debe ejecutarse con:
-# source ./00-load-instana-env.sh
+#
+# Configuración central de Instana API.
+# Este archivo NO solicita credenciales interactivamente.
+#
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    echo "ERROR: este script debe cargarse con:"
-    echo
-    echo "  source ./00-load-instana-env.sh"
-    echo
-    exit 1
+INSTANA_SECRET_FILE="/opt/instana-demo/secrets/instana-api.env"
+
+if [[ ! -r "${INSTANA_SECRET_FILE}" ]]; then
+  echo "[ERROR] No existe configuración persistente de Instana:"
+  echo "        ${INSTANA_SECRET_FILE}"
+  return 1 2>/dev/null || exit 1
 fi
 
+# shellcheck disable=SC1090
+source "${INSTANA_SECRET_FILE}"
 
-export INSTANA_URL="https://unit0-ibm.instana-0.ibmdte.local"
+: "${INSTANA_URL:?INSTANA_URL no configurada}"
+: "${INSTANA_TOKEN:?INSTANA_TOKEN no configurado}"
 
-unset INSTANA_TOKEN
+case "${INSTANA_TOKEN}" in
+  TU_TOKEN_ACTUAL|CHANGE_ME|REPLACE_ME|"")
+    echo "[ERROR] INSTANA_TOKEN contiene un placeholder."
+    echo "        Configura una sola vez:"
+    echo "        /opt/instana-demo/secrets/instana-api.env"
+    return 1 2>/dev/null || exit 1
+    ;;
+esac
 
-
-echo
-IFS= read -r -s -p "Instana API Token: " INSTANA_TOKEN
-printf '\n'
-
-# Elimina únicamente CR accidental al pegar desde Windows.
-INSTANA_TOKEN="${INSTANA_TOKEN//$'\r'/}"
-
-if [[ -z "${INSTANA_TOKEN}" ]]; then
-    echo "ERROR: API Token vacío"
-    return 1
-fi
-
+export INSTANA_URL
 export INSTANA_TOKEN
 
-
-api_get() {
-
-    local path="$1"
-    local body="/tmp/instana-api-body.json"
-
-    rm -f "${body}"
-
-    local code
-
-    code=$(curl -skS \
-        -o "${body}" \
-        -w '%{http_code}' \
-        -H "Authorization: apiToken ${INSTANA_TOKEN}" \
-        -H "Accept: application/json" \
-        "${INSTANA_URL}${path}") || {
-            echo "ERROR: fallo curl para ${path}"
-            return 1
-        }
-
-    echo "HTTP=${code}"
-    echo
-
-    if [[ -s "${body}" ]]; then
-
-        if jq . "${body}" >/dev/null 2>&1; then
-            jq . "${body}"
-        else
-            cat "${body}"
-            echo
-        fi
-
-    fi
-
-    [[ "${code}" =~ ^2 ]]
-}
-
+#
+# Normalización.
+#
+INSTANA_URL="${INSTANA_URL%/}"
 
 echo
 echo "Validando acceso a Instana..."
 
-code=$(curl -skS \
-    -o /tmp/instana-api-precheck.json \
+HTTP_CODE="$(
+  curl -ksS \
+    --connect-timeout 5 \
+    --max-time 15 \
+    -o /tmp/instana-api-validation.$$ \
     -w '%{http_code}' \
     -H "Authorization: apiToken ${INSTANA_TOKEN}" \
-    -H "Accept: application/json" \
-    "${INSTANA_URL}/api/application-monitoring/catalog/metrics")
+    "${INSTANA_URL}/api/website-monitoring/config" \
+    2>/dev/null || true
+)"
 
+rm -f /tmp/instana-api-validation.$$
 
-if [[ "${code}" != "200" ]]; then
-
-    echo "ERROR: Instana API respondió HTTP=${code}"
-
-    if [[ -s /tmp/instana-api-precheck.json ]]; then
-        cat /tmp/instana-api-precheck.json
-        echo
-    fi
-
-    unset INSTANA_TOKEN
-    return 1
-
+if [[ "${HTTP_CODE}" != "200" ]]; then
+  echo "[ERROR] Instana API no accesible (HTTP ${HTTP_CODE:-000})"
+  return 1 2>/dev/null || exit 1
 fi
-
-export DASHBOARD_API_TOKEN_NAME="${DASHBOARD_API_TOKEN_NAME:-demo}"
 
 echo "Instana API: OK"
 echo "URL: ${INSTANA_URL}"
-echo "Token: cargado (${#INSTANA_TOKEN} caracteres)"
+echo "Token: cargado automáticamente (${#INSTANA_TOKEN} caracteres)"
 echo

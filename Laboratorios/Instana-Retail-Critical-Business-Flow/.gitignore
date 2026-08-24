@@ -23,3 +23,62 @@ target/
 .claude/
 .agents/
 .codex/
+
+# Runtime state / generated Instana responses
+state/
+logs/
+secrets/
+golden/
+archive/
+backup/
+
+# Runtime API snapshots
+instana-api/config/*-current.json
+instana-api/config/*shareable-api-token*.json
+instana-api/config/*shareable-api-tokens*.json
+
+# Local credentials
+*.env
+*.pem
+*.key
+*.p12
+*.jks
+
+# Temporary / backup artifacts
+*.log
+*.old
+*.before-*
+*.backup-*
+
+# Runtime state / generated Instana responses
+state/
+logs/
+secrets/
+golden/
+archive/
+backup/
+
+# Runtime API snapshots
+instana-api/config/*-current.json
+instana-api/config/*shareable-api-token*.json
+instana-api/config/*shareable-api-tokens*.json
+
+# Local credentials
+*.env
+*.pem
+*.key
+*.p12
+*.jks
+
+# Temporary / backup artifacts
+*.log
+*.old
+*.before-*
+*.backup-*
+
+# Generated Synthetic payloads
+instana-api/config/synthetic-business.json
+instana-api/config/synthetic-technical.json
+
+# Generated Smart Alert payload
+instana-api/config/alert-business.json

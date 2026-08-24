@@ -253,7 +253,8 @@ install -d \
   "${APP}/src/main/java/com/ibm/demo" \
   "${APP}/src/main/java/com/ibm/demo/retail" \
   "${APP}/src/main/resources" \
-  "${APP}/src/main/resources/static"
+  "${APP}/src/main/resources/static" \
+  "${APP}/src/main/resources/static/images"
 
 
 install -d \
@@ -350,6 +351,26 @@ sync_app_file \
   "${APP}/src/main/resources/static/index.html"
 
 
+sync_app_file \
+  "${STAGE}/app/src/main/resources/static/images/bienestar-diario.jpg" \
+  "${APP}/src/main/resources/static/images/bienestar-diario.jpg"
+
+
+sync_app_file \
+  "${STAGE}/app/src/main/resources/static/images/cuidado-natural.jpg" \
+  "${APP}/src/main/resources/static/images/cuidado-natural.jpg"
+
+
+sync_app_file \
+  "${STAGE}/app/src/main/resources/static/images/energia-diaria.jpg" \
+  "${APP}/src/main/resources/static/images/energia-diaria.jpg"
+
+
+sync_app_file \
+  "${STAGE}/app/src/main/resources/static/images/cuidado-personal.jpg" \
+  "${APP}/src/main/resources/static/images/cuidado-personal.jpg"
+
+
 sync_root_file \
   "${STAGE}/k8s-retail/Containerfile" \
   "${K8S_DIR}/Containerfile" \
@@ -380,12 +401,16 @@ then
     echo
     info "Maven build" "REQUIRED"
 
-    sudo -u instanademo \
-      mvn \
-      -q \
-      -f "${APP}/pom.xml" \
-      clean package \
-      -DskipTests
+    (
+      cd "${APP}"
+
+      sudo -H -u instanademo \
+        mvn \
+        -q \
+        -f "${APP}/pom.xml" \
+        clean package \
+        -DskipTests
+    )
 
     BUILT_JAR="${APP}/target/retail-app.jar"
 
